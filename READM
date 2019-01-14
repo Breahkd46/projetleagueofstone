@@ -1,0 +1,5 @@
+Dans ce projet, il est question de développer un mashup
+(mélange) de deux jeux vidéos. En utilisant le système de jeu de Hearthstone (HS) développé par Blizzard
+nous intégrerons les données ouvertes du jeu League Of Legends (LoL) développé par Riot Games. Ce projet
+s’intitule "League of Stones" et il propose un jeu de cartes dont les cartes proviennent de LoL.
+Les deux joueurs s’affrontant possèdent un deck de 20 cartes et 150 points de vie.
