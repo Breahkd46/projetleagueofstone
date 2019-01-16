@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import { SERVER_URL } from "./consts";
+import "./Signin.css";
 
 class Signup extends Component {
   constructor(props) {
@@ -60,10 +61,11 @@ class Signup extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="base">
         <form onSubmit={this.handleSubmit}>
           <div>{this.state.error}</div>
-          Inscrivez-vous :
+          <h1>Inscrivez-vous :</h1>
+          <div class="cadre">
           <label>
             Pseudo :{" "}
             <input
@@ -72,6 +74,8 @@ class Signup extends Component {
               onChange={this.handleChangeLogin}
             />
           </label>
+          </div>
+          <div class="cadre">
           <label>
             Email :{" "}
             <input
@@ -80,6 +84,8 @@ class Signup extends Component {
               onChange={this.handleChangeEmail}
             />
           </label>
+          </div>
+          <div class="cadre">
           <label>
             Mot de passe :{" "}
             <input
@@ -88,6 +94,8 @@ class Signup extends Component {
               onChange={this.handleChangePassword}
             />
           </label>
+          </div>
+          <div class="cadre">
           <label>
             Confirmation du mot de passe :{" "}
             <input
@@ -96,7 +104,10 @@ class Signup extends Component {
               onChange={this.handleChangeConfirmPassword}
             />
           </label>
+          </div>
+          <div id="bouton">
           <input type="submit" value="S'inscrire" />
+          </div>
         </form>
         <div>
           {"Vous avez déjà un compte ? "}

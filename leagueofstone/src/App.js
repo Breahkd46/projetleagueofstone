@@ -52,6 +52,7 @@ class App extends Component {
           />
           />
           <Route path="/signup" component={Signup} />
+          <Route path="/game" component={Game} />
           <PrivateRoute component={Game} isConnected={this.state.isConnected} />
         </Switch>
       </Router>
