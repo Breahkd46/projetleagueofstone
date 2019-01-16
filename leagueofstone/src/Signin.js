@@ -21,6 +21,7 @@ class Signin extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // Requete Ajax
     axios
       .get(
         SERVER_URL +
