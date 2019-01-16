@@ -17,7 +17,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={props => {
       return rest.isConnected ? (
-        <Component {...props} />
+        <Component {...props} {...rest} />
       ) : (
         <Redirect to="/signin" />
       );
@@ -34,8 +34,14 @@ class App extends Component {
     };
 
     this.setSessionToken = this.setSessionToken.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
-
+  handleLogout() {
+    this.setState({
+      token: "",
+      isConnected: false
+    })
+  }
   setSessionToken(token) {
     this.setState({ token, isConnected: true });
   }
@@ -52,7 +58,7 @@ class App extends Component {
           />
           />
           <Route path="/signup" component={Signup} />
-          <PrivateRoute component={Game} isConnected={this.state.isConnected} />
+          <PrivateRoute component={Game} setLogout={this.handleLogout} isConnected={this.state.isConnected} />
         </Switch>
       </Router>
     );
