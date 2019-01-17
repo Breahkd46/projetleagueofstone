@@ -11,6 +11,7 @@ import Signup from "./Signup";
 import Game from "./Game";
 
 import "./App.css";
+import Logout from "./Logout";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -53,6 +54,7 @@ class App extends Component {
           />
           <Route path="/signup" component={Signup} />
           <Route path="/game" component={Game} />
+          <Route path="/logout" component={Logout} />
           <PrivateRoute component={Game} isConnected={this.state.isConnected} />
         </Switch>
       </Router>

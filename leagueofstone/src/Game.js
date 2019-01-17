@@ -11,14 +11,13 @@ class Game extends Component {
           <ul className="menu">
             <li><a href="#compte">Compte</a></li>
             <li><a href="#cartes">Liste de cartes</a></li>
-            <li><a href="#déconnexion">Se déconnecter</a></li>
+            <li><a href="/logout">Se déconnecter</a></li>
           </ul>
-          {/* <div class="menu">
-            <a href="#compte">Compte</a>
-            <a href="#cartes">Liste de cartes</a>
-            <a href="#déconnexion">Se déconnecter</a>
-          </div> */}
         </header>
+
+        <div id="newPart">
+          <h4>Nouvelle partie</h4>
+        </div>
       </div>
     );
   }
