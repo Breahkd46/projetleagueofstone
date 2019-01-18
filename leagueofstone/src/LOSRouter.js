@@ -12,9 +12,7 @@ import Signup from "./Signup";
 import Game from "./Game";
 
 // Import pour redux
-import losApp from './los-reducer/reducers';
-
-import "./App.css";
+import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -28,22 +26,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }}
   />
 );
-// Creation du store pour Redux
-let store = createStore(
-  losApp,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
 
 class LOSRouter extends Component {
-  constructor(props) {
-    super(props);
-
-    // this.setSessionToken = this.setSessionToken.bind(this);
-    // this.handleLogout = this.handleLogout.bind(this);
-  }
 
   render() {
-    console.log(this.props.sessionToken)
     return (
       <Router>
         <Switch>
@@ -57,7 +43,7 @@ class LOSRouter extends Component {
 }
 
 const mapStateToProps = state => {
-  return { sessionToken: state.sessionReducer.sessionToken}
+  return { sessionToken: state.sessionReducer}
 }
 
 // const mapDispatchToProps = dispatch => {

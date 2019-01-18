@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import axios from "axios";
+
+// Redux
+import { connect } from 'react-redux';
+import removeTokenSession from './actions/removeTokenSession'
 
 import { SERVER_URL } from "./consts";
 import "./App.css";
@@ -20,11 +24,10 @@ class Logout extends Component {
       .then(res => {
         if (res.data.status === "ok") {
           console.log(res.data);
-          this.props.setLogout();
+          this.props.removeTokenSession("");
           // this.props.history.push(process.env.PUBLIC_URL + "/");
         }
       });
-      this.props.setLogout();
   }
   render() {
     return (
@@ -35,4 +38,17 @@ class Logout extends Component {
   }
 }
 
-export default Logout;
+// const mapStateToProps = state => {
+//   return { sessionToken: state.sessionReducer}
+// }
+
+const mapDispatchToProps = dispatch => {
+  console.log("ok");
+  return {
+    removeTokenSession: token => {
+      dispatch(removeTokenSession(token))
+    }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Logout)
