@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+// Redux
+import { connect } from 'react-redux'
+import setTokenSession from './los-reducer/action'
 import { SERVER_URL } from "./consts";
 
 import "./App.css";
@@ -32,7 +34,8 @@ class Signin extends Component {
       )
       .then(res => {
         if (res.data.status === "ok") {
-          this.props.setSessionToken(res.data.token);
+          // this.props.setSessionToken(res.data.token);
+          this.props.setSessionToken(res.data.token)
           this.props.history.push(process.env.PUBLIC_URL + "/");
         }
       });
@@ -84,4 +87,16 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+const mapStateToProps = state => {
+  return { sessionToken: state.sessionReducer.sessionToken}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setTokenSession: token => {
+      dispatch(setTokenSession(token))
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Signin)
