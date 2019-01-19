@@ -3,6 +3,7 @@ import React, { Component } from "react";
 // Redux
 import { connect } from 'react-redux';
 import updateMatchmakingRequest from './actions/updateMatchmakingRequest';
+import setMatch from './actions/setMatch';
 
 // Requete Server
 import axios from "axios";
@@ -46,7 +47,6 @@ class ListRequest extends Component {
   }
 
   handleAcceptRequest(e) {
-
     axios
       .get(
         SERVER_URL + "/matchmaking/acceptRequest?token=" +
@@ -68,15 +68,25 @@ class ListRequest extends Component {
     console.log(this.props.matchmaking.request);
     return (
       <div>
-      Tableau de requetes
+      <table>
+        <caption>Tableau de requetes</caption>
+        <thead>
+          <tr>
+           <th>Name</th>
+           <th>Accepter</th>
+          </tr>
+        </thead>
+        <tbody>
         {this.props.matchmaking.request.map( player => {
           return (
-            <div>
-            <p>Name : {player.name}</p>
-            <button value={player.matchmakingId} onClick={this.handleAcceptRequest} > Accepter </button>
-            </div>
+            <tr>
+             <td>{player.name}</td>
+             <td><button value={player.matchmakingId} onClick={this.handleAcceptRequest} > Accepter </button></td>
+            </tr>
           )
         })}
+        </tbody>
+        </table>
       </div>
     )
   }
@@ -93,6 +103,9 @@ const mapDispatchToProps = dispatch => {
   return {
     updateMatchmakingRequest: request => {
       dispatch(updateMatchmakingRequest(request))
+    },
+    setMatch: player1 => {
+      dispatch(setMatch(player1,player1))
     }
   }
 }

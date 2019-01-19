@@ -8,6 +8,8 @@ import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
 
+import './list.css';
+
 class ListMatchmacking extends Component {
 
   constructor(props) {
@@ -77,17 +79,28 @@ class ListMatchmacking extends Component {
   render() {
     console.log("reload");
     return (
-      <div> Tableau des joueurs en attente
-      {this.state.players.map((player, i) => {
-        return (
-          <div key={i}>
-          {console.log(player)}
-          <p>Name : {player.name}</p>
-          <button value={player.matchmakingId} onClick={this.handleMatchRequest}> Request </button>
-          </div>
-        )
-      })}
+      <div>
+      <table>
+        <caption>Tableau des joueurs en attent</caption>
+        <thead>
+          <tr>
+           <th>Name</th>
+           <th>Request</th>
+          </tr>
+        </thead>
+        <tbody>
+        {this.state.players.map((player, i) => {
+          return (
+              <tr key={i}>
+               <td>{player.name}</td>
+               <td><button value={player.matchmakingId} onClick={this.handleMatchRequest}> Request </button></td>
+              </tr>
+          )
+        })}
+        </tbody>
+      </table>
       </div>
+
     )
   }
 }
