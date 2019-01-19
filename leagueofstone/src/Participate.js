@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 
 import ButtonParticipate from './ButtonParticipate';
+import ButtonUnParticipate from './ButtonUnParticipate';
 import ListMatchmacking from './ListMatchmacking';
 import ListRequest from './ListRequest';
+
+// Requete Server
+// import axios from "axios";
+// import { SERVER_URL } from "./consts";
 
 // Redux
 import { connect } from 'react-redux';
@@ -12,6 +17,9 @@ class Participate extends Component {
 
   // constructor(props) {
   //   super(props);
+  //   this.state = {
+  //     request: []
+  //   };
   // }
 
   render() {
@@ -23,7 +31,8 @@ class Participate extends Component {
       return (
         <div>
           <ListMatchmacking />
-          <ListRequest />
+          <ListRequest requests={this.props.matchmaking.request} />
+          <ButtonUnParticipate />
         </div>
       );
     }

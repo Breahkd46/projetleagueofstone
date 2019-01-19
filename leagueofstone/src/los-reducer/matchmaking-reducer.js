@@ -1,5 +1,6 @@
 const initialState = {
-  matchmakingId: ""
+  matchmakingId: "",
+  request: []
 }
 
 function matchmakingReducer(state = initialState, action) {
@@ -9,6 +10,16 @@ function matchmakingReducer(state = initialState, action) {
               ...state,
               matchmakingId: action.id,
               request: action.request,
+            };
+        case "UPDATE_MATCHMAKING_REQUEST":
+            return {
+              ...state,
+              request: action.request,
+            };
+        case "REMOVE_MATCHMAKING":
+            return {
+              matchmakingId: "",
+              request: [],
             };
         default:
             return state;
