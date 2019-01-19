@@ -4,8 +4,6 @@ const initialState = {
 }
 
 function sessionReducer(state = initialState, action) {
-    console.log(action.type);
-    console.log(action.token);
     switch (action.type) {
         case "SET_TOKEN_SESSION":
             return {
