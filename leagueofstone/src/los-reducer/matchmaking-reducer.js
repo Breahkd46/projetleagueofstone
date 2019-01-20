@@ -1,11 +1,12 @@
 const initialState = {
   matchmakingId: "",
-  request: []
+  request: [],
+  match: null
 }
 
 function matchmakingReducer(state = initialState, action) {
     switch (action.type) {
-        case "SET_MATCHMACKING":
+        case "INIT_MATCHMAKING":
             return {
               ...state,
               matchmakingId: action.id,
@@ -20,6 +21,12 @@ function matchmakingReducer(state = initialState, action) {
             return {
               matchmakingId: "",
               request: [],
+              match: null
+            };
+        case "SET_MATCHMAKING":
+            return {
+              ...state,
+              match: action.match
             };
         default:
             return state;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import setMatchmacking from './actions/setMatchmacking';
+import initMatchmaking from './actions/initMatchmaking';
 
 // Requete Server
 import axios from "axios";
@@ -24,7 +24,7 @@ class ButtonParticipate extends Component {
       )
       .then(res => {
         if (res.data.status === "ok") {
-          this.props.setMatchmacking(res.data.data.matchmakingId, res.data.data.request)
+          this.props.initMatchmaking(res.data.data.matchmakingId, res.data.data.request)
           // this.props.history.push(process.env.PUBLIC_URL + "/");
         } else {
           console.log(res.data.message);
@@ -47,8 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setMatchmacking: (matchmakingId,request) => {
-      dispatch(setMatchmacking(matchmakingId,request))
+    initMatchmaking: (matchmakingId,request) => {
+      dispatch(initMatchmaking(matchmakingId,request))
     }
   }
 }

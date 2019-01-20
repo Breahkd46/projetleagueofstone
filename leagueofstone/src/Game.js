@@ -17,14 +17,20 @@ class Game extends Component {
   //
   // }
 
+
+
   render() {
-    if(this.props.match.isMatch) {
+    if(this.props.matchmaking.match !== null) {
       return (
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>League of Stones</h2>
-            <p>Bienvenue</p>
+            <p>Bienvenue</p> <br></br>
+            <p> Et c'est parti </p>
+            <div> {this.props.matchmaking.match.player1.name}</div>
+            <p> CONTRE </p>
+            <div> {this.props.matchmaking.match.player2.name} </div>
           </header>
         </div>
       )
@@ -47,7 +53,10 @@ class Game extends Component {
 }
 
 const mapStateToProps = state => {
-  return { match: state.matchReducer}
+  return {
+    match: state.matchReducer,
+    matchmaking: state.matchmakingReducer
+  }
 }
 
 const mapDispatchToProps = dispatch => {

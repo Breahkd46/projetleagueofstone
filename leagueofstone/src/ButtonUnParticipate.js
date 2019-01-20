@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import removeMatchmacking from './actions/removeMatchmacking';
+import removeMatchmaking from './actions/removeMatchmaking';
 
 // Requete Server
 import axios from "axios";
@@ -25,7 +25,7 @@ class ButtonUnParticipate extends Component {
       .then(res => {
         if (res.data.status === "ok") {
           console.log(res.data.data);
-          this.props.removeMatchmacking("")
+          this.props.removeMatchmaking("")
           // this.props.history.push(process.env.PUBLIC_URL + "/");
         } else {
           console.log(res.data.message);
@@ -48,8 +48,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeMatchmacking: (token) => {
-      dispatch(removeMatchmacking(token))
+    removeMatchmaking: (token) => {
+      dispatch(removeMatchmaking(token))
     }
   }
 }

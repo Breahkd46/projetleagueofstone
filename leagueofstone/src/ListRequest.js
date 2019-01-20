@@ -38,7 +38,7 @@ class ListRequest extends Component {
         if (res.data.status === "ok") {
           console.log(res.data.data.request);
           if (res.data.data.request !== this.props.matchmaking.request) {
-            updateMatchmakingRequest(res.data.data.request)
+            this.props.updateMatchmakingRequest(res.data.data.request)
           }
         } else {
           console.log(res.data.message);
@@ -77,9 +77,9 @@ class ListRequest extends Component {
           </tr>
         </thead>
         <tbody>
-        {this.props.matchmaking.request.map( player => {
+        {this.props.matchmaking.request.map( (player, i) => {
           return (
-            <tr>
+            <tr key={i}>
              <td>{player.name}</td>
              <td><button value={player.matchmakingId} onClick={this.handleAcceptRequest} > Accepter </button></td>
             </tr>
@@ -104,8 +104,8 @@ const mapDispatchToProps = dispatch => {
     updateMatchmakingRequest: request => {
       dispatch(updateMatchmakingRequest(request))
     },
-    setMatch: player1 => {
-      dispatch(setMatch(player1,player1))
+    setMatch: (player1,player2) => {
+      dispatch(setMatch(player1,player2))
     }
   }
 }
