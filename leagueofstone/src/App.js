@@ -5,6 +5,12 @@ import { createStore } from 'redux';
 
 import LOSRouter from './LOSRouter';
 
+import { Router, Route, Switch } from 'react-router';
+import Signin from "./Signin.js";
+import Signup from "./Signup";
+import Game from "./Game";
+import PrivateRoute from "./LOSRouter";
+
 // Import pour redux
 import losApp from './los-reducer/reducers';
 
@@ -24,11 +30,6 @@ class App extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <Provider store={store}>
-        <LOSRouter />
-      </Provider>
-=======
       <Router>
         <Switch>
           <Route
@@ -42,9 +43,11 @@ class App extends Component {
           <Route path="/game" component={Game} />
           <Route path="/logout" component={Logout} />
           <PrivateRoute component={Game} isConnected={this.state.isConnected} />
+          <Provider store={store}>
+        <LOSRouter />
+      </Provider>
         </Switch>
       </Router>
->>>>>>> devEmma
     );
   }
 }
