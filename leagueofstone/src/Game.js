@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 
 import Logout from "./Logout";
 import Unsubscribe from './Unsubscribe';
@@ -9,9 +8,7 @@ import Participate from './Participate';
 import { connect } from 'react-redux';
 import setMatch from './actions/setMatch';
 
-=======
 import './App.css'
->>>>>>> devEmma
 import logo from "./logo.svg";
 import "./Game.css";
 
@@ -24,7 +21,6 @@ class Game extends Component {
 
 
   render() {
-<<<<<<< HEAD
     if(this.props.matchmaking.match !== null) {
       return (
         <div className="App">
@@ -53,24 +49,6 @@ class Game extends Component {
         </div>
       );
     }
-
-=======
-    return (
-      <div>
-        <header>
-          <ul className="menu">
-            <li><a href="#compte">Compte</a></li>
-            <li><a href="#cartes">Liste de cartes</a></li>
-            <li><a href="/logout">Se déconnecter</a></li>
-          </ul>
-        </header>
-
-        <div id="newPart">
-          <h4>Nouvelle partie</h4>
-        </div>
-      </div>
-    );
->>>>>>> devEmma
   }
 }
 
