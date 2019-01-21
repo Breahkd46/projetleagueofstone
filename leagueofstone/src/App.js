@@ -1,48 +1,34 @@
 import React, { Component } from "react";
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
 
-import Signin from "./Signin";
-import Signup from "./Signup";
-import Game from "./Game";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import LOSRouter from './LOSRouter';
+
+// Import pour redux
+import losApp from './los-reducer/reducers';
 
 import "./App.css";
 import Logout from "./Logout";
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => {
-      return rest.isConnected ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to="/signin" />
-      );
-    }}
-  />
-);
+// Creation du store pour Redux
+let store = createStore(
+  losApp,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      token: "",
-      isConnected: false
-    };
-
-    this.setSessionToken = this.setSessionToken.bind(this);
-  }
-
-  setSessionToken(token) {
-    this.setState({ token, isConnected: true });
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
+<<<<<<< HEAD
+      <Provider store={store}>
+        <LOSRouter />
+      </Provider>
+=======
       <Router>
         <Switch>
           <Route
@@ -58,8 +44,9 @@ class App extends Component {
           <PrivateRoute component={Game} isConnected={this.state.isConnected} />
         </Switch>
       </Router>
+>>>>>>> devEmma
     );
   }
 }
 
-export default App;
+export default App
