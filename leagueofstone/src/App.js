@@ -10,12 +10,12 @@ import Signin from "./Signin.js";
 import Signup from "./Signup";
 import Game from "./Game";
 import PrivateRoute from "./LOSRouter";
+import Logout from "./Logout";
 
 // Import pour redux
 import losApp from './los-reducer/reducers';
 
 import "./App.css";
-import Logout from "./Logout";
 
 // Creation du store pour Redux
 let store = createStore(
