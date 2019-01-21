@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './App.css'
 import logo from "./logo.svg";
 import "./Game.css";
+import Participate from "./Participate";
 
 class Game extends Component {
   render() {
@@ -16,7 +17,7 @@ class Game extends Component {
         </header>
 
         <div id="newPart">
-          <h4>Nouvelle partie</h4>
+        <Participate />
         </div>
       </div>
     );
