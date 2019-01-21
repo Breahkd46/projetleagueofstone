@@ -25,11 +25,7 @@ class Game extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <ul className="menu">
-              <li><a href="#compte">Compte</a></li>
-              <li><a href="#cartes">Liste de cartes</a></li>
-              <li><a href="/logout">Se déconnecter</a></li>
-            </ul>
+
             <img src={logo} className="App-logo" alt="logo" />
             <h2>League of Stones</h2>
             <p>Bienvenue</p> <br></br>
@@ -44,6 +40,11 @@ class Game extends Component {
       return (
         <div className="App">
           <header className="App-header">
+            <ul className="menu">
+              <li><a href="#compte">Compte</a></li>
+              <li><a href="#cartes">Liste de cartes</a></li>
+              <li><a href="/logout">Se déconnecter</a></li>
+            </ul>
             <Logout />
             <img src={logo} className="App-logo" alt="logo" />
             <h2>League of Stones</h2>
