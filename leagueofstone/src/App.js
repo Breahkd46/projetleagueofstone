@@ -9,7 +9,6 @@ import LOSRouter from './LOSRouter';
 import losApp from './los-reducer/reducers';
 
 import "./App.css";
-import Logout from "./Logout";
 
 // Creation du store pour Redux
 let store = createStore(
@@ -24,27 +23,9 @@ class App extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <Provider store={store}>
         <LOSRouter />
       </Provider>
-=======
-      <Router>
-        <Switch>
-          <Route
-            path="/signin"
-            render={props => (
-              <Signin setSessionToken={this.setSessionToken} {...props} />
-            )}
-          />
-          />
-          <Route path="/signup" component={Signup} />
-          <Route path="/game" component={Game} />
-          <Route path="/logout" component={Logout} />
-          <PrivateRoute component={Game} isConnected={this.state.isConnected} />
-        </Switch>
-      </Router>
->>>>>>> devEmma
     );
   }
 }
