@@ -8,6 +8,7 @@ import setTokenSession from './actions/setTokenSession'
 import { SERVER_URL } from "./consts";
 
 import "./App.css";
+import "./Signin.css";
 
 class Signin extends Component {
   constructor(props) {
@@ -50,10 +51,10 @@ class Signin extends Component {
 
   render() {
     return (
-      <div>
+      <div class="base">
         <form onSubmit={this.handleSubmit}>
-          Connectez-vous :
-          <div>
+          <h1>Connectez-vous :</h1>
+          <div class="cadre">
             <label>
               Login :{" "}
               <input
@@ -63,7 +64,7 @@ class Signin extends Component {
               />
             </label>
           </div>
-          <div>
+          <div class="cadre">
             <label>
               Mot de passe :{" "}
               <input
@@ -73,7 +74,7 @@ class Signin extends Component {
               />
             </label>
           </div>
-          <div>
+          <div id="bouton">
             <input type="submit" value="Se connecter" />
           </div>
         </form>

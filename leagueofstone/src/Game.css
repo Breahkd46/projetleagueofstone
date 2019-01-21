@@ -1,0 +1,41 @@
+.menu {
+    background-color: #601006;
+    /* position: fixed; */
+    margin: 0;  
+    text-align: center;
+}
+
+.menu li{
+    display: inline-block;
+    margin: 20px;
+    padding: 14px 16px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+.menu li a:hover {
+    color: black;
+    display: block
+  }
+
+h4{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+}
+
+h4:hover{
+    color: black;
+}
+
+#newPart{
+    margin: 25%;
+    padding: 10%;
+    background-color: #601006;
+    border-radius: 15%;
+    border-style: solid;
+}
