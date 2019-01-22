@@ -15,7 +15,8 @@ class Signin extends Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      error: "",
     };
 
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -36,9 +37,10 @@ class Signin extends Component {
       )
       .then(res => {
         if (res.data.status === "ok") {
-          // this.props.setSessionToken(res.data.token);
-          this.props.setTokenSession(res.data.data.token)
+          this.props.setTokenSession(res.data.data.token);
           this.props.history.push(process.env.PUBLIC_URL + "/");
+        } else if(res.data.status === "error") {
+          this.setState({error: res.data.message})
         }
       });
   }
@@ -51,10 +53,10 @@ class Signin extends Component {
 
   render() {
     return (
-      <div class="base">
+      <div className="base">
         <form onSubmit={this.handleSubmit}>
           <h1>Connectez-vous :</h1>
-          <div class="cadre">
+          <div className="cadre">
             <label>
               Login :{" "}
               <input
@@ -64,7 +66,7 @@ class Signin extends Component {
               />
             </label>
           </div>
-          <div class="cadre">
+          <div className="cadre">
             <label>
               Mot de passe :{" "}
               <input
@@ -73,6 +75,9 @@ class Signin extends Component {
                 onChange={this.handleChangePassword}
               />
             </label>
+          </div>
+          <div>
+            <p>{this.state.error}</p>
           </div>
           <div id="bouton">
             <input type="submit" value="Se connecter" />
@@ -91,7 +96,7 @@ class Signin extends Component {
 
 const mapStateToProps = state => {
   return { sessionToken: state.sessionReducer}
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -99,6 +104,6 @@ const mapDispatchToProps = dispatch => {
       dispatch(setTokenSession(token))
     }
   }
-}
+};
 
 export default connect(mapStateToProps,mapDispatchToProps)(Signin)
