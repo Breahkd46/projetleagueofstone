@@ -9,7 +9,6 @@ import { SERVER_URL } from "./consts";
 import { connect } from 'react-redux';
 import removeTokenSession from './actions/removeTokenSession'
 
-
 import "./App.css";
 
 class Logout extends Component {
@@ -29,11 +28,8 @@ class Logout extends Component {
           console.log(res.data);
           this.props.removeTokenSession("");
           // this.props.history.push(process.env.PUBLIC_URL + "/");
-          this.props.setLogout();
-          // this.props.history.push(process.env.PUBLIC_URL + "/");
         }
       });
-      this.props.setLogout();
   }
   render() {
     return (
