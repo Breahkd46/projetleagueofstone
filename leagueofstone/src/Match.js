@@ -14,18 +14,27 @@ class Match extends Component {
 
 
     render() {
-        return (
-            <div >
-                <header >
-                    <h2>League of Stones</h2>
-                    <p>Bienvenue</p> <br />
-                    <p> Et c'est parti </p>
-                    <div> {this.props.matchmaking.match.player1.name}</div>
-                    <p> CONTRE </p>
-                    <div> {this.props.matchmaking.match.player2.name} </div>
-                </header>
-            </div>
-        )
+        if (this.props.match.status == "Deck is pending") {
+            return (
+                <div>
+                    <p>Constituer son deck</p>
+                </div>
+            )
+        }else if(status) {
+            return (
+                <div >
+                    <header >
+                        <h2>League of Stones</h2>
+                        <p>Bienvenue</p> <br />
+                        <p> Et c'est parti </p>
+                        <div> {this.props.matchmaking.match.player1.name}</div>
+                        <p> CONTRE </p>
+                        <div> {this.props.matchmaking.match.player2.name} </div>
+                    </header>
+                </div>
+            )
+        }
+
     }
     // render() {
     //     return (
