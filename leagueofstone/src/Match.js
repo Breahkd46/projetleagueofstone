@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import setMatch from "./actions/setMatch";
+// import setMatch from "./actions/setMatch";
 import {connect} from "react-redux";
+
+import './App.css'
 
 class Match extends Component {
     // constructor(props) {
@@ -13,10 +15,10 @@ class Match extends Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
+            <div >
+                <header >
                     <h2>League of Stones</h2>
-                    <p>Bienvenue</p> <br></br>
+                    <p>Bienvenue</p> <br />
                     <p> Et c'est parti </p>
                     <div> {this.props.matchmaking.match.player1.name}</div>
                     <p> CONTRE </p>
@@ -25,6 +27,13 @@ class Match extends Component {
             </div>
         )
     }
+    // render() {
+    //     return (
+    //         <div>
+    //             <p>CouCOU</p>
+    //         </div>
+    //     )
+    // }
 }
 
 const mapStateToProps = state => {
@@ -32,7 +41,7 @@ const mapStateToProps = state => {
         match: state.matchReducer,
         matchmaking: state.matchmakingReducer
     }
-}
+};
 
 // const mapDispatchToProps = dispatch => {
 //     return {

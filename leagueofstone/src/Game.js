@@ -24,8 +24,10 @@ class Game extends Component {
   render() {
     if(this.props.matchmaking.match !== null) {
       return (
-        <Match/>
-      )
+          <div>
+            <Match />
+          </div>
+      );
     } else {
       return (
         <div className="App">
@@ -53,7 +55,7 @@ const mapStateToProps = state => {
     match: state.matchReducer,
     matchmaking: state.matchmakingReducer
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -61,5 +63,5 @@ const mapDispatchToProps = dispatch => {
       dispatch(setMatch(matchmakingId))
     }
   }
-}
+};
 export default connect(mapStateToProps,mapDispatchToProps)(Game)

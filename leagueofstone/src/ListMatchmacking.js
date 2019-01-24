@@ -19,7 +19,7 @@ class ListMatchmacking extends Component {
       players: [],
       playerRequest: [],
       errorMessage: "",
-    }
+    };
 
     this.handleMatchRequest = this.handleMatchRequest.bind(this);
   }
@@ -57,10 +57,10 @@ class ListMatchmacking extends Component {
 
   handleMatchRequest(e) {
     console.log("Envoi de requete pour ", e.target.value);
-    const matId = e.target.value
+    const matId = e.target.value;
     if(this.state.playerRequest.includes(matId)) {
-      console.log(this.state.playerRequest.includes(matId))
-      console.log(this.state.playerRequest)
+      // console.log(this.state.playerRequest.includes(matId));
+      // console.log(this.state.playerRequest)
       this.setState({
         errorMessage: "Vous avez deja fait une requete a ce joueur"
       })
@@ -95,11 +95,12 @@ class ListMatchmacking extends Component {
 
   render() {
     console.log("reload");
-    const alreadyChoose = () => {return (
+    console.log(this.state.errorMessage);
+    const alreadyChoose =  (
         <div>
-          <p>this.state.errorChoice</p>
+          <p>{this.state.errorMessage}</p>
         </div>
-    )};
+    );
     return (
       <div>
       <table>
@@ -133,7 +134,7 @@ const mapStateToProps = state => {
     matchmaking: state.matchmakingReducer,
     sessionToken: state.sessionReducer
   }
-}
+};
 
 // const mapDispatchToProps = dispatch => {
 //   return {
