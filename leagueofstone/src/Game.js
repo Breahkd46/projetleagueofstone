@@ -11,6 +11,7 @@ import setMatch from './actions/setMatch';
 import './App.css'
 import logo from "./logo.svg";
 import "./Game.css";
+import Match from "./Match";
 
 class Game extends Component {
   // constructor(props) {
@@ -23,6 +24,12 @@ class Game extends Component {
   render() {
     if(this.props.matchmaking.match !== null) {
       return (
+          <div>
+            <Match />
+          </div>
+      );
+    } else {
+      return (
         <div className="App">
           <header className="App-header">
             <ul className="menu">
@@ -30,20 +37,6 @@ class Game extends Component {
               <li><a href="#cartes">Liste de cartes</a></li>
               <li><a href="/logout">Se déconnecter</a></li>
             </ul>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>League of Stones</h2>
-            <p>Bienvenue</p> <br></br>
-            <p> Et c'est parti </p>
-            <div> {this.props.matchmaking.match.player1.name}</div>
-            <p> CONTRE </p>
-            <div> {this.props.matchmaking.match.player2.name} </div>
-          </header>
-        </div>
-      )
-    } else {
-      return (
-        <div className="App">
-          <header className="App-header">
             <Logout />
             <img src={logo} className="App-logo" alt="logo" />
             <h2>League of Stones</h2>
@@ -62,7 +55,7 @@ const mapStateToProps = state => {
     match: state.matchReducer,
     matchmaking: state.matchmakingReducer
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -70,5 +63,5 @@ const mapDispatchToProps = dispatch => {
       dispatch(setMatch(matchmakingId))
     }
   }
-}
+};
 export default connect(mapStateToProps,mapDispatchToProps)(Game)

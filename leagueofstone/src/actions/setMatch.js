@@ -1,8 +1,8 @@
-export default function setMatch(player1, player2) {
+export default function setMatch(status,player1, player2) {
     return {
         type: "SET_MATCH",
-        isMatch: true,
+        status: status,
         player1: player1,
-        player2: player2
+        player2: player2,
     };
 }
