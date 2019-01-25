@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 
 import './App.css'
 import MakeDeck from "./MakeDeck";
+
+import HandsCards from "./HandsCards.js"
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
@@ -67,8 +69,10 @@ class Match extends Component {
                         <div> {this.props.matchmaking.match.player1.name}</div>
                         <p> CONTRE </p>
                         <div> {this.props.matchmaking.match.player2.name} </div>
+                          <HandsCards />
                     </header>
                 </div>
+
             )
         }
 

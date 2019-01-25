@@ -2,55 +2,67 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import setMatch from './actions/setMatch';
+//import setMatch from './actions/setMatch';
 
-import './App.css'
+import './App.css';
 import logo from "./logo.svg";
 import "./Game.css";
-import "Card" from "./Card.js"
+import Card from "./Card.js";
 
 import axios from "axios";
 import {SERVER_URL} from "./consts";
 
-import MakeDeck from "./MakeDeck.js";
-//import Player from "./Player";
 
 class HandsCards extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            handsCards: []
+            handsCardsJ1: [],
+            numberCardsJ2: 0
         }
     }
      componentDidMount() {
          axios
-            .get(
-               SERVER_URL + "/match/getMatch?token=" +
+           .get(
+              SERVER_URL + "/match/getMatch?token=" +
                  this.props.sessionToken.token
-            )
+          )
              .then(res => {
                  if (res.data.status === "ok") {
-                     console.log(res.data.data);
+                     console.log(res.data.data.player1.hand);
+                     console.log(res.data.data.player2.hand);
                      this.setState({
-                       handsCards: res.data.data.player1.hand
-                     })
+                       handsCardsJ1: res.data.data.player1.hand,
+                       numberCardsJ2: res.data.data.player2.hand
+                  })
                      // this.props.history.push(process.env.PUBLIC_URL + "/");
                  } else {
                      console.log(res.data.message);
                  }
-             });
+            });
      }
 
+
+    createHandsCardsJ2 = () => {
+      let handJ2 = []
+
+      for (let i = 0; i < this.state.numberCardsJ2; i++){
+        handJ2.push(<Card img = {"./dos-carte.png"} />)
+      }
+      return handJ2
+    }
     render() {
         return (
-            <div className="handsCards">
-              <p> Cartes en main </p>
-                {this.state.handsCards.map((card, index)=> {
-                  return (
-                      <Card key={index} name={card.name} img={card.img}/>
-                  )
-                })}
+          <div className ="handsAll">
+            <div className="handsCardsJ1">
+                {this.state.handsCardsJ1.map((card, index) =>
+                    <Card key={index} name={card.name} img={card.img}/>
+                )}
             </div>
+            <div className="handsCardsJ2">
+              {this.createHandsCardsJ2()}
+            </div>
+          </div>
         )
     }
 }
@@ -63,11 +75,11 @@ const mapStateToProps = state => {
     }
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setMatch: matchmakingId => {
-            dispatch(setMatch(matchmakingId))
-        }
-    }
-};
-export default connect(mapStateToProps,mapDispatchToProps)(HandsCards)
+//const mapDispatchToProps = dispatch => {
+    //return {
+//        setMatch: match => {
+  //          dispatch(setMatch(res.data.data))
+  //      }
+  //  }
+//};
+export default connect(mapStateToProps, null)(HandsCards)
