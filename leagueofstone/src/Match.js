@@ -4,6 +4,7 @@ import updateMatch from "./actions/updateMatch";
 import {connect} from "react-redux";
 
 import './App.css'
+import './Signin.css'
 import MakeDeck from "./MakeDeck";
 
 import HandsCards from "./HandsCards.js"
@@ -11,6 +12,8 @@ import HandsCards from "./HandsCards.js"
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
+
+import Part from "./Part"
 
 class Match extends Component {
     // constructor(props) {
@@ -50,12 +53,12 @@ class Match extends Component {
         console.log(this.props.match.status)
         if(this.props.match.status === "") {
             return (
-                <p>Loading...</p>
+                <div className="base"><p><h1>Loading...</h1></p></div>
+
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
                 <div>
-                    <p>Constituer son deck</p>
                     <MakeDeck />
                 </div>
             )
