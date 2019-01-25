@@ -17,34 +17,34 @@ class ListRequest extends Component {
 
     this.handleAcceptRequest = this.handleAcceptRequest.bind(this);
   }
-  componentDidMount() {
-    this.intervalID = setInterval(
-      () => this.reloadRequests(),
-      RELOAD_TIME
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalID);
-  }
-
-  reloadRequests() {
-    axios
-      .get(
-        SERVER_URL + "/matchmaking/participate?token=" +
-        this.props.sessionToken.token
-      )
-      .then(res => {
-        if (res.data.status === "ok") {
-          console.log(res.data.data.request);
-          if (res.data.data.request !== this.props.matchmaking.request) {
-            this.props.updateMatchmakingRequest(res.data.data.request)
-          }
-        } else {
-          console.log(res.data.message);
-        }
-      });
-  }
+  // componentDidMount() {
+  //   this.intervalID = setInterval(
+  //     () => this.reloadRequests(),
+  //     RELOAD_TIME
+  //   );
+  // }
+  //
+  // componentWillUnmount() {
+  //   clearInterval(this.intervalID);
+  // }
+  //
+  // reloadRequests() {
+  //   axios
+  //     .get(
+  //       SERVER_URL + "/matchmaking/participate?token=" +
+  //       this.props.sessionToken.token
+  //     )
+  //     .then(res => {
+  //       if (res.data.status === "ok") {
+  //         console.log(res.data.data.request);
+  //         if (res.data.data.request !== this.props.matchmaking.request) {
+  //           this.props.updateMatchmakingRequest(res.data.data.request)
+  //         }
+  //       } else {
+  //         console.log(res.data.message);
+  //       }
+  //     });
+  // }
 
   handleAcceptRequest(e) {
     axios
@@ -65,7 +65,7 @@ class ListRequest extends Component {
   }
 
   render() {
-    console.log(this.props.matchmaking.request);
+    // console.log(this.props.matchmaking.request);
     return (
       <div>
       <table>
