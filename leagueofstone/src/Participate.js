@@ -8,7 +8,7 @@ import ListRequest from './ListRequest';
 // Redux
 import { connect } from 'react-redux';
 import setMatchmaking from './actions/setMatchmaking';
-import setMatch from './actions/setMatch';
+// import setMatch from './actions/setMatch';
 
 // Requete Server
 import axios from "axios";
@@ -74,17 +74,14 @@ const mapStateToProps = state => {
     matchmaking: state.matchmakingReducer,
     sessionToken: state.sessionReducer
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setMatchmaking: match => {
       dispatch(setMatchmaking(match))
-    },
-    setMatch: (player1, player2) => {
-      dispatch(setMatch(player1, player2))
     }
 
   }
-}
+};
 export default connect(mapStateToProps,mapDispatchToProps)(Participate)
