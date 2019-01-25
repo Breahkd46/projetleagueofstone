@@ -72,7 +72,7 @@ class Match extends Component {
                         <div> {this.props.matchmaking.match.player1.name}</div>
                         <p> CONTRE </p>
                         <div> {this.props.matchmaking.match.player2.name} </div>
-                          <HandsCards />
+                          <HandsCards player={this.props.sessionToken}/>
                     </header>
                 </div>
 
