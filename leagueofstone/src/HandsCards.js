@@ -8,6 +8,7 @@ import './App.css';
 import logo from "./logo.svg";
 import "./Game.css";
 import Card from "./Card.js";
+import DownCard from './DownCard'
 
 import axios from "axios";
 import {SERVER_URL} from "./consts";
@@ -47,7 +48,7 @@ class HandsCards extends Component {
       let handJ2 = []
 
       for (let i = 0; i < this.state.numberCardsJ2; i++){
-        handJ2.push(<Card img = {"./dos-carte.png"} />)
+        handJ2.push(<DownCard img = {"./dos-carte.png"} />)
       }
       return handJ2
     }
@@ -55,9 +56,10 @@ class HandsCards extends Component {
         return (
           <div className ="handsAll">
             <div className="handsCardsJ1">
-                {this.state.handsCardsJ1.map((card, index) =>
-                    <Card key={index} name={card.name} img={card.img}/>
-                )}
+                {this.state.handsCardsJ1.map((card, index) => {
+                  {console.log(card)}
+                    return (<Card key={index} onClick={null} name={card.name} img={card.key}  info={card.stats} />)
+                })}
             </div>
             <div className="handsCardsJ2">
               {this.createHandsCardsJ2()}
