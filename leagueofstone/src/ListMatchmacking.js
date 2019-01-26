@@ -19,8 +19,9 @@ class ListMatchmacking extends Component {
 
     this.state = {
       players: [],
-      playerRequest: []
-    }
+      playerRequest: [],
+      errorMessage: "",
+    };
 
     this.handleMatchRequest = this.handleMatchRequest.bind(this);
   }
@@ -58,28 +59,50 @@ class ListMatchmacking extends Component {
 
   handleMatchRequest(e) {
     console.log("Envoi de requete pour ", e.target.value);
-    axios
-      .get(
-        SERVER_URL + "/matchmaking/request?token=" +
-        this.props.sessionToken.token +
-        "&matchmakingId=" +
-        e.target.value
-      )
-      .then(res => {
-        if (res.data.status === "ok") {
-          console.log(res.data.data);
-          // this.setState({
-          //   players: res.data.data
-          // })
-          // this.props.history.push(process.env.PUBLIC_URL + "/");
-        } else {
-          console.log(res.data.message);
-        }
-      });
+    const matId = e.target.value;
+    if(this.state.playerRequest.includes(matId)) {
+      // console.log(this.state.playerRequest.includes(matId));
+      // console.log(this.state.playerRequest)
+      this.setState({
+        errorMessage: "Vous avez deja fait une requete a ce joueur"
+      })
+    } else {
+      axios
+          .get(
+              SERVER_URL + "/matchmaking/request?token=" +
+              this.props.sessionToken.token +
+              "&matchmakingId=" +
+              e.target.value
+          )
+          .then(res => {
+            if (res.data.status === "ok") {
+              console.log(res.data.data);
+              this.setState(state => ({
+                playerRequest: [...state.playerRequest, matId]
+              }))
+              // this.props.history.push(process.env.PUBLIC_URL + "/");
+            } else {
+              console.log(res.data.message);
+              this.setState({
+                errorMessage: "La requete n'a pas fonctionné"
+              })
+            }
+          });
+      this.setState({
+        errorMessage: ""
+      })
+    }
+
   }
 
   render() {
     console.log("reload");
+    console.log(this.state.errorMessage);
+    const alreadyChoose =  (
+        <div>
+          <p>{this.state.errorMessage}</p>
+        </div>
+    );
     return (
       <div>
       <table>
@@ -101,6 +124,7 @@ class ListMatchmacking extends Component {
         })}
         </tbody>
       </table>
+        {alreadyChoose}
       </div>
 
     )
@@ -112,7 +136,7 @@ const mapStateToProps = state => {
     matchmaking: state.matchmakingReducer,
     sessionToken: state.sessionReducer
   }
-}
+};
 
 // const mapDispatchToProps = dispatch => {
 //   return {

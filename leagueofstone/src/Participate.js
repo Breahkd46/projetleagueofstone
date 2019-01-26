@@ -8,12 +8,15 @@ import ListRequest from './ListRequest';
 // Redux
 import { connect } from 'react-redux';
 import setMatchmaking from './actions/setMatchmaking';
-import setMatch from './actions/setMatch';
+import updateMatchmakingRequest from "./actions/updateMatchmakingRequest";
+
+// import setMatch from './actions/setMatch';
 
 // Requete Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
+
 
 class Participate extends Component {
 
@@ -37,8 +40,15 @@ class Participate extends Component {
         )
         .then(res => {
           if (res.data.status === "ok") {
+            console.log(res.data.data.request)
+            console.log(this.props.matchmaking.request)
+            console.log(res.data.data.request !== this.props.matchmaking.request)
+            if (res.data.data.request !== this.props.matchmaking.request) {
+              this.props.updateMatchmakingRequest(res.data.data.request)
+            }
             if (res.data.data.match) {
               console.log(res.data.data);
+
               this.props.setMatchmaking(res.data.data.match);
 
             }
@@ -76,17 +86,16 @@ const mapStateToProps = state => {
     matchmaking: state.matchmakingReducer,
     sessionToken: state.sessionReducer
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
+    updateMatchmakingRequest: request => {
+      dispatch(updateMatchmakingRequest(request))
+    },
     setMatchmaking: match => {
       dispatch(setMatchmaking(match))
-    },
-    setMatch: (player1, player2) => {
-      dispatch(setMatch(player1, player2))
     }
-
   }
-}
+};
 export default connect(mapStateToProps,mapDispatchToProps)(Participate)
