@@ -60,9 +60,11 @@ class Participate extends Component {
     } else {
       return (
         <div>
-          <ListMatchmacking />
-          <ListRequest requests={this.props.matchmaking.request} />
-          <ButtonUnParticipate />
+        <div className="base">
+          <div><ListMatchmacking /></div>
+          <div><ListRequest requests={this.props.matchmaking.request} /></div>
+        </div>
+        <ButtonUnParticipate />
         </div>
       );
     }

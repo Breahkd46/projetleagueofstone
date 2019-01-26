@@ -8,9 +8,8 @@ import Participate from './Participate';
 import { connect } from 'react-redux';
 import setMatch from './actions/setMatch';
 
-import './App.css'
-import logo from "./logo.svg";
 import "./Game.css";
+import "./Signin.css";
 
 class Game extends Component {
   // constructor(props) {
@@ -30,7 +29,6 @@ class Game extends Component {
               <li><a href="#cartes">Liste de cartes</a></li>
               <li><a href="/logout">Se déconnecter</a></li>
             </ul>
-            <img src={logo} className="App-logo" alt="logo" />
             <h2>League of Stones</h2>
             <p>Bienvenue</p> <br></br>
             <p> Et c'est parti </p>
@@ -44,13 +42,18 @@ class Game extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <Logout />
-            <img src={logo} className="App-logo" alt="logo" />
+          <ul className="menu">
+              <li><a href="#compte">Compte</a></li>
+              <li><a href="#cartes">Liste de cartes</a></li>
+              <li><a href="/logout">Se déconnecter</a></li>
+            </ul>
             <h2>League of Stones</h2>
             <p>Bienvenue</p>
           </header>
-          <Participate />
-          <Unsubscribe />
+            <Participate />
+          <div className="base">
+            <Unsubscribe />
+          </div>
         </div>
       );
     }

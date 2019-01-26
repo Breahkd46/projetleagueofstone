@@ -8,6 +8,8 @@ import initMatchmaking from './actions/initMatchmaking';
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 
+import "./Signin.css"
+
 class ButtonParticipate extends Component {
 
   constructor(props) {
@@ -34,9 +36,11 @@ class ButtonParticipate extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-      Participer
-      </button>
+      <div className="base">
+      <div id="bouton">
+        <input type="button" value="Participer" onClick={this.handleClick}/>
+      </div>
+      </div>
     );
   }
 }
