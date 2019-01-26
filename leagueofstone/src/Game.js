@@ -30,24 +30,6 @@ class Game extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <ul className="menu">
-              <li><a href="#compte">Compte</a></li>
-              <li><a href="#cartes">Liste de cartes</a></li>
-              <li><a href="/logout">Se déconnecter</a></li>
-            </ul>
-            <h2>League of Stones</h2>
-            <p>Bienvenue</p> <br></br>
-            <p> Et c'est parti </p>
-            <div> {this.props.matchmaking.match.player1.name}</div>
-            <p> CONTRE </p>
-            <div> {this.props.matchmaking.match.player2.name} </div>
-          </header>
-        </div>
-      )
-    } else {
-      return (
-        <div className="App">
-          <header className="App-header">
           <ul className="menu">
               <li><a href="#compte">Compte</a></li>
               <li><a href="#cartes">Liste de cartes</a></li>

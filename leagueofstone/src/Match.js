@@ -4,6 +4,7 @@ import setMatch from "./actions/setMatch";
 import {connect} from "react-redux";
 
 import './App.css'
+import './Signin.css'
 import MakeDeck from "./MakeDeck";
 import axios from "axios";
 import {SERVER_URL} from "./consts";
@@ -35,12 +36,13 @@ class Match extends Component {
     render() {
         if(this.props.match.status === "") {
             return (
-                <p>Loading...</p>
+                <div className="base"><p><h1>Loading...</h1></p></div>
+                
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
-                <div>
-                    <p>Constituer son deck</p>
+                <div className="base">
+                    <p><h1>Constituer son deck</h1></p>
                     <MakeDeck />
                 </div>
             )
