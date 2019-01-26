@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // Redux
 import { connect } from 'react-redux';
 import updateMatchmakingRequest from './actions/updateMatchmakingRequest';
-import setMatch from './actions/setMatch';
+import setMatch from './actions/updateMatch';
 
 // Requete Server
 import axios from "axios";

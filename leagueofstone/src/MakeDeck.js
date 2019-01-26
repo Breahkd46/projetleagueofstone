@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // Redux
 import { connect } from 'react-redux';
-import setMatch from './actions/setMatch';
+import setMatch from './actions/updateMatch';
 
 import './App.css'
 import "./Game.css";
@@ -135,7 +135,7 @@ class MakeDeck extends Component {
                     <div className="TabCardsToAdd">
                         <p>Cartes du deck</p>
                         {this.state.deck.map((champ, index) =>
-                            <Card key={index} name={champ.name} img={champ.name}
+                            <Card key={index} name={champ.name} img={champ.key}
                                 // choosed={champ.flipped}
                                   onClick={() => this.handleClickToCards(index)}/>
                         )}
@@ -143,7 +143,7 @@ class MakeDeck extends Component {
                     <div className="Board card-columns TabCardsToAdd">
                         <p>Tab de carte a choisir</p>
                         {this.state.cards.map((champ, index) =>
-                            <Card key={index} name={champ.name} img={champ.name}
+                            <Card key={index} name={champ.name} img={champ.key}
                                 // choosed={champ.flipped}
                                   onClick={() => this.handleClickToDeck(index)}/>
                         )}

@@ -6,7 +6,7 @@ import Participate from './Participate';
 
 // Redux
 import { connect } from 'react-redux';
-import setMatch from './actions/setMatch';
+// import setMatch from './actions/updateMatch';
 
 import './App.css'
 import logo from "./logo.svg";
@@ -57,11 +57,11 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setMatch: matchmakingId => {
-      dispatch(setMatch(matchmakingId))
-    }
-  }
-};
-export default connect(mapStateToProps,mapDispatchToProps)(Game)
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     setMatch: matchmakingId => {
+//       dispatch(setMatch(matchmakingId))
+//     }
+//   }
+// };
+export default connect(mapStateToProps,null)(Game)

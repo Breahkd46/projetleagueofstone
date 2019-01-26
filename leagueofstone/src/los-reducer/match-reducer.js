@@ -6,7 +6,7 @@ const initialState = {
 
 function matchReducer(state = initialState, action) {
     switch (action.type) {
-        case "SET_MATCH":
+        case "UPDATE_MATCH":
             return {
               ...state,
               status: action.status,
