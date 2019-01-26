@@ -10,6 +10,8 @@ import "./stylesheets/makeDeck.css"
 // import axios from "axios";
 // import {SERVER_URL} from "./consts";
 import Card from "./Card";
+import axios from "axios";
+import {SERVER_URL} from "./consts";
 
 class MakeDeck extends Component {
     constructor(props) {
@@ -20,6 +22,10 @@ class MakeDeck extends Component {
             isLoaded: false,
             nbCards: 0
         }
+
+        this.handleClickToDeck = this.handleClickToDeck.bind(this);
+        this.handleClickToCards = this.handleClickToCards.bind(this);
+        this.handleClickCreateDeck = this.handleClickCreateDeck.bind(this);
     }
 
     componentDidMount() {
@@ -85,10 +91,47 @@ class MakeDeck extends Component {
         }));
     }
 
+    handleClickCreateDeck() {
+        if(this.state.nbCards === 20) {
+            const req = [];
+            for(let card of this.state.deck) {
+                console.log(card)
+                req.push({
+                    key: card.name
+                })
+            }
+            // req.push({key: this.state.deck.map((champ, index,) => champ.key) });
+
+
+            console.log(req)
+            console.log(JSON.stringify(req))
+            const requete = encodeURI(JSON.stringify(req));
+            // requete initDeck
+            console.log(requete)
+            axios
+                .get(
+                    SERVER_URL + "/match/initDeck?token=" +
+                    this.props.sessionToken.token +
+                    "&deck=" +
+                    requete
+                )
+                .then(res => {
+                    if (res.data.status === "ok") {
+                        console.log(res.data.data);
+                        // this.props.history.push(process.env.PUBLIC_URL + "/");
+                    } else {
+                        console.log(res.data.message);
+                    }
+                });
+        }
+
+    }
+
     render() {
         if(this.state.isLoaded) {
             return (
                 <div className="MakeDeck">
+                    <button onClick={this.handleClickCreateDeck}>Creer le deck</button>
                     <div className="TabCardsToAdd">
                         <p>Cartes du deck</p>
                         {this.state.deck.map((champ, index) =>
