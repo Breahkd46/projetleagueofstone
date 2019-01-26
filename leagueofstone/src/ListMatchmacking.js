@@ -9,6 +9,8 @@ import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
 
 import './list.css';
+import './Signin.css';
+import './stylesheets/ListMatchmacking.css';
 
 class ListMatchmacking extends Component {
 
@@ -104,7 +106,7 @@ class ListMatchmacking extends Component {
     return (
       <div>
       <table>
-        <caption>Tableau des joueurs en attent</caption>
+        <caption><h1>Tableau des joueurs en attente</h1></caption>
         <thead>
           <tr>
            <th>Name</th>

@@ -8,6 +8,8 @@ import removeMatchmaking from './actions/removeMatchmaking';
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 
+import "./Signin.css";
+
 class ButtonUnParticipate extends Component {
 
   constructor(props) {
@@ -35,9 +37,11 @@ class ButtonUnParticipate extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-      Annuler
-      </button>
+      <div className="base">
+      <div id="bouton">
+        <input type="button" value="Annuler" onClick={this.handleClick}/>
+      </div>
+      </div>
     );
   }
 }

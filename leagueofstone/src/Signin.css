@@ -11,7 +11,7 @@
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
 
-.base .cadre{
+.cadre{
 	padding: 30px;
 	background: #F8F8F8;
 	border-radius: 6px;
@@ -21,7 +21,6 @@
 .base h1{
 	background: #601006;
 	padding: 20px 30px 15px 30px;
-	margin: -30px -30px 30px -30px;
 	border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
@@ -58,7 +57,8 @@
 	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-.base input[type="submit"]{
+.base input[type="submit"],
+.base input[type="button"]{
 	background: #601006;
 	padding: 8px 20px 8px 20px;
 	border-radius: 5px;
@@ -74,7 +74,8 @@
     font-size: 15px;
 }
 
-.base input[type="submit"]:hover{
+.base input[type="submit"]:hover,
+.base input[type="button"]:hover{
 	background: #601006;
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);

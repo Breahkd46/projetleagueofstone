@@ -39,3 +39,15 @@ h4:hover{
     border-radius: 15%;
     border-style: solid;
 }
+
+h2{
+    color : black;
+}
+
+p{
+    color : black;
+}
+
+.App-header{
+    min-height: 0vh;
+}

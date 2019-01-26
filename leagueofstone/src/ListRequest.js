@@ -10,6 +10,9 @@ import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
 
+import "./Signin.css";
+import "./stylesheets/ListMatchmacking.css"
+
 class ListRequest extends Component {
 
   constructor(props) {
@@ -69,7 +72,7 @@ class ListRequest extends Component {
     return (
       <div>
       <table>
-        <caption>Tableau de requetes</caption>
+        <caption><h1>Tableau de requetes</h1></caption>
         <thead>
           <tr>
            <th>Name</th>

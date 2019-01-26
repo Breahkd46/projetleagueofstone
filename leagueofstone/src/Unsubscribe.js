@@ -9,6 +9,7 @@ import removeTokenSession from './actions/removeTokenSession'
 
 import { SERVER_URL } from "./consts";
 import "./App.css";
+import "./Signin.css";
 
 class Unsubscribe extends Component {
   constructor(props) {
@@ -57,8 +58,8 @@ class Unsubscribe extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          Supprimer son compte :
-          <div>
+          <h1>Supprimer son compte :</h1>
+          <div className="cadre">
             <label>
               Login :{" "}
               <input
@@ -68,7 +69,7 @@ class Unsubscribe extends Component {
               />
             </label>
           </div>
-          <div>
+          <div className="cadre">
             <label>
               Mot de passe :{" "}
               <input
