@@ -66,8 +66,12 @@ class Participate extends Component {
   render() {
     if (this.props.matchmaking.matchmakingId === "") {
       return (
-        <ButtonParticipate />
+          <ButtonParticipate/>
       );
+    } else if (this.props.matchmaking.match) {
+      return (
+          <div><p>Vous avez deja un match en cours...</p></div>
+      )
     } else {
       return (
         <div>

@@ -9,6 +9,7 @@ import axios from "axios";
 import { SERVER_URL } from "./consts";
 
 import "./Signin.css"
+import setMatchmaking from "./actions/setMatchmaking";
 
 class ButtonParticipate extends Component {
 
@@ -26,8 +27,10 @@ class ButtonParticipate extends Component {
       )
       .then(res => {
         if (res.data.status === "ok") {
-          this.props.initMatchmaking(res.data.data.matchmakingId, res.data.data.request)
-          // this.props.history.push(process.env.PUBLIC_URL + "/");
+          const reqs = res.data.data.request ? res.data.data.request : [];
+          console.log(reqs)
+          this.props.initMatchmaking(res.data.data.matchmakingId, reqs)
+          this.props.setMatchmaking(res.data.data.match)
         } else {
           console.log(res.data.message);
         }
@@ -53,6 +56,9 @@ const mapDispatchToProps = dispatch => {
   return {
     initMatchmaking: (matchmakingId,request) => {
       dispatch(initMatchmaking(matchmakingId,request))
+    },
+    setMatchmaking: (match) => {
+      dispatch(setMatchmaking(match))
     }
   }
 }

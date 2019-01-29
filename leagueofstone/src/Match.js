@@ -53,7 +53,6 @@ class Match extends Component {
         }else if (this.props.match.status === "Deck is pending") {
             return (
                 <div>
-                    <p>Constituer son deck</p>
                     <MakeDeck />
                 </div>
             )
