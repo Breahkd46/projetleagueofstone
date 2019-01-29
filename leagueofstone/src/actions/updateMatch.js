@@ -1,6 +1,6 @@
-export default function setMatch(status,player1, player2) {
+export default function updateMatch(status,player1, player2) {
     return {
-        type: "SET_MATCH",
+        type: "UPDATE_MATCH",
         status: status,
         player1: player1,
         player2: player2,

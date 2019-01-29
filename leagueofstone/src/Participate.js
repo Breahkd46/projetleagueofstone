@@ -25,6 +25,7 @@ class Participate extends Component {
       () => this.reloadParticipate(),
       RELOAD_TIME
     );
+    this.reloadParticipate()
   }
 
   componentWillUnmount() {
