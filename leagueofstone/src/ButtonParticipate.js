@@ -30,7 +30,11 @@ class ButtonParticipate extends Component {
           const reqs = res.data.data.request ? res.data.data.request : [];
           console.log(reqs)
           this.props.initMatchmaking(res.data.data.matchmakingId, reqs)
-          this.props.setMatchmaking(res.data.data.match)
+          if (res.data.data.match) {
+            console.log(res.data.data)
+            this.props.setMatchmaking(res.data.data.match)
+          }
+
         } else {
           console.log(res.data.message);
         }
