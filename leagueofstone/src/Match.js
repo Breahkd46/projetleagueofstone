@@ -9,6 +9,8 @@ import MakeDeck from "./MakeDeck";
 import axios from "axios";
 import {SERVER_URL} from "./consts";
 
+import Part from "./Part"
+
 class Match extends Component {
     // constructor(props) {
     //   super(props);
@@ -41,9 +43,12 @@ class Match extends Component {
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
-                <div className="base">
-                    <p><h1>Constituer son deck</h1></p>
-                    <MakeDeck />
+                // <div className="base">
+                //     <p><h1>Constituer son deck</h1></p>
+                //     <MakeDeck />
+                // </div>
+                <div >
+                    <Part />
                 </div>
             )
         }else {
