@@ -8,10 +8,9 @@ import "./Game.css";
 import "./stylesheets/makeDeck.css"
 
 // import axios from "axios";
-// import {SERVER_URL} from "./consts";
+import {SERVER_URL} from "./consts";
 import Card from "./Card";
 import axios from "axios";
-import {SERVER_URL} from "./consts";
 
 class MakeDeck extends Component {
     constructor(props) {
@@ -19,8 +18,8 @@ class MakeDeck extends Component {
         this.state = {
             cards: [],
             deck: [],
-            isLoaded: false,
-            nbCards: 0
+            status: false,
+            nbCards: 0,
         }
 
         this.handleClickToDeck = this.handleClickToDeck.bind(this);
@@ -29,43 +28,24 @@ class MakeDeck extends Component {
     }
 
     componentDidMount() {
-        fetch("champion.json")
-            .then(response => response.json())
-            .then(response => {
-                // tab = []
-                // for(champion in response) {
-                //     cards = {
-                //         id: champion.id,
-                //         key: champion.key,
-                //         name: champion.name,
-                //         title: champion.title,
-                //         image: champion.image,
-                //         skins: champion.skins,
-                //         info: champion.info,
-                //
-                //     }
-                // }
-                this.setState({
-                    isLoaded: true,
-                    cards: response
-                });
-            }).catch(error =>
-            console.error("Error : chooseChampions : ", error)
-        );
 
-        // axios
-        //     .get(
-        //         SERVER_URL + "/cards/getAll?token=" +
-        //         this.props.sessionToken.token
-        //     )
-        //     .then(res => {
-        //         if (res.data.status === "ok") {
-        //             console.log(res.data.data);
-        //             // this.props.history.push(process.env.PUBLIC_URL + "/");
-        //         } else {
-        //             console.log(res.data.message);
-        //         }
-        //     });
+        axios
+            .get(
+                SERVER_URL + "/cards/getAll?token=" +
+                this.props.sessionToken.token
+            )
+            .then(res => {
+                if (res.data.status === "ok") {
+                    console.log(res.data.data);
+                    // this.props.history.push(process.env.PUBLIC_URL + "/");
+                    this.setState({
+                        status: "loaded",
+                        cards: res.data.data,
+                    });
+                } else {
+                    console.log(res.data.message);
+                }
+            });
     }
 
     handleClickToDeck(index) {
@@ -119,6 +99,9 @@ class MakeDeck extends Component {
                     if (res.data.status === "ok") {
                         console.log(res.data.data);
                         // this.props.history.push(process.env.PUBLIC_URL + "/");
+                        this.setState({
+                            status: "requestSent"
+                        })
                     } else {
                         console.log(res.data.message);
                     }
@@ -128,7 +111,7 @@ class MakeDeck extends Component {
     }
 
     render() {
-        if(this.state.isLoaded) {
+        if(this.state.status === "loaded") {
             return (
                 <div className="MakeDeck">
                     <button onClick={this.handleClickCreateDeck}>Creer le deck</button>
@@ -150,10 +133,14 @@ class MakeDeck extends Component {
                     </div>
                 </div>
             )
+        } else if(this.state.status === "requestSent") {
+            return (
+                <div><p>En attente du joueur adverse...</p></div>
+                )
         } else {
             return (
-                <div><p>Loading...</p></div>
-                )
+                <div><p>Chargement...</p></div>
+            )
         }
     }
 }
@@ -161,7 +148,7 @@ class MakeDeck extends Component {
 const mapStateToProps = state => {
     return {
         match: state.matchReducer,
-        sessionToken: state.sessionReducer
+        sessionToken: state.sessionReducer,
 
     }
 };
