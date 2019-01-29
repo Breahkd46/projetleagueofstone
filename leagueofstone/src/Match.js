@@ -21,6 +21,7 @@ class Match extends Component {
             () => this.reloadMatch(),
             RELOAD_TIME
         );
+        this.reloadMatch()
     }
 
     componentWillUnmount() {
