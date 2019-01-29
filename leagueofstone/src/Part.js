@@ -1,44 +1,36 @@
 import React, { Component } from "react";
 import "./stylesheets/Part.css";
 
+import ButtonTimer from "./ButtonTimer";
+import JoueurAdverse from "./JoueurAdverse";
+import JoueurPrincipal from "./JoueurPrincipal";
+
 class Part extends Component {
   
     render() {
       return (
         <div class="newBase">
           <div class="container">
-            <div class="row">
-              <div class="col">
-                Joueur adverse
+              <div class="row">
+                  <JoueurAdverse />
               </div>
-              <div class="col">
-                Cartes plateau adversaire
+              <div class="row">
+                <JoueurPrincipal />
               </div>
-              <div class="col">
-                Deck
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                Joueur 2
-              </div>
-              <div class="col">
-                <div class="row">
-                  Cartes plateau
+              <div class="row">
+                <div class="col">
+                <ButtonTimer />
                 </div>
-                <div class="row">
-                  Cartes main
+                <div class="col">
+                  Fin de tour
                 </div>
               </div>
-              <div class="col">
-                Deck
-              </div>
-            </div>
           </div>
         </div>
       );
     }
-  }
+  
+}
   
   export default Part
   
