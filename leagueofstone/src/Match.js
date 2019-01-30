@@ -43,25 +43,15 @@ class Match extends Component {
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
-                // <div className="base">
-                //     <p><h1>Constituer son deck</h1></p>
-                //     <MakeDeck />
-                // </div>
-                <div >
-                    <Part />
+                <div className="base">
+                    <p><h1>Constituer son deck</h1></p>
+                    <MakeDeck />
                 </div>
             )
         }else {
             return (
                 <div >
-                    <header >
-                        <h2>League of Stones</h2>
-                        <p>Bienvenue</p> <br />
-                        <p> Et c'est parti </p>
-                        <div> {this.props.matchmaking.match.player1.name}</div>
-                        <p> CONTRE </p>
-                        <div> {this.props.matchmaking.match.player2.name} </div>
-                    </header>
+                    <Part />
                 </div>
             )
         }
