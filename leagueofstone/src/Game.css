@@ -1,7 +1,7 @@
 .menu {
     background-color: #601006;
     /* position: fixed; */
-    margin: 0;  
+    margin: 0;
     text-align: center;
 }
 
@@ -50,4 +50,8 @@ p{
 
 .App-header{
     min-height: 0vh;
+}
+
+.plateau{
+    display: flex;
 }
