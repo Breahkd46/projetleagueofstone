@@ -57,6 +57,7 @@ class Match extends Component {
                 </div>
             )
         }else {
+            console.log(this.props.sessionToken.id)
             return (
                 <div >
                     <header >

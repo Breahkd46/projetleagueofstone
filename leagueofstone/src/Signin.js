@@ -38,7 +38,10 @@ class Signin extends Component {
       .then(res => {
         if (res.data.status === "ok") {
           console.log(res.data.data);
-          this.props.setTokenSession(res.data.data.token);
+          this.props.setTokenSession(res.data.data.token,
+              res.data.data.id,
+              res.data.data.email,
+              res.data.data.name);
           this.props.history.push(process.env.PUBLIC_URL + "/");
         } else if(res.data.status === "error") {
           this.setState({error: res.data.message})
@@ -101,8 +104,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTokenSession: token => {
-      dispatch(setTokenSession(token))
+    setTokenSession: (token, id, email, name) => {
+      dispatch(setTokenSession(token, id, email, name))
     }
   }
 };
