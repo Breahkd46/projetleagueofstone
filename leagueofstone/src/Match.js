@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
-import setMatch from "./actions/setMatch";
+import updateMatch from "./actions/updateMatch";
 import {connect} from "react-redux";
 
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
+// Server
 import axios from "axios";
-import {SERVER_URL} from "./consts";
+import { SERVER_URL } from "./consts";
+import { RELOAD_TIME } from "./consts";
 
 import Part from "./Part"
 
@@ -18,6 +20,18 @@ class Match extends Component {
     // }
 
     componentDidMount() {
+        this.intervalID = setInterval(
+            () => this.reloadMatch(),
+            RELOAD_TIME
+        );
+        this.reloadMatch()
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
+    }
+
+    reloadMatch() {
         axios
             .get(
                 SERVER_URL + "/match/getMatch?token=" +
@@ -26,16 +40,15 @@ class Match extends Component {
             .then(res => {
                 if (res.data.status === "ok") {
                     console.log(res.data.data);
-                    this.props.setMatch(res.data.data.status, res.data.data.player1, res.data.data.player2)
-                    // this.props.history.push(process.env.PUBLIC_URL + "/");
+                    this.props.updateMatch(res.data.data.status, res.data.data.player1, res.data.data.player2);
                 } else {
                     console.log(res.data.message);
                 }
             });
     }
 
-
     render() {
+        console.log(this.props.match.status)
         if(this.props.match.status === "") {
             return (
                 <div className="base"><p><h1>Loading...</h1></p></div>
@@ -43,8 +56,7 @@ class Match extends Component {
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
-                <div className="base">
-                    <p><h1>Constituer son deck</h1></p>
+                <div>
                     <MakeDeck />
                 </div>
             )
@@ -57,13 +69,6 @@ class Match extends Component {
         }
 
     }
-    // render() {
-    //     return (
-    //         <div>
-    //             <p>CouCOU</p>
-    //         </div>
-    //     )
-    // }
 }
 
 const mapStateToProps = state => {
@@ -77,8 +82,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setMatch: (status, player1, player2) => {
-            dispatch(setMatch(status, player1, player2))
+        updateMatch: (status, player1, player2) => {
+            dispatch(updateMatch(status, player1, player2))
         }
     }
 };

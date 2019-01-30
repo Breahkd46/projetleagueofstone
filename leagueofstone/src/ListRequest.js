@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // Redux
 import { connect } from 'react-redux';
 import updateMatchmakingRequest from './actions/updateMatchmakingRequest';
-import setMatch from './actions/setMatch';
+import setMatch from './actions/updateMatch';
 
 // Requete Server
 import axios from "axios";
@@ -68,7 +68,7 @@ class ListRequest extends Component {
   }
 
   render() {
-    // console.log(this.props.matchmaking.request);
+    console.log(this.props.matchmaking.request);
     return (
       <div>
       <table>
