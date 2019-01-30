@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
-import Logout from "./Logout";
 import Unsubscribe from './Unsubscribe';
 
 // Redux
 import { connect } from 'react-redux';
-// import setMatch from './actions/updateMatch';
 
 import "./Game.css";
-import Match from "./Match";
 
 class Compte extends Component {
     // constructor(props) {

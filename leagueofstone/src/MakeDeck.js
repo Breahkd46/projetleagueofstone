@@ -19,7 +19,7 @@ class MakeDeck extends Component {
         this.state = {
             cards: [],
             deck: [],
-            status: false,
+            status: "",
             nbCards: 0,
         }
 
@@ -120,22 +120,22 @@ class MakeDeck extends Component {
                         </ul>
                     </div>
                     <button className={"button"} onClick={this.handleClickCreateDeck}>Creer le deck</button>
-                    <div className="MakeDeck container">
+                    <div className="MakeDeck containerMakeDeck">
                         <div className="cadre TabCardsToAdd containerList">
                             <p className={"titreList"}>Collection de cartes</p>
-                            <div className={"container"}>
+                            <div className={"containerMakeDeck"}>
                                 {this.state.cards.map((champ, index) =>
                                     <Card className={"item"} key={index}
                                           name={champ.name}
                                           img={champ.key}
-                                          info={champ.info}
+                                          info={champ.stats}
                                           onClick={() => this.handleClickToDeck(index)}/>
                                 )}
                             </div>
                         </div>
                         <div className="cadre TabCardsToAdd containerList">
                             <p className={"titreList"}>Mon deck</p>
-                            <div className={"container"}>
+                            <div className={"containerMakeDeck"}>
                             {this.state.deck.map((champ, index) =>
                                 <Card className={"item"} key={index}
                                       name={champ.name}

@@ -13,13 +13,14 @@
     justify-content: center;
 }
 
-.container {
+
+.containerMakeDeck {
     display: flex;
-    /*flex-direction: row;*/
-    /*!* row-reverse | column | column-reverse;*!*/
-    /*flex-wrap: wrap;*/
+    flex-direction: row;
+    /* !* row-reverse | column | column-reverse;*! */
+    flex-wrap: wrap;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .containerList {
@@ -29,6 +30,8 @@
     margin: 15px;
 
 }
+
+
 
 .button {
     background: #601006;
