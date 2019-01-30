@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./stylesheets/card.css";
+import "./stylesheets/Card.css";
 class Card extends Component {
     // flipped() {
     //     return this.props.flipped ? "notflipped" : "flipped";
@@ -33,6 +33,7 @@ class Card extends Component {
                         {/*</div>*/}
                     {/*</div>*/}
                 </div>
+            </div>
         );
     }
 }

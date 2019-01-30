@@ -12,11 +12,12 @@ class JoueurAdverse extends Component {
                     <img src="/lol.jpg"/>
                 </div>
                 <div class="col">
-                    Deck
+                   Deck 
                 </div>
             </div>
             <div class="div_img">
-                <CardVisible />
+                {/* <CardVisible /> */}
+                Carte Visible
                 
             </div>
         </div>

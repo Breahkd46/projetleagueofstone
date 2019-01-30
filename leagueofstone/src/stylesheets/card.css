@@ -1,80 +1,11 @@
-/* @keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.oui{
+    overflow: hidden;
+    width: 80%;
+    margin : 24px;
 }
 
-.flip{animation: fadein 4.0s;} */
-
-.card img {
-  width: 100%;
-}
-
-.card-body {
-  margin-top: -60px;
-  padding: 0;
-  color: white;
-}
-.flip {
-  -webkit-perspective: 80px;
-  width: 13em;
-  /*height: 14em;*/
-  /*position: relative;*/
-  margin-bottom: 10px;
-}
-.flip .card.flipped {
-  -webkit-transform: rotatex(-180deg);
-}
-.flip .card {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 0.5s;
-}
-
-.flip .card .face {
-  width: 100%;
-  height: 100%;
-  /*position: absolute;*/
-  -webkit-backface-visibility: hidden;
-  z-index: 2;
-}
-.flip .card .front {
-  /*position: absolute;*/
-  z-index: 1;
-  background: white;
-  color: black;
-  cursor: pointer;
-}
-.flip .card .back {
-  -webkit-transform: rotatex(-180deg);
-  background: blue;
-  background: black;
-  color: white;
-  cursor: pointer;
-}
-
-/*Texte de la carte*/
-
-.card-text {
-  justify-content: space-between;
-  padding: 0;
-}
-.card-text-title {
-  flex-grow: 4;
-  justify-content: center;
-  text-align: center;
-  vertical-align: center;
-}
-.card-text-title p {
-  text-align: center;
-  vertical-align: center;
-
-}
-
-.card-text-item-right, .card-text-item-left {
-  flex-grow: 1;
+.oui img{
+    background-size: cover;
+    width: 150%;
+    margin-left:-117%;
 }
