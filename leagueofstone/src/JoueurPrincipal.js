@@ -12,7 +12,7 @@ class JoueurPrincipal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            handsCardsJ2: []
+            hands: []
         }
     }
     
@@ -23,14 +23,24 @@ class JoueurPrincipal extends Component {
               this.props.sessionToken.token
        )
           .then(res => {
-              if (res.data.status === "ok") {
-                  console.log(res.data.data.player2.hand);
-                  this.setState({
-                    handsCardsJ1: res.data.data.player2.hand
-               })
-                  // this.props.history.push(process.env.PUBLIC_URL + "/");
-              } else {
-                  console.log(res.data.message);
+            console.log(res);
+              if (res.statusText === "OK") {
+                  let finalHands = [];
+                  let handsRequete = res.data.data.player1.hand
+                  for (let cartes in handsRequete){
+                    console.log("toto");
+
+                    finalHands.push(
+                        <Card key={res.data.data.player1.hand.index} onClick={null} name={res.data.data.player1.hand.name} img={res.data.data.player1.hand.key}  info={res.data.data.player1.hand.stats} />
+                    )
+                    }
+              this.setState({
+                  hands: finalHands,
+              })     
+                    console.log(this.state.hands);
+
+            } else {
+                  console.log(this.state.hands);
               }
          });
     }
@@ -43,8 +53,8 @@ class JoueurPrincipal extends Component {
                 Carte visible
             </div>
             <div class="div_img">
-                {this.state.handsCardsJ2}
-                {/* {this.state.handsCardsJ1.map((card, index) => {
+                {this.state.hands}
+                {/* .map((card, index) => {
                     {console.log(card)}
                         return (<Card key={index} onClick={null} name={card.name} img={card.key}  info={card.stats} />)
                     })} */}
