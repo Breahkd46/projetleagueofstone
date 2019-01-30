@@ -6,6 +6,8 @@ import {connect} from "react-redux";
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
+
+import HandsCards from "./HandsCards.js"
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
@@ -52,7 +54,7 @@ class Match extends Component {
         if(this.props.match.status === "") {
             return (
                 <div className="base"><p><h1>Loading...</h1></p></div>
-                
+
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
@@ -63,8 +65,17 @@ class Match extends Component {
         }else {
             return (
                 <div >
-                    <Part />
+                    <header >
+                        <h2>League of Stones</h2>
+                        <p>Bienvenue</p> <br />
+                        <p> Et c'est parti </p>
+                        <div> {this.props.matchmaking.match.player1.name}</div>
+                        <p> CONTRE </p>
+                        <div> {this.props.matchmaking.match.player2.name} </div>
+                          <HandsCards />
+                    </header>
                 </div>
+
             )
         }
 
