@@ -15,11 +15,12 @@ class JoueurPrincipal extends Component {
                 Cartes main
             </div>
             <div class="row">
-                <div class="herov1">
-                    <img class="hero" src="/lol2.jpg"/>
+                <div class="col">
+                    <img src="/lol2.jpg"/>
                 </div>
                 <div class="col">
-                    Deck
+                    <div class="deck">
+                    </div>
                 </div>
             </div>
         </div>

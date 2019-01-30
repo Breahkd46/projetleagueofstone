@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./stylesheets/Card.css";
+import "./stylesheets/card.css";
 class Card extends Component {
     // flipped() {
     //     return this.props.flipped ? "notflipped" : "flipped";

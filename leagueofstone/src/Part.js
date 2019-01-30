@@ -5,6 +5,8 @@ import ButtonTimer from "./ButtonTimer";
 import JoueurAdverse from "./JoueurAdverse";
 import JoueurPrincipal from "./JoueurPrincipal";
 
+import "./stylesheets/Joueur.css";
+
 class Part extends Component {
   
     render() {

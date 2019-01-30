@@ -12,7 +12,8 @@ class JoueurAdverse extends Component {
                     <img src="/lol.jpg"/>
                 </div>
                 <div class="col">
-                   Deck 
+                    <div class="deck">
+                    </div>
                 </div>
             </div>
             <div class="div_img">
