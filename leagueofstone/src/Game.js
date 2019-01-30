@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
-import Logout from "./Logout";
-import Unsubscribe from './Unsubscribe';
 import Participate from './Participate';
-import HandsCards from "./HandsCards.js";
 
 // Redux
 import { connect } from 'react-redux';
@@ -61,9 +58,7 @@ class Game extends Component {
                     return (<ListeCartes />);
                 default:
                     return (<div><p>Error</p></div>)
-        }
-
-
+            }
         }
       return (
         <div className="App">
