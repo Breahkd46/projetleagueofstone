@@ -6,6 +6,7 @@ import setMatch from './actions/updateMatch';
 import './App.css'
 import "./Game.css";
 import "./stylesheets/makeDeck.css"
+import "./Signin.css"
 
 // import axios from "axios";
 import {SERVER_URL} from "./consts";
@@ -28,7 +29,6 @@ class MakeDeck extends Component {
     }
 
     componentDidMount() {
-
         axios
             .get(
                 SERVER_URL + "/cards/getAll?token=" +
@@ -113,23 +113,39 @@ class MakeDeck extends Component {
     render() {
         if(this.state.status === "loaded") {
             return (
-                <div className="MakeDeck">
-                    <button onClick={this.handleClickCreateDeck}>Creer le deck</button>
-                    <div className="TabCardsToAdd">
-                        <p>Cartes du deck</p>
-                        {this.state.deck.map((champ, index) =>
-                            <Card key={index} name={champ.name} img={champ.key}
-                                // choosed={champ.flipped}
-                                  onClick={() => this.handleClickToCards(index)}/>
-                        )}
+                <div className={""}>
+                    <div>
+                        <ul className="menu">
+                            <li><h1>Contruisez votre deck</h1></li>
+                        </ul>
                     </div>
-                    <div className="Board card-columns TabCardsToAdd">
-                        <p>Tab de carte a choisir</p>
-                        {this.state.cards.map((champ, index) =>
-                            <Card key={index} name={champ.name} img={champ.key}
-                                // choosed={champ.flipped}
-                                  onClick={() => this.handleClickToDeck(index)}/>
-                        )}
+                    <button className={"button"} onClick={this.handleClickCreateDeck}>Creer le deck</button>
+                    <div className="MakeDeck container">
+                        <div className="cadre TabCardsToAdd containerList">
+                            <p className={"titreList"}>Collection de cartes</p>
+                            <div className={"container"}>
+                                {this.state.cards.map((champ, index) =>
+                                    <Card className={"item"} key={index}
+                                          name={champ.name}
+                                          img={champ.key}
+                                          info={champ.info}
+                                          onClick={() => this.handleClickToDeck(index)}/>
+                                )}
+                            </div>
+                        </div>
+                        <div className="cadre TabCardsToAdd containerList">
+                            <p className={"titreList"}>Mon deck</p>
+                            <div className={"container"}>
+                            {this.state.deck.map((champ, index) =>
+                                <Card className={"item"} key={index}
+                                      name={champ.name}
+                                      img={champ.key}
+                                      info={champ.info}
+                                      onClick={() => this.handleClickToCards(index)}/>
+                            )}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             )

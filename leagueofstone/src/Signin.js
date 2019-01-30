@@ -37,6 +37,7 @@ class Signin extends Component {
       )
       .then(res => {
         if (res.data.status === "ok") {
+          console.log(res.data.data);
           this.props.setTokenSession(res.data.data.token);
           this.props.history.push(process.env.PUBLIC_URL + "/");
         } else if(res.data.status === "error") {

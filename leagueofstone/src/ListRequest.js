@@ -68,7 +68,7 @@ class ListRequest extends Component {
   }
 
   render() {
-    // console.log(this.props.matchmaking.request);
+    console.log(this.props.matchmaking.request);
     return (
       <div>
       <table>
