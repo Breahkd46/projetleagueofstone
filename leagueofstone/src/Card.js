@@ -11,7 +11,7 @@ class Card extends Component {
                 <div className={`card flip`} >
                     <div className="face front">
                         <img className="" alt={`${this.props.name} card`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.props.img}_0.jpg`}/>
-                        <div className="card-text container">
+                        <div className="card-text">
                             <div className={"card-text-item-left"}>
                                 <p>A : {this.props.info?this.props.info.attackdamage:''}</p>
                                 {/*<p>M : {this.props.info.magic}</p>*/}
@@ -20,7 +20,7 @@ class Card extends Component {
                                 <p>{this.props.name}</p>
                             </div>
                             <div className={"card-text-item-right"}>
-                                {/*<p>D : {this.props.info.armor}</p>*/}
+                                <p>D : {this.props.info.armor}</p>
                                 {/*<p>Dif : {this.props.info.difficulty}</p>*/}
                             </div>
                         </div>
