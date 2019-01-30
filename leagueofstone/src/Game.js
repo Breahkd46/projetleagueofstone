@@ -81,9 +81,6 @@ class Game extends Component {
           <div className="base">
             <Unsubscribe />
           </div>
-          //<div>
-            //<CardVisible />
-          //</div>
         </div>
       );
     }

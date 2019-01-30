@@ -34,8 +34,8 @@ class Card extends Component {
                             {/*<p className="card-text">Click me</p>*/}
                         {/*</div>*/}
                     {/*</div>*/}
+                    </div>
                 </div>
-            </div>
         );
     }
 }
