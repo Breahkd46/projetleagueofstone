@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import "./Card.css";
 class Card extends Component {
-    constructor(props){
-      super(props);
-    }
 
-    flipped() {
-        return this.props.flipped ? "notflipped" : "flipped";
-    }
+
+    // flipped() {
+    //     return this.props.flipped ? "notflipped" : "flipped";
+    // }
 
     render() {
 
@@ -37,8 +35,10 @@ class Card extends Component {
                         {/*</div>*/}
                     {/*</div>*/}
                 </div>
+            </div>
         );
     }
 }
+
 
 export default Card;
