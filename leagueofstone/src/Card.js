@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import "./stylesheets/card.css";
+import "./stylesheets/Card.css";
 class Card extends Component {
     // flipped() {
     //     return this.props.flipped ? "notflipped" : "flipped";
     // }
 
     render() {
-
         return (
             <div className="flip" onClick={this.props.onClick}>
                 <div className={`card flip`} >
@@ -14,15 +13,15 @@ class Card extends Component {
                         <img className="" alt={`${this.props.name} card`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.props.img}_0.jpg`}/>
                         <div className="card-text container">
                             <div className={"card-text-item-left"}>
-                                <p>A : {this.props.info.attack}</p>
-                                <p>M : {this.props.info.magic}</p>
+                                <p>A : {this.props.info?this.props.info.attackdamage:''}</p>
+                                {/*<p>M : {this.props.info.magic}</p>*/}
                             </div>
                             <div className={"card-text-title"}>
                                 <p>{this.props.name}</p>
                             </div>
                             <div className={"card-text-item-right"}>
-                                <p>D : {this.props.info.defense}</p>
-                                <p>Dif : {this.props.info.difficulty}</p>
+                                {/*<p>D : {this.props.info.armor}</p>*/}
+                                {/*<p>Dif : {this.props.info.difficulty}</p>*/}
                             </div>
                         </div>
                     </div>
