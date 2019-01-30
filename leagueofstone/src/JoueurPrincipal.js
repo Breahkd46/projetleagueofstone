@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./stylesheets/Joueur.css";
+import CardVisible from "./CardVisible";
 
 class JoueurPrincipal extends Component {
   
@@ -7,18 +8,18 @@ class JoueurPrincipal extends Component {
       return (
         <div class="container">
             <div class="div_img">
-                Cartes plateau
+                <CardVisible />
+            </div>
+            <div class="div_img">
+                Cartes main
             </div>
             <div class="row">
-                <div class="col">
-                    Cartes main
+                <div class="herov1">
+                    <img class="hero" src="/lol2.jpg"/>
                 </div>
                 <div class="col">
                     Deck
                 </div>
-            </div>
-            <div class="div_img">
-                <img src="/lol2.jpg" height="20%" width="20%"/>
             </div>
         </div>
       );

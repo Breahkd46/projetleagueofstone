@@ -5,7 +5,7 @@ class ButtonTimer extends Component {
     
     render() {
       return (
-        <div onload="decompte()">
+        <div onload={this.decompte}>
             <div id="Crono"></div>
         </div>
         

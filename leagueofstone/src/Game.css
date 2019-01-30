@@ -51,3 +51,8 @@ p{
 .App-header{
     min-height: 0vh;
 }
+
+
+.plateau{
+    display: flex;
+}
