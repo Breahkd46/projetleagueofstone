@@ -8,6 +8,10 @@ import JoueurPrincipal from "./JoueurPrincipal";
 import "./stylesheets/Joueur.css";
 
 class Part extends Component {
+
+  
+
+
   
     render() {
       return (
