@@ -1,81 +1,68 @@
 import React, { Component } from "react";
 
 // Redux
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 //import setMatch from './actions/setMatch';
 
 import './App.css';
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./Game.css";
 import Card from "./Card.js";
 import DownCard from './DownCard'
 
-import axios from "axios";
-import {SERVER_URL} from "./consts";
+// import axios from "axios";
+// import {SERVER_URL} from "./consts";
 
 
 class HandsCards extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            handsCardsJ1: [],
-            numberCardsJ2: 0
-        }
-    }
-     componentDidMount() {
-         axios
-           .get(
-              SERVER_URL + "/match/getMatch?token=" +
-                 this.props.sessionToken.token
-          )
-             .then(res => {
-                 if (res.data.status === "ok") {
-                     console.log(res.data.data.player1.hand);
-                     console.log(res.data.data.player2.hand);
-                     this.setState({
-                       handsCardsJ1: res.data.data.player1.hand,
-                       numberCardsJ2: res.data.data.player2.hand
-                  })
-                     // this.props.history.push(process.env.PUBLIC_URL + "/");
-                 } else {
-                     console.log(res.data.message);
-                 }
-            });
-     }
-
 
     createHandsCardsJ2 = () => {
-      let handJ2 = []
+        let handJ2 = []
 
-      for (let i = 0; i < this.state.numberCardsJ2; i++){
-        handJ2.push(<DownCard img = {"./dos-carte.png"} />)
-      }
-      return handJ2
+        for (let i = 0; i < this.props.handPlayer; i++) {
+            handJ2.push(<DownCard key={i}/>)
+        }
+        return handJ2
     }
+
+
     render() {
-        return (
-          <div className ="handsAll">
-            <div className="handsCardsJ1">
-                {this.state.handsCardsJ1.map((card, index) => {
-                  {console.log(card)}
-                    return (<Card key={index} onClick={null} name={card.name} img={card.key}  info={card.stats} />)
-                })}
-            </div>
-            <div className="handsCardsJ2">
-              {this.createHandsCardsJ2()}
-            </div>
-          </div>
-        )
+        if (this.props.handPlayer instanceof Array) {
+            return (
+                <div>
+                    {console.log(this.props.handPlayer)}
+                    /* J'affiche bien une array de card dans ma console mais on me dit que this.props.handPlayer est pas défini..*/
+                    {this.props.handPlayer.map((card, index) => {
+                        {
+                            console.log(card)
+                        }
+                        /* Ce console.log marche et affiche des cartes dans la console */
+                        return (
+                            <div key={index} className="handsCardsJ1">
+                                <Card key={index} onClick={null} name={card.name} img={card.key} info={card.stats}/>
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        } else {
+
+            return (
+                <div className="handsCardsJ2">
+                    {this.createHandsCardsJ2()}
+                </div>
+            )
+        }
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        match: state.matchReducer,
-        sessionToken: state.sessionReducer
+//const mapStateToProps = state => {
+  //  return {
+  //      match: state.matchReducer,
+  //      sessionToken: state.sessionReducer
 
-    }
-};
+  //  }
+//};
 
 //const mapDispatchToProps = dispatch => {
     //return {
@@ -84,4 +71,5 @@ const mapStateToProps = state => {
   //      }
   //  }
 //};
-export default connect(mapStateToProps, null)(HandsCards)
+//export default connect(mapStateToProps, null)(HandsCards)
+export default HandsCards;

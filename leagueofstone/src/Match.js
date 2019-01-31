@@ -6,8 +6,9 @@ import {connect} from "react-redux";
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
-
-import HandsCards from "./HandsCards.js"
+import HandsCards from "./HandsCards";
+import JoueurAdverse from "./JoueurAdverse";
+import JoueurPrincipal from "./JoueurPrincipal";
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
@@ -16,24 +17,40 @@ import { RELOAD_TIME } from "./consts";
 import Part from "./Part"
 
 class Match extends Component {
-    // constructor(props) {
-    //   super(props);
-    //
-    // }
+    constructor(props) {
+        super(props);
+        if(this.props.match.status === '' || this.props.match.status === "Deck is pending") {
+            this.setState({
+                isDeck: true,
+            });
+        } else {
+            this.state = {
+                isDeck: false,
+            }
+        }
+
+
+        this.handleDeckInit = this.handleDeckInit.bind(this)
+    }
 
     componentDidMount() {
         this.intervalID = setInterval(
             () => this.reloadMatch(),
             RELOAD_TIME
         );
-        this.reloadMatch()
+        this.loadMatch()
+        if(this.props.match.status === '' || this.props.match.status === "Deck is pending") {
+            this.setState({
+                isDeck: true,
+            });
+        }
     }
 
     componentWillUnmount() {
         clearInterval(this.intervalID);
     }
 
-    reloadMatch() {
+    loadMatch() {
         axios
             .get(
                 SERVER_URL + "/match/getMatch?token=" +
@@ -48,33 +65,49 @@ class Match extends Component {
                 }
             });
     }
+    reloadMatch() {
+        if (this.state.isDeck && this.props.match.status === "Deck is pending") {
+            this.loadMatch();
+        }
+
+    }
+
+    handleDeckInit() {
+        this.setState({
+            isDeck: true,
+        })
+    }
 
     render() {
         console.log(this.props.match.status)
         if(this.props.match.status === "") {
             return (
-                <div className="base"><p><h1>Loading...</h1></p></div>
+                <div className="base"><h1>Loading...</h1></div>
 
             )
         }else if (this.props.match.status === "Deck is pending") {
             return (
                 <div>
-                    <MakeDeck />
+                    <MakeDeck handleDeckInit={this.handleDeckInit}/>
                 </div>
             )
         }else {
             console.log(this.props.sessionToken.id)
+            console.log(this.props.matchmaking.match.player2)
+            console.log(this.props.match.player1.hand)
             return (
                 <div >
                     <header >
                         <h2>League of Stones</h2>
                         <p>Bienvenue</p> <br />
-                        <p> Et c'est parti </p>
+                        <p> Et c est parti </p>
                         <div> {this.props.matchmaking.match.player1.name}</div>
                         <p> CONTRE </p>
                         <div> {this.props.matchmaking.match.player2.name} </div>
-                          <HandsCards />
                     </header>
+                    <Part />
+                    {/*<div> <JoueurAdverse player={this.props.match.player2} /> </div>*/}
+                    {/*<div> <JoueurPrincipal player={this.props.match.player1} /> </div>*/}
                 </div>
 
             )

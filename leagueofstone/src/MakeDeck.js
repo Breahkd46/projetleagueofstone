@@ -102,11 +102,13 @@ class MakeDeck extends Component {
                         this.setState({
                             status: "requestSent"
                         })
+                        this.props.handleDeckInit();
                     } else {
                         console.log(res.data.message);
                     }
                 });
         }
+
 
     }
 
