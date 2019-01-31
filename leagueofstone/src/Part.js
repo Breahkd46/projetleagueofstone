@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./stylesheets/Part.css";
+import "./stylesheets/Joueur.css";
 
 import ButtonTimer from "./ButtonTimer";
 import JoueurAdverse from "./JoueurAdverse";
@@ -48,23 +49,23 @@ class Part extends Component {
 
     render() {
         return (
-            <div className="newBase">
-                <div className="container">
-                    <div className="row">
+            <div className="plateau">
+                <div classname="center">
+                    <div className="adversaire">
                         <JoueurAdverse player={this.state.player2}/>
                     </div>
-                    }
-                    <div className="row">
+                    <div className="principal">
                         <JoueurPrincipal player={this.state.player1}/>
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    {/* <div className="bouton">
+                        <div className="timer">
+                            Timer
                             <ButtonTimer/>
                         </div>
-                        <div className="col">
+                        <div className="finTour">
                             Fin de tour
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

@@ -12,25 +12,20 @@ class JoueurPrincipal extends Component {
 
     render() {
       return (
-        <div className="container">
-            <div className="div_img">
-                {/* <CardVisible /> */}
+        <div>
+            <div>
                 Carte visible
             </div>
-            <div className="div_img">
-                Cartes main
-            </div>
-            <div className="row">
-                <div className="herov1">
-                    <img className="hero" src="/lol2.jpg"/>
-                </div>
-                <div className="deck">
-                    Deck
-                </div>
-            </div>
-            <div className="hand">
+            <div>
               {<HandsCards handPlayer={this.props.player.hand}/>}
             </div>
+            <div>
+                <div className="col2">
+                </div>
+                <div className="col3">
+                </div>
+            </div>
+            
         </div>
       );
     }

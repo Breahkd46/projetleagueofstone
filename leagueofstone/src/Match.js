@@ -96,15 +96,7 @@ class Match extends Component {
             console.log(this.props.matchmaking.match.player2)
             console.log(this.props.match.player1.hand)
             return (
-                <div >
-                    <header >
-                        <h2>League of Stones</h2>
-                        <p>Bienvenue</p> <br />
-                        <p> Et c est parti </p>
-                        <div> {this.props.matchmaking.match.player1.name}</div>
-                        <p> CONTRE </p>
-                        <div> {this.props.matchmaking.match.player2.name} </div>
-                    </header>
+                <div className="part">
                     <Part />
                     {/*<div> <JoueurAdverse player={this.props.match.player2} /> </div>*/}
                     {/*<div> <JoueurPrincipal player={this.props.match.player1} /> </div>*/}
