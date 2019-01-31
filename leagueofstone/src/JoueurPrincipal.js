@@ -7,13 +7,15 @@ import {SERVER_URL} from "./consts";
 import Card from "./Card.js";
 import { connect } from 'react-redux';
 
+import HandsCards from "./HandsCards";
+
 class JoueurPrincipal extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            hand: []
-        }
+            hand: [],
+            nomJoeur1 : "",        }
     }
     
     componentDidMount() {
@@ -29,7 +31,8 @@ class JoueurPrincipal extends Component {
                   // let handsRequete = res.data.data.player1.hand
                   // console.log(handsRequete)
                   this.setState({
-                      hand: res.data.data.player1.hand
+                      hand: res.data.data.player1.hand,
+                      nomJoeur1 : res.data.data.player1.name
                   })
 
                   // for (let cartes in handsRequete){
@@ -58,16 +61,10 @@ class JoueurPrincipal extends Component {
                 {/* <CardVisible /> */}
                 Carte visible
             </div>
-            <div class="div_img">
-                {this.state.hand.map((card, index) => {
-                    {console.log(card)}
-                        return (<Card key={index}
-                                      onClick={null}
-                                      name={card.name}
-                                      img={card.key}
-                                      info={card.stats} />)
-                    })}
+            <div className="hand">
+              {<HandsCards handPlayer={this.props.player.hand}/>}
             </div>
+
             <div class="row">
                 <div class="col">
                     <img src="/lol2.jpg"/>
