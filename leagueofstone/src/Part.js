@@ -17,6 +17,8 @@ class Part extends Component {
             player2: ""
 
         }
+        this.handleEndTurn = this.handleEndTurn.bind(this);
+        this.handlePickCard = this.handlePickCard.bind(this);
     }
 
     componentDidMount() {
@@ -65,7 +67,22 @@ class Part extends Component {
             });
     }
 
+    handlePickCard() {
+        axios
+            .get(
+                SERVER_URL + "/match/pickCard?token=" +
+                this.props.sessionToken.token
+            ).then( res => {
+            if (res.data.status === "ok") {
+                console.log(res.data.data);
 
+                // this.props.history.push(process.env.PUBLIC_URL + "/");
+            } else {
+                console.log(res.data.message);
+            }
+        });
+        this.loadMatch()
+    }
 
     handleEndTurn() {
         axios
@@ -91,11 +108,16 @@ class Part extends Component {
                     <div className="row">
                         <JoueurAdverse player={this.state.player2}/>
                     </div>
-                    <div className="col">
-                        <button onClick={this.handleEndTurn()}>Fin du tour</button>
-                    </div>
+                    {/*<div className="col">*/}
+                        {/*<button onClick={this.handlePickCard()}>Pioche</button>*/}
+                    {/*</div>*/}
+                    {/*<div className="col">*/}
+                        {/*<button onClick={this.handleEndTurn()}>Fin du tour</button>*/}
+                    {/*</div>*/}
                     <div className="row">
-                        <JoueurPrincipal player={this.state.player1}/>
+                        <JoueurPrincipal handlePickCard={this.handlePickCard}
+                                         handleEndTurn={this.handleEndTurn}
+                                         player={this.state.player1}/>
                     </div>
                     <div className="row">
                         <div className="col">

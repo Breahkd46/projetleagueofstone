@@ -24,6 +24,18 @@ class JoueurPrincipal extends Component {
                 <div className="herov1">
                     <img className="hero" src="/lol2.jpg"/>
                 </div>
+                <div className="col">
+                    <button {(this.props.player.turn) ? "" : "disabled"}
+                        onClick={this.props.handlePickCard()}>
+                        Pioche
+                    </button>
+                </div>
+                <div className="col">
+                    <button {(this.props.player.turn) ? "" : "disabled"}
+                        onClick={this.props.handleEndTurn()}>
+                        Fin du tour
+                    </button>
+                </div>
                 <div className="deck">
                     Deck
                 </div>
