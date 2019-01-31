@@ -15,77 +15,52 @@ import {SERVER_URL} from "./consts";
 
 
 class HandsCards extends Component {
-    constructor(props) {
-        super(props);
-        //this.state = {
-        //    handsCardsJ1: [],
-        //    numberCardsJ2: 0,
-        //    idPlayer1: "",
-        //    idPlayer2: ""
-
-        //}
-    }
-     //componentDidMount() {
-      //   axios
-        //   .get(
-        //      SERVER_URL + "/match/getMatch?token=" +
-        //         this.props.sessionToken.token
-        //  )
-        //     .then(res => {
-        //         if (res.data.status === "ok") {
-        //             console.log(res.data.data.player1.id);
-        //             console.log(res.data.data.player2.hand);
-        //             this.setState({
-        //               handsCardsJ1: res.data.data.player1.hand,
-        //               numberCardsJ2: res.data.data.player2.hand,
-        //               idPlayer1: res.data.data.player1.id,
-        //               idPlayer2: res.data.data.player2.id
-        //          })
-                     // this.props.history.push(process.env.PUBLIC_URL + "/");
-        //         } else {
-        //             console.log(res.data.message);
-        //         }
-        //    });
-     //}
-
 
     createHandsCardsJ2 = () => {
       let handJ2 = []
 
-      for (let i = 0; i < this.state.numberCardsJ2; i++){
-        handJ2.push(<DownCard img = {"./dos-carte.png"} />)
+      for (let i = 0; i < this.props.handPlayer; i++){
+        handJ2.push(<DownCard />)
       }
       return handJ2
     }
 
 
     render() {
-      if(this.props.player.id === this.props.sessionToken.id)
+      if(this.props.handPlayer === 4)
        {
-        return (
-            <div className="handsCardsJ1">
-                {this.state.handsCardsJ1.map((card, index) => {
-                  {console.log(card)}
-                    return (<Card key={index} onClick={null} name={card.name} img={card.key}  info={card.stats} />)
-                })}
-            </div>
-        ) } else {
           return (
-            <div className="handsCardsJ2">
-              {this.createHandsCardsJ2()}
-            </div>
-          )
-        }
-    }
+              <div className="handsCardsJ2">
+                {this.createHandsCardsJ2()}
+              </div>
+            )
+          } else {
+              return (
+                <div>
+                  {console.log(this.props.handPlayer)}
+                  /* J'affiche bien une array de card dans ma console mais on me dit que this.props.handPlayer est pas défini..*/
+                    {this.props.handPlayer.map((card, index) => {
+                        {console.log(card)}
+                        /* Ce console.log marche et affiche des cartes dans la console */
+                        return (
+                          <div className="handsCardsJ1">
+                            <Card key={index} onClick={null} name={card.name} img={card.key}  info={card.stats} />
+                          </div>
+                        )
+                    })}
+                </div>
+                )
+            }
+      }
 }
 
-const mapStateToProps = state => {
-    return {
-        match: state.matchReducer,
-        sessionToken: state.sessionReducer
+//const mapStateToProps = state => {
+  //  return {
+  //      match: state.matchReducer,
+  //      sessionToken: state.sessionReducer
 
-    }
-};
+  //  }
+//};
 
 //const mapDispatchToProps = dispatch => {
     //return {
@@ -94,4 +69,5 @@ const mapStateToProps = state => {
   //      }
   //  }
 //};
-export default connect(mapStateToProps, null)(HandsCards)
+//export default connect(mapStateToProps, null)(HandsCards)
+export default HandsCards;

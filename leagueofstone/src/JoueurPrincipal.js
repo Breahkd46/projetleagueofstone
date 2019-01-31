@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./stylesheets/Joueur.css";
 import CardVisible from "./CardVisible";
+import HandsCards from "./HandsCards";
 
 class JoueurPrincipal extends Component {
-  
+
     render() {
       return (
         <div class="container">
@@ -22,10 +23,13 @@ class JoueurPrincipal extends Component {
                     Deck
                 </div>
             </div>
+            <div class="hand">
+              {<HandsCards handPlayer={this.props.player.hand}/>}
+            </div>
         </div>
       );
     }
-  
+
 }
-  
-  export default JoueurPrincipal
+
+export default JoueurPrincipal;
