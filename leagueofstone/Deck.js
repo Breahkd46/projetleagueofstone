@@ -7,7 +7,7 @@ import setMatch from './actions/setMatch';
 import './App.css'
 import logo from "./logo.svg";
 import "./Game.css";
-import "Card" from "./Card.js"
+import Card from "./Card.js";
 
 import axios from "axios";
 import {SERVER_URL} from "./consts";
@@ -23,7 +23,7 @@ class Deck extends Component {
         }
     }
      componentDidMount() {
-         axios
+         axios  
             .get(
                SERVER_URL + "/match/getMatch?token=" +
                  this.props.sessionToken.token

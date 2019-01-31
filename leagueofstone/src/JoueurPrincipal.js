@@ -3,6 +3,11 @@ import "./stylesheets/Joueur.css";
 import CardVisible from "./CardVisible";
 import HandsCards from "./HandsCards";
 
+import axios from "axios";
+import {SERVER_URL} from "./consts";
+import Card from "./CardHand.js";
+import { connect } from 'react-redux';
+
 class JoueurPrincipal extends Component {
 
     render() {
@@ -19,7 +24,7 @@ class JoueurPrincipal extends Component {
                 <div className="herov1">
                     <img className="hero" src="/lol2.jpg"/>
                 </div>
-                <div className="col">
+                <div className="deck">
                     Deck
                 </div>
             </div>
