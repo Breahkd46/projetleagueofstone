@@ -114,6 +114,7 @@ class Match extends Component {
     }
 }
 
+
 const mapStateToProps = state => {
     return {
         match: state.matchReducer,
