@@ -7,21 +7,21 @@ class JoueurAdverse extends Component {
 
     render() {
       return (
-        <div class="container">
-            <div class="row">
-                <div class="col">
+        <div className="container">
+            <div className="row">
+                <div className="col">
                     <img src="/lol.jpg"/>
                 </div>
-                <div class="col">
+                <div className="col">
                    Deck
                 </div>
             </div>
-            <div class="div_img">
+            <div className="div_img">
                 {/* <CardVisible /> */}
                 Carte Visible
 
             </div>
-            <div class="hand">
+            <div className="hand">
               {<HandsCards handPlayer={this.props.player.hand}/>}
             </div>
         </div>

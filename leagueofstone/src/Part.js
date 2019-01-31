@@ -13,8 +13,6 @@ class Part extends Component {
   constructor(props) {
       super(props);
       this.state = {
-      //    handsCardsJ1: [],
-      //    numberCardsJ2: 0,
           player1: "",
           player2: ""
 
@@ -29,41 +27,47 @@ class Part extends Component {
            .then(res => {
                if (res.data.status === "ok") {
                    console.log(res.data.data.player1);
-                   console.log(res.data.data.player2);
-                   this.setState({
-      //               handsCardsJ1: res.data.data.player1.hand,
-      //               numberCardsJ2: res.data.data.player2.hand,
-                     player1: res.data.data.player1,
-                     player2: res.data.data.player2
-                })
+                   if (this.props.sessionToken.id === res.data.data.player1.id) {
+                       this.setState({
+                           player1: res.data.data.player1,
+                           player2: res.data.data.player2
+                       })
+                   } else {
+                       this.setState({
+                           player1: res.data.data.player2,
+                           player2: res.data.data.player1
+                       })
+                   }
+
                    // this.props.history.push(process.env.PUBLIC_URL + "/");
                } else {
                    console.log(res.data.message);
                }
           });
    }
+
     render() {
-      return (
-        <div class="newBase">
-          <div class="container">
-                <div class="row">
-                  <JoueurAdverse player={this.state.player2}/>
+        return (
+            <div className="newBase">
+                <div className="container">
+                    <div className="row">
+                        <JoueurAdverse player={this.state.player2}/>
+                    </div>
+                    }
+                    <div className="row">
+                        <JoueurPrincipal player={this.state.player1}/>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <ButtonTimer/>
+                        </div>
+                        <div className="col">
+                            Fin de tour
+                        </div>
+                    </div>
                 </div>
-              }
-              <div class="row">
-                <JoueurPrincipal player={this.state.player1}/>
-              </div>
-              <div class="row">
-                <div class="col">
-                <ButtonTimer />
-                </div>
-                <div class="col">
-                  Fin de tour
-                </div>
-              </div>
-          </div>
-        </div>
-      );
+            </div>
+        );
     }
 
 }
