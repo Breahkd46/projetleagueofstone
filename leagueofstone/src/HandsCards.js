@@ -30,7 +30,7 @@ class HandsCards extends Component {
         let i = 1;
         for(let c in handTemp){
             handfinal.push(
-                <CardHand 
+                <CardHand key={c}
                 lvl={i}
                 name={handTemp[c]['name']}
                 img={handTemp[c]['name']}

@@ -15,8 +15,14 @@ class Compte extends Component {
 
     render() {
         return (
-            <div className="base">
-                <Unsubscribe />
+            <div>
+                <div className={"base"}>
+                    <p>Nom : {this.props.sessionToken.name}</p>
+                    <p>Email : {this.props.sessionToken.email}</p>
+                </div>
+                <div className="base">
+                    <Unsubscribe />
+                </div>
             </div>
         )
     }
@@ -24,8 +30,7 @@ class Compte extends Component {
 
 const mapStateToProps = state => {
     return {
-        match: state.matchReducer,
-        matchmaking: state.matchmakingReducer
+        sessionToken: state.sessionReducer
     }
 };
 
