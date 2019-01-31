@@ -19,7 +19,7 @@ class MakeDeck extends Component {
         this.state = {
             cards: [],
             deck: [],
-            status: false,
+            status: "",
             nbCards: 0,
         }
 
@@ -102,11 +102,13 @@ class MakeDeck extends Component {
                         this.setState({
                             status: "requestSent"
                         })
+                        this.props.handleDeckInit();
                     } else {
                         console.log(res.data.message);
                     }
                 });
         }
+
 
     }
 
@@ -128,7 +130,7 @@ class MakeDeck extends Component {
                                     <Card className={"item"} key={index}
                                           name={champ.name}
                                           img={champ.key}
-                                          info={champ.info}
+                                          info={champ.stats}
                                           onClick={() => this.handleClickToDeck(index)}/>
                                 )}
                             </div>

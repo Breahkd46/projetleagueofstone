@@ -1,11 +1,142 @@
-.oui{
+.oui {
     overflow: hidden;
-    width: 80%;
-    margin : 24px;
+    width: 75%;
+    margin: 30px;
 }
 
-.oui img{
+.oui img {
     background-size: cover;
-    width: 150%;
-    margin-left:-117%;
+    width: 244%;
+    margin-left: -120%;
+}
+
+.card-text {
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*.face{*/
+    /*overflow: hidden;*/
+    /*width: 75%;*/
+    /*margin : 30px;*/
+/*}*/
+
+/*.face img{*/
+    /*background-size: cover;*/
+    /*width: 244%;*/
+    /*margin-left:-120%;*/
+/*}*/
+.card-text-item-left {
+
+}
+
+.card-text-item-right {
+
+}
+
+.card-text-title {
+
+}
+
+/* @keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flip{animation: fadein 4.0s;} */
+
+
+.card-body {
+    margin-top: -60px;
+    padding: 0;
+    color: white;
+}
+
+.flip {
+    -webkit-perspective: 800px;
+    width: 14em;
+    /*height: 200px;*/
+    position: sticky;
+    margin-bottom: 10px;
+}
+
+.flip .card.flipped {
+    -webkit-transform: rotatex(-180deg);
+}
+
+.flip .card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+}
+
+.card img {
+    width: 100%;
+}
+
+/*.flip .card .face {*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*position: absolute;*/
+/*-webkit-backface-visibility: hidden;*/
+/*z-index: 2;*/
+/*}*/
+.flip .card .front {
+    /*position: absolute;*/
+    z-index: 1;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+/*.flip .card .back {*/
+/*-webkit-transform: rotatex(-180deg);*/
+/*background: blue;*/
+/*background: black;*/
+/*color: white;*/
+/*cursor: pointer;*/
+/*}*/
+
+.id1{
+    position: absolute;
+    left: 0%;
+    width: 20%;
+    height: 100%;
+}
+.id2{
+    position: absolute;
+    left: 20%;
+    width: 20%;
+    height: 100%;
+}
+.id3{
+    position: absolute;
+    left: 40%;
+    width: 20%;
+    height: 100%;
+}
+.id4{
+    position: absolute;
+    left: 60%;
+    width: 20%;
+    height: 100%;
+}
+.id5{
+    position: absolute;
+    left: 80%;
+    width: 20%;
+    height: 100%;
+}
+.hausementepaule{
+    background-size: 100% 100%;
+    width: 100%;
+    height: 43%;
+
+    
 }

@@ -6,6 +6,9 @@ import {connect} from "react-redux";
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
+import HandsCards from "./HandsCards";
+import JoueurAdverse from "./JoueurAdverse";
+import JoueurPrincipal from "./JoueurPrincipal";
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
@@ -35,13 +38,12 @@ class Match extends Component {
             () => this.reloadMatch(),
             RELOAD_TIME
         );
-        this.reloadMatch()
+        this.loadMatch()
         if(this.props.match.status === '' || this.props.match.status === "Deck is pending") {
             this.setState({
                 isDeck: true,
             });
         }
-
     }
 
     componentWillUnmount() {
@@ -75,8 +77,6 @@ class Match extends Component {
             isDeck: true,
         })
     }
-
-
 
     render() {
         console.log(this.props.match.status)

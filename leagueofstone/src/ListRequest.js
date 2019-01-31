@@ -8,7 +8,7 @@ import setMatch from './actions/updateMatch';
 // Requete Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
-import { RELOAD_TIME } from "./consts";
+// import { RELOAD_TIME } from "./consts";
 
 import "./Signin.css";
 import "./stylesheets/ListMatchmacking.css"

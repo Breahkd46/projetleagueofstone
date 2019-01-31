@@ -7,7 +7,7 @@ import React, { Component } from "react";
 import './App.css';
 // import logo from "./logo.svg";
 import "./Game.css";
-import Card from "./Card.js";
+import CardHand from "./CardHand.js";  
 import DownCard from './DownCard'
 
 // import axios from "axios";
@@ -16,8 +16,37 @@ import DownCard from './DownCard'
 
 class HandsCards extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            hand: [],
+
+        }
+    }
+
+    creatHand = () => {
+        let handfinal = []
+        let handTemp = this.props.handPlayer
+        let i = 1;
+        for(let c in handTemp){
+            handfinal.push(
+                <CardHand 
+                lvl={i}
+                name={handTemp[c]['name']}
+                img={handTemp[c]['name']}
+                
+                />
+            );
+            i++
+        }
+        this.setState({
+            hand: handfinal,
+        })
+    }
+
     createHandsCardsJ2 = () => {
         let handJ2 = []
+        
 
         for (let i = 0; i < this.props.handPlayer; i++) {
             handJ2.push(<DownCard key={i}/>)
@@ -25,24 +54,23 @@ class HandsCards extends Component {
         return handJ2
     }
 
+    componentDidMount(){
+        this.intervalGetMatch = setInterval(() => this.creatHand(), 1000);
+    }
 
+    componentWillMount(){
+        clearInterval(this.intervalGetMatch);
+    }
+    
+    
     render() {
+
         if (this.props.handPlayer instanceof Array) {
+            
             return (
-                <div>
-                    {console.log(this.props.handPlayer)}
-                    /* J'affiche bien une array de card dans ma console mais on me dit que this.props.handPlayer est pas défini..*/
-                    {this.props.handPlayer.map((card, index) => {
-                        {
-                            console.log(card)
-                        }
-                        /* Ce console.log marche et affiche des cartes dans la console */
-                        return (
-                            <div key={index} className="handsCardsJ1">
-                                <Card key={index} onClick={null} name={card.name} img={card.key} info={card.stats}/>
-                            </div>
-                        )
-                    })}
+                
+                <div className="hand">
+                    {this.state.hand}
                 </div>
             )
         } else {

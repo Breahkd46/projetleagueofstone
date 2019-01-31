@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import "./stylesheets/card.css";
+import "./stylesheets/Card.css";
 class Card extends Component {
     // flipped() {
     //     return this.props.flipped ? "notflipped" : "flipped";
     // }
 
     render() {
-
         return (
             <div className="flip" onClick={this.props.onClick}>
                 <div className={`card flip`} >
                     <div className="face front">
                         <img className="" alt={`${this.props.name} card`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.props.img}_0.jpg`}/>
-                        <div className="card-text container">
+                        <div className="card-text">
                             <div className={"card-text-item-left"}>
-                                <p>A : {this.props.info.attackdammage}</p>
+                                <p>A : {this.props.info?this.props.info.attackdamage:''}</p>
                                 {/*<p>M : {this.props.info.magic}</p>*/}
                             </div>
                             <div className={"card-text-title"}>
