@@ -76,7 +76,6 @@ const mapStateToProps = state => {
     return {
         match: state.matchReducer,
         sessionToken: state.sessionReducer
-
     }
 };
 
