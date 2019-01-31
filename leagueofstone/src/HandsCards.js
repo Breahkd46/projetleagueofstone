@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // Redux
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 //import setMatch from './actions/setMatch';
 
 import './App.css';
@@ -10,11 +10,15 @@ import "./Game.css";
 import Card from "./Card.js";
 import DownCard from './DownCard'
 
-// import axios from "axios";
-// import {SERVER_URL} from "./consts";
+import axios from "axios";
+import {SERVER_URL} from "./consts";
 
 
 class HandsCards extends Component {
+  constructor(props){
+    super(props);
+    this.handleHandToBoard = this.handleHandToBoard.bind(this);
+  }
 
     createHandsCardsJ2 = () => {
         let handJ2 = []
@@ -25,21 +29,35 @@ class HandsCards extends Component {
         return handJ2
     }
 
+    handleHandToBoard(key){
+      console.log("Carte jouée", key);
+      const keyCard = key;
+      axios
+          .get(
+              SERVER_URL + "/match/playCard?token=" +
+              this.props.sessionToken.token + "&card=" +
+              keyCard
+          )
+          .then(res => {
+              if (res.data.status === "ok") {
+                  console.log(res.data.data);
+                  this.props.handlePlayCard();
+              } else {
+                  console.log(res.data.message);
+              }
+          });
+    }
 
     render() {
         if (this.props.handPlayer instanceof Array) {
             return (
                 <div>
                     {console.log(this.props.handPlayer)}
-                    /* J'affiche bien une array de card dans ma console mais on me dit que this.props.handPlayer est pas défini..*/
                     {this.props.handPlayer.map((card, index) => {
-                        {
-                            console.log(card)
-                        }
-                        /* Ce console.log marche et affiche des cartes dans la console */
+                        {console.log(card)}
                         return (
                             <div key={index} className="handsCardsJ1">
-                                <Card key={index} onClick={null} name={card.name} img={card.key} info={card.stats}/>
+                                <Card key={index} onClick={null} name={card.name} img={card.key} info={card.stats} onClick={() => this.handleHandToBoard(card.key)}/>
                             </div>
                         )
                     })}
@@ -56,13 +74,13 @@ class HandsCards extends Component {
     }
 }
 
-//const mapStateToProps = state => {
-  //  return {
-  //      match: state.matchReducer,
-  //      sessionToken: state.sessionReducer
+const mapStateToProps = state => {
+    return {
+        match: state.matchReducer,
+        sessionToken: state.sessionReducer
 
-  //  }
-//};
+    }
+};
 
 //const mapDispatchToProps = dispatch => {
     //return {
@@ -71,5 +89,5 @@ class HandsCards extends Component {
   //      }
   //  }
 //};
-//export default connect(mapStateToProps, null)(HandsCards)
-export default HandsCards;
+export default connect(mapStateToProps, null)(HandsCards)
+//export default HandsCards;

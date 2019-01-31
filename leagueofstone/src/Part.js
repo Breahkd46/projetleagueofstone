@@ -46,6 +46,22 @@ class Part extends Component {
           });
    }
 
+    handlePlayCard(){
+        axios
+          .get(
+              SERVER_URL + "/match/getMatch?token=" +
+               this.props.sessionToken.token
+           )
+           .then(res => {
+               if (res.data.status === "ok") {
+                   console.log(res.data.data);
+                   this.props.updateMatch(res.data.data.status, res.data.data.player1, res.data.data.player2);
+               } else {
+                   console.log(res.data.message);
+               }
+           });
+         }
+
     render() {
         return (
             <div className="newBase">
@@ -55,7 +71,7 @@ class Part extends Component {
                     </div>
                     }
                     <div className="row">
-                        <JoueurPrincipal player={this.state.player1}/>
+                        <JoueurPrincipal player={this.state.player1} handlePlayCard={this.handlePlayCard}/>
                     </div>
                     <div className="row">
                         <div className="col">

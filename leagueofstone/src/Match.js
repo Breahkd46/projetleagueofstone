@@ -106,8 +106,6 @@ class Match extends Component {
                         <div> {this.props.matchmaking.match.player2.name} </div>
                     </header>
                     <Part />
-                    {/*<div> <JoueurAdverse player={this.props.match.player2} /> </div>*/}
-                    {/*<div> <JoueurPrincipal player={this.props.match.player1} /> </div>*/}
                 </div>
 
             )
