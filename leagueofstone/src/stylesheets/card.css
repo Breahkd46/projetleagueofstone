@@ -1,11 +1,11 @@
-.oui{
+.face{
     overflow: hidden;
-    width: 80%;
-    margin : 24px;
+    width: 75%;
+    margin : 30px;
 }
 
-.oui img{
+.face img{
     background-size: cover;
-    width: 150%;
-    margin-left:-117%;
+    width: 244%;
+    margin-left:-120%;
 }

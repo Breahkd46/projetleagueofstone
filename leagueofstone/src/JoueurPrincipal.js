@@ -8,7 +8,8 @@ class JoueurPrincipal extends Component {
       return (
         <div class="container">
             <div class="div_img">
-                <CardVisible />
+                {/* <CardVisible /> */}
+                Carte visible
             </div>
             <div class="div_img">
                 Cartes main

@@ -7,9 +7,7 @@ class CardVisible extends Component{
   constructor(props){
     super(props);
     this.state={
-      tabCard : ['Alistar','Camille', 'Olaf', 'Evelynn','Zed']
-
-
+      tabCard : ['Alistar','Camille', 'Olaf', 'Warwick','Zed','Thresh']
     }
   }
 

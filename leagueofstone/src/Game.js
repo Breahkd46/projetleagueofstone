@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Logout from "./Logout";
 import Unsubscribe from './Unsubscribe';
 import Participate from './Participate';
-import CardVisible from './CardVisible'
+import HandsCards from "./HandsCards";
+import CardVisible from './CardVisible';
 
 // Redux
 import { connect } from 'react-redux';
@@ -80,6 +81,9 @@ class Game extends Component {
             <Participate />
           <div className="base">
             <Unsubscribe />
+          </div>
+          <div className="plateau">
+            <CardVisible />
           </div>
         </div>
       );
