@@ -5,17 +5,34 @@ import ButtonTimer from "./ButtonTimer";
 import JoueurAdverse from "./JoueurAdverse";
 import JoueurPrincipal from "./JoueurPrincipal";
 
+import axios from "axios";
+import {SERVER_URL} from "./consts";
+
 class Part extends Component {
-  
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
+
+    handleAttack(){
+      axios
+        .get(
+          SERVER_URL + "/match/attack?token="+
+            this.props.sessionToken.token + "&card="
+        )
+    }
+
     render() {
       return (
         <div class="newBase">
           <div class="container">
               <div class="row">
-                  <JoueurAdverse />
+                  <JoueurAdverse handleReceive = {this.handleReveive}/>
               </div>
               <div class="row">
-                <JoueurPrincipal />
+                <JoueurPrincipal handleAttack = {this.handleAttack}/>
               </div>
               <div class="row">
                 <div class="col">
@@ -29,8 +46,7 @@ class Part extends Component {
         </div>
       );
     }
-  
+
 }
-  
+
   export default Part
-  

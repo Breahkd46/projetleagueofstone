@@ -3,12 +3,14 @@ import "./stylesheets/Joueur.css";
 import CardVisible from "./CardVisible";
 
 class JoueurPrincipal extends Component {
-  
+
+
+
     render() {
       return (
         <div class="container">
             <div class="div_img">
-                {/* <CardVisible /> */}
+                <CardVisible handleCard = {this.props.handleAttack} board = {this.props.player.board}/>
                 Carte visible
             </div>
             <div class="div_img">
@@ -25,7 +27,7 @@ class JoueurPrincipal extends Component {
         </div>
       );
     }
-  
+
 }
-  
+
   export default JoueurPrincipal
