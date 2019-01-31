@@ -34,6 +34,7 @@ class Part extends Component {
     }
 
     reloadMatch() {
+        console.log(this.state.player2.turn)
         if (this.state.player2.turn) {
             this.loadMatch();
         }
