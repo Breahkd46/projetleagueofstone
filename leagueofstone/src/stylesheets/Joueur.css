@@ -37,7 +37,80 @@ img{
     height: 100%;
 }
 
-p{
+.pDeck{
+    font-size: 247%;
+    font-family: fantasy;
+    color: white;
+    text-align: center;
+}
+
+.col{
+    position: absolute;
+    left: 25%;
+    background-image: url("/lol.jpg");
+    border: 3px solid;
+    width: 10%;
+    height: 20%;
+    background-size: 100% 100%;
+    /* width: 40%;
+    height: 20%; */
+}
+
+.col1{
+    position: absolute;
+    left: 75%;
+    background-image: url("/deck.png");
+    border: 3px solid;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 20%;
+    background-size: 100% 100%;
     font-size: 100%;
 }
 
+.col2{
+    position: absolute;
+    left: -340%;
+    background-image: url(/lol2.jpg);
+    border: 3px solid;
+    background-repeat: no-repeat;
+    top: 1425%;
+    width: 156%;
+    height: 557%;
+}
+
+.col3{
+    position: absolute;
+    left: 409%;
+    background-image: url(/deck.png);
+    border: 3px solid;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 132%;
+    height: 695%;
+    top: 1466%;
+
+}
+
+
+.visible{
+    background: olive;
+    border: 3px solid;
+    position: absolute;
+    top: 34%;
+    left: 45%;
+}
+
+.pJoueurP{
+    font-size: 240%;
+    font-family: fantasy;
+    color: white;
+    text-align: center;
+}
+
+.pJoueurA{
+    font-size: 240%;
+    font-family: fantasy;
+    color: white;
+    text-align: center;
+}

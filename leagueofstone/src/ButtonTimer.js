@@ -18,8 +18,8 @@ class ButtonTimer extends Component {
 
     componentDidMount() {
         this.intervalID = setInterval(
-            () => this.reloadMatch(),
-            RELOAD_TIME
+            () => this.time(),
+            1000
         );
     }
 

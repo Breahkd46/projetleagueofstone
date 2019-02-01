@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./stylesheets/Joueur.css";
+import CardVisible from "./CardVisible";
 import HandsCards from "./HandsCards";
+
+import axios from "axios";
+import {SERVER_URL} from "./consts";
+import Card from "./CardHand.js";
+import { connect } from 'react-redux';
 
 class JoueurAdverse extends Component {
 
@@ -9,12 +15,11 @@ class JoueurAdverse extends Component {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <img alt='photo lol' src="/lol.jpg"/>
+                    <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
-                <div className="deck">
-            
-                {console.log(this.props.player.deck)}
-                    {this.props.player.deck}
+                <div className="col1">
+                    <p className="pDeck">{console.log(this.props.player.deck)}
+                    {this.props.player.deck}</p>
                 </div>
             </div>
             <div className="div_img">
