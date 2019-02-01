@@ -3,6 +3,11 @@ import "./stylesheets/Joueur.css";
 import CardVisible from "./CardVisible";
 import HandsCards from "./HandsCards";
 
+import axios from "axios";
+import {SERVER_URL} from "./consts";
+import Card from "./CardHand.js";
+import { connect } from 'react-redux';
+
 class JoueurAdverse extends Component {
 
     render() {
@@ -12,8 +17,9 @@ class JoueurAdverse extends Component {
                 <div className="col">
                     <img src="/lol.jpg"/>
                 </div>
-                <div className="col">
-                   Deck
+                <div className="col1">
+                    <p className="pDeck">{console.log(this.props.player.deck)}
+                    {this.props.player.deck}</p>
                 </div>
             </div>
             <div className="div_img">
@@ -21,7 +27,8 @@ class JoueurAdverse extends Component {
 
             </div>
             <div className="hand">
-              {<HandsCards handPlayer={this.props.player.hand}/>}
+              {<HandsCards handPlayer={this.props.player.hand}
+                           handlePlayCard={null}/>}
             </div>
         </div>
       );

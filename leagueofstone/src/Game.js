@@ -75,9 +75,6 @@ class Game extends Component {
             <p>Bienvenue</p>
           </header>
             <Participate />
-          <div className="plateau">
-            <Part />
-          </div>
         </div>
       );
     }

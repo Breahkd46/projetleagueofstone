@@ -11,7 +11,7 @@ class JoueurPrincipal extends Component {
       return (
         <div class="container">
             <div class="div_img">
-                <CardVisible handleCard = {this.props.handleAttack} board = {this.props.player.board}/>
+                <CardVisible handleCard={this.props.handleAttack} board = {this.props.player.board}/>
                 Carte visible
             </div>
             <div className="div_img">

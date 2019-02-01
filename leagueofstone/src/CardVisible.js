@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Card from './Card.js'
+import Card from './CardHand.js'
 import './Game.css'
 
 import axios from "axios";
