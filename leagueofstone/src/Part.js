@@ -9,7 +9,8 @@ import { connect } from 'react-redux';class Part extends Component {
      super(props);
      this.state = {
          player1: "",
-         player2: ""      }
+         player2: ""
+       }
  }
   componentDidMount() {
       axios
@@ -35,15 +36,33 @@ import { connect } from 'react-redux';class Part extends Component {
                   console.log(res.data.message);
               }
          });
-  }    render() {
+  }
+
+ handlePlayCard(){
+   axios
+       .get(
+           SERVER_URL + "/match/getMatch?token=" +
+           this.props.sessionToken.token
+       )
+       .then(res => {
+           if (res.data.status === "ok") {
+               console.log(res.data.data);
+               this.props.updateMatch(res.data.data.status, res.data.data.player1, res.data.data.player2);
+           } else {
+               console.log(res.data.message);
+           }
+       });
+ }
+
+      render() {
        return (
            <div className="plateau">
                <div classname="center">
                    <div className="adversaire">
-                       <JoueurAdverse player={this.state.player2}/>
+                       <JoueurAdverse player={this.state.player2} handlePlayCard={this.handlePlayCard}/>
                    </div>
                    <div className="principal">
-                       <JoueurPrincipal player={this.state.player1}/>
+                       <JoueurPrincipal player={this.state.player1} handlePlayCard={this.handlePlayCard}/>
                    </div>
                    {/* <div className="bouton">
                        <div className="timer">
