@@ -22,14 +22,15 @@ class JoueurAdverse extends Component {
                     {this.props.player.deck}</p>
                 </div>
             </div>
+            <div className="hand">
+                {<HandsCards handPlayer={this.props.player.hand}
+                             handlePlayCard={null}/>}
+            </div>
             <div className="div_img">
-                {/* <CardVisible /> */}
+                <CardVisible board={this.props.player.board}
+                             handleCard={this.handleAttackDest}/>
                 Carte Visible
 
-            </div>
-            <div className="hand">
-              {<HandsCards handPlayer={this.props.player.hand}
-                           handlePlayCard={null}/>}
             </div>
         </div>
       );

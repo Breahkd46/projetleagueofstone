@@ -15,11 +15,12 @@ class Part extends Component {
         this.state = {
             player1: "",
             player2: ""
-
         }
         this.handleEndTurn = this.handleEndTurn.bind(this);
         this.handlePickCard = this.handlePickCard.bind(this);
         this.handlePlayCard = this.handlePlayCard.bind(this);
+        this.handleAttackDest = this.handleAttackDest.bind(this)
+        this.handleAttackSource = this.handleAttackSource.bind(this)
     }
 
     componentDidMount() {
@@ -106,33 +107,48 @@ class Part extends Component {
         this.loadMatch()
     }
 
+    handleAttackSource(card) {
+        console.log(card)
+    }
+
+    handleAttackDest(card) {
+        console.log(card)
+    }
+
     render() {
-        return (
-            <div className="newBase">
-                <div className="container">
-                    <div className="row">
-                        <JoueurAdverse player={this.state.player2}/>
-                    </div>
-                    {/*<div className="col">*/}
+        if (this.state.player1 === "") {
+            return (<p>Chargement...</p>);
+        } else {
+            return (
+                <div className="newBase">
+                    <div className="container">
+                        <div className="row">
+                            <JoueurAdverse player={this.state.player2}
+                                           handleAttackDest={this.handleAttackDest}/>
+                        </div>
+                        {/*<div className="col">*/}
                         {/*<button onClick={this.handlePickCard()}>Pioche</button>*/}
-                    {/*</div>*/}
-                    {/*<div className="col">*/}
+                        {/*</div>*/}
+                        {/*<div className="col">*/}
                         {/*<button onClick={this.handleEndTurn()}>Fin du tour</button>*/}
-                    {/*</div>*/}
-                    <div className="row">
-                        <JoueurPrincipal handlePickCard={this.handlePickCard}
-                                         handleEndTurn={this.handleEndTurn}
-                                         handlePlayCard={this.handlePlayCard}
-                                         player={this.state.player1}/>
-                    </div>
-                    <div className="row">
-                        <div className="col">
-                            <ButtonTimer/>
+                        {/*</div>*/}
+                        <div className="row">
+                            <JoueurPrincipal handlePickCard={this.handlePickCard}
+                                             handleEndTurn={this.handleEndTurn}
+                                             handlePlayCard={this.handlePlayCard}
+                                             handleAttackSource={this.handleAttackSource}
+                                             player={this.state.player1}/>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <ButtonTimer/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
     }
 
 }

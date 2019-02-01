@@ -1,32 +1,39 @@
 import React, {Component} from "react";
 import Card from './CardHand.js'
 import './Game.css'
+import axios from "axios";
+import {SERVER_URL} from "./consts";
+import CardHand from "./CardHand";
 
-class CardVisible extends Component{
+class CardVisible extends Component {
 
-  constructor(props){
-    super(props);
-    this.state={
-      tabCard : ['Alistar','Camille', 'Olaf', 'Evelynn','Zed']
+    constructor(props) {
+        super(props);
+        // this.state={
+        //
+        // }
 
+        this.handleClickCard = this.handleClickCard.bind(this)
 
     }
-  }
 
-  poserCard(){
-    //Ajoute la carte de la main au plateau
-    //Ajoute la carte à this.state.tabCard
+    handleClickCard(card) {
+        this.props.handleCard(card);
+    }
 
-  }
-
-  render(){
-    return(
-      <div className='plateau'>
-      {this.state.tabCard.map((champ) =>{
-        return <Card img={champ} name={champ}/>;
-      })}
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className='plateau'>
+                {this.props.board.map((champ, index) =>
+                    <CardHand key={index}
+                              lvl={index + 1}
+                              name={champ.key}
+                              img={champ.key}
+                              onClick={() => this.handleClickCard(champ.key)}
+                    />)}
+            </div>
+        )
+    }
 }
+
 export default CardVisible;

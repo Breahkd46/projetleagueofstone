@@ -16,14 +16,13 @@ class JoueurPrincipal extends Component {
         return (
             <div className="container">
                 <div className="div_img">
-                    {/*<CardVisible board={this.props.player.board}/>*/}
+                    <CardVisible board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
                     Carte visible
                 </div>
                 <div className="div_img">
                     Cartes main
                 </div>
                 <div className="row">
-
                     <div className="col2">
                         <p className="pJoueurP">Joueur {this.props.player.name}</p>
                     </div>
