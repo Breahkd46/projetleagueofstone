@@ -1,17 +1,11 @@
 import React, { Component } from "react";
 import "./stylesheets/Joueur.css";
-import CardVisible from "./CardVisible";
 import HandsCards from "./HandsCards";
-
-import axios from "axios";
-import {SERVER_URL} from "./consts";
-// import Card from "./CardHand.js";
-import { connect } from 'react-redux';
 
 class JoueurPrincipal extends Component {
 
     render() {
-        const statusTurn = this.props.player.turn ? "" : "disabled";
+        // const statusTurn = this.props.player.turn ? "" : "disabled";
 
         return (
             <div className="container">
@@ -24,7 +18,7 @@ class JoueurPrincipal extends Component {
                 </div>
                 <div className="row">
                     <div className="herov1">
-                        <img className="hero" src="/lol2.jpg"/>
+                        <img className="hero"  src="/lol2.jpg"/> //alt='photo lol'
                     </div>
                     <div className="col">
                         <button disabled={!this.props.player.turn}

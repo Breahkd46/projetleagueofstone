@@ -1,19 +1,42 @@
 import React, { Component } from "react";
+import {RELOAD_TIME} from "./consts";
 
 
 class ButtonTimer extends Component {
-    
-    render() {
-      return (
-        <div onLoad={this.decompte}>
-            <div id="Crono"></div>
-        </div>
-        
-      );
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: 0,
+        }
+    }
+    time() {
+        this.setState(state => ({
+            time: state.time + 1
+        }));
+
     }
 
-    
+    componentDidMount() {
+        this.intervalID = setInterval(
+            () => this.reloadMatch(),
+            RELOAD_TIME
+        );
     }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
+    }
+    render() {
+        const timer = `${Math.floor(this.state.time/60)}:${this.state.time % 60}`
+      return (
+
+        <div >
+            {/*onLoad={this.decompte}*/}
+            <div id="Crono">{timer}</div>
+        </div>
+      );
+    }
+}
 
 function decompte(){
     var cpt = 10 ;

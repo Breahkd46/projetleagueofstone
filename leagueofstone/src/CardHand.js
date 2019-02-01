@@ -3,9 +3,9 @@ import "./stylesheets/Card.css";
 
 class CardHand extends Component {
 
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     // flipped() {
     //     return this.props.flipped ? "notflipped" : "flipped";
     // }
