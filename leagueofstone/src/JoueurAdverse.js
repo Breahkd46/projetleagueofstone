@@ -17,7 +17,7 @@ class JoueurAdverse extends Component {
                 <div className="col">
                 </div>
                 <div className="col1">
-                    <p>{console.log(this.props.player.deck)}
+                    <p className="pDeck">{console.log(this.props.player.deck)}
                     {this.props.player.deck}</p>
                 </div>
             </div>

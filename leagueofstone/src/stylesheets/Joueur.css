@@ -33,7 +33,7 @@ div.div_img {
     height: 100%;
 }
 
-p{
+.pDeck{
     font-size: 247%;
     font-family: fantasy;
     color: white;
@@ -83,9 +83,9 @@ p{
     background-image: url(/deck.png);
     border: 3px solid;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     width: 160%;
     height: 695%;
-    background-size: 100% 100%;
     top: 1466%;
 
 }
