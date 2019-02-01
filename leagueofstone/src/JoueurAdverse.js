@@ -12,8 +12,8 @@ class JoueurAdverse extends Component {
 
     render() {
       return (
-          <div>
-            <div className="hero">
+        <div className="container">
+            <div className="row">
                 <div className="col">
                     <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
@@ -22,11 +22,16 @@ class JoueurAdverse extends Component {
                     {this.props.player.deck}</p>
                 </div>
             </div>
-            <div className="visible">
+            <div className="div_img">
+                {/* <CardVisible /> */}
                 Carte Visible
+
             </div>
+            <div className="hand">
+              {<HandsCards handPlayer={this.props.player.hand}
+                           handlePlayCard={null}/>}
             </div>
-            
+        </div>
       );
     }
 

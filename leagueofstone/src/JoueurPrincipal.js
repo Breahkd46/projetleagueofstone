@@ -5,7 +5,7 @@ import HandsCards from "./HandsCards";
 
 import axios from "axios";
 import {SERVER_URL} from "./consts";
-import Card from "./CardHand.js";
+// import Card from "./CardHand.js";
 import { connect } from 'react-redux';
 
 class JoueurPrincipal extends Component {
@@ -23,12 +23,12 @@ class JoueurPrincipal extends Component {
                 <div className="col2">
                  <p className="pJoueurP">Joueur {this.props.player.name}</p>
                 </div>
-                <div className="col3">
+                <div className="hand">
+                    <HandsCards handPlayer={this.props.player.hand}
+                                handlePlayCard={this.props.handlePlayCard}/>
                 </div>
             </div>
-            
-        </div>
-      );
+        );
     }
 
 }

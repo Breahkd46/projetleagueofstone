@@ -105,30 +105,28 @@
 
 .id1{
     position: absolute;
-    left: -348%;
+    left: 0%;
     width: 20%;
     height: 100%;
-    
 }
 .id2{
     position: absolute;
-    left: -169%;
+    left: 20%;
     width: 20%;
     height: 100%;
 }
 .id3{
     position: absolute;
-    left: 3%;
+    left: 40%;
     width: 20%;
     height: 100%;
 }
 .id4{
     position: absolute;
-    left: 177%;
+    left: 60%;
     width: 20%;
     height: 100%;
 }
-
 .id5{
     position: absolute;
     left: 80%;
@@ -137,10 +135,8 @@
 }
 .hausementepaule{
     background-size: 100% 100%;
-    width: 725%;
-    height: 700%;
-    position: absolute;
-    top: 276%;
+    width: 100%;
+    height: 43%;
 
     
 }
