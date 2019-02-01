@@ -15,6 +15,7 @@ class JoueurAdverse extends Component {
           <div>
             <div className="hero">
                 <div className="col">
+                    <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
                 <div className="col1">
                     <p className="pDeck">{console.log(this.props.player.deck)}

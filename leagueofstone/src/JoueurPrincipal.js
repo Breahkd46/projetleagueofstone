@@ -21,6 +21,7 @@ class JoueurPrincipal extends Component {
             </div>
             <div>
                 <div className="col2">
+                 <p className="pJoueurP">Joueur {this.props.player.name}</p>
                 </div>
                 <div className="col3">
                 </div>

@@ -144,3 +144,12 @@
 
     
 }
+
+.nom{
+    font-size: 200%;
+    font-family: fantasy;
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: -25%;
+}
