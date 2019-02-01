@@ -6,9 +6,6 @@ import {connect} from "react-redux";
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
-import HandsCards from "./HandsCards";
-import JoueurAdverse from "./JoueurAdverse";
-import JoueurPrincipal from "./JoueurPrincipal";
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
