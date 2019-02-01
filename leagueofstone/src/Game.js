@@ -43,7 +43,7 @@ class Game extends Component {
   render() {
     if(this.props.matchmaking.match !== null) {
       return (
-          <div>
+          <div className="match">
             <Match />
           </div>
       );

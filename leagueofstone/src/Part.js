@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./stylesheets/Part.css";
-
-import ButtonTimer from "./ButtonTimer";
+import "./stylesheets/Joueur.css";import ButtonTimer from "./ButtonTimer";
 import JoueurAdverse from "./JoueurAdverse";
 import JoueurPrincipal from "./JoueurPrincipal";
 
@@ -130,7 +129,21 @@ class Part extends Component {
         );
     }
 
-}
+ handlePlayCard(){
+   axios
+       .get(
+           SERVER_URL + "/match/getMatch?token=" +
+           this.props.sessionToken.token
+       )
+       .then(res => {
+           if (res.data.status === "ok") {
+               console.log(res.data.data);
+               this.props.updateMatch(res.data.data.status, res.data.data.player1, res.data.data.player2);
+           } else {
+               console.log(res.data.message);
+           }
+       });
+ }
 
 const mapStateToProps = state => {
     return {
@@ -139,4 +152,4 @@ const mapStateToProps = state => {
     }
 };
 
-  export default connect(mapStateToProps, null)(Part)
+export default connect(mapStateToProps, null)(Part)
