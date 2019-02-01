@@ -15,7 +15,7 @@ class JoueurAdverse extends Component {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <img src="/lol.jpg"/>
+                    <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
                 <div className="col1">
                     <p className="pDeck">{console.log(this.props.player.deck)}

@@ -81,12 +81,12 @@ img{
 
 .col3{
     position: absolute;
-    left: 448%;
+    left: 409%;
     background-image: url(/deck.png);
     border: 3px solid;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 160%;
+    width: 132%;
     height: 695%;
     top: 1466%;
 
@@ -99,4 +99,18 @@ img{
     position: absolute;
     top: 34%;
     left: 45%;
+}
+
+.pJoueurP{
+    font-size: 240%;
+    font-family: fantasy;
+    color: white;
+    text-align: center;
+}
+
+.pJoueurA{
+    font-size: 240%;
+    font-family: fantasy;
+    color: white;
+    text-align: center;
 }
