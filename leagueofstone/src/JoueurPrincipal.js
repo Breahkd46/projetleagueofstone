@@ -43,7 +43,8 @@ class JoueurPrincipal extends Component {
                     </div>
                 </div>
                 <div className="hand">
-                    <HandsCards handPlayer={this.props.player.hand}/>
+                    <HandsCards handPlayer={this.props.player.hand}
+                                handlePlayCard={this.props.handlePlayCard}/>
                 </div>
             </div>
         );
