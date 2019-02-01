@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import Logout from "./Logout";
-import Unsubscribe from './Unsubscribe';
 import Participate from './Participate';
 import HandsCards from "./HandsCards";
 import Part from './Part';
@@ -62,9 +60,7 @@ class Game extends Component {
                     return (<ListeCartes />);
                 default:
                     return (<div><p>Error</p></div>)
-        }
-
-
+            }
         }
       return (
         <div className="App">
@@ -79,9 +75,6 @@ class Game extends Component {
             <p>Bienvenue</p>
           </header>
             <Participate />
-          <div className="base">
-            <Unsubscribe />
-          </div>
           <div className="plateau">
             <Part />
           </div>

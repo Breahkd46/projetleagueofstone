@@ -1,10 +1,10 @@
-.oui{
+.oui {
     overflow: hidden;
-    width: 80%;
-    margin : 24px;
+    width: 75%;
+    margin: 30px;
 }
 
-.oui img{
+.oui img {
     background-size: cover;
     width: 233%;
     margin-left:-117%;
