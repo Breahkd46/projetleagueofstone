@@ -9,15 +9,19 @@ class CardVisible extends Component {
 
     constructor(props) {
         super(props);
-        // this.state={
-        //
-        // }
+        this.state={
+            selectedCard: "",
+        }
 
         this.handleClickCard = this.handleClickCard.bind(this)
 
     }
 
     handleClickCard(card) {
+        this.setState({
+            selectedCard: card,
+        })
+        console.log(card);
         this.props.handleCard(card);
     }
 
@@ -26,10 +30,11 @@ class CardVisible extends Component {
             <div className='plateau'>
                 {this.props.board.map((champ, index) =>
                     <CardHand key={index}
+                              className={this.state.selectedCard === champ.key?"selectedCard":""}
                               lvl={index + 1}
                               name={champ.key}
                               img={champ.key}
-                              onClick={() => this.handleClickCard(champ.key)}
+                              click={() => this.handleClickCard(champ.key)}
                     />)}
             </div>
         )

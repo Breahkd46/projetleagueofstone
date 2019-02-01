@@ -12,7 +12,7 @@ class JoueurPrincipal extends Component {
 
     render() {
         // const statusTurn = this.props.player.turn ? "" : "disabled";
-
+        console.log(this.props.handleAttackSource)
         return (
             <div className="container">
                 <div className="div_img">

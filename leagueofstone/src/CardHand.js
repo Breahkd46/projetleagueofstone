@@ -14,7 +14,7 @@ class CardHand extends Component {
         let id = "id"+this.props.lvl;
         let img = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+this.props.img+"_0.jpg";
         return (
-            <div className={id}>
+            <div className={id} onClick={this.props.click}>
             <div className="hausementepaule" style={{backgroundImage: "url("+img+")"}}>
                 <p className="nom">{this.props.name}</p>
             </div>

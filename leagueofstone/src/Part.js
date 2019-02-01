@@ -14,7 +14,9 @@ class Part extends Component {
         super(props);
         this.state = {
             player1: "",
-            player2: ""
+            player2: "",
+            attackSrc: "",
+            attackDest: "",
         }
         this.handleEndTurn = this.handleEndTurn.bind(this);
         this.handlePickCard = this.handlePickCard.bind(this);
@@ -103,17 +105,71 @@ class Part extends Component {
         });
         this.loadMatch();
     }
+
     handlePlayCard() {
         this.loadMatch()
     }
 
-    handleAttackSource(card) {
+    attack() {
+        console.log(this.state.attackSrc)
+        console.log(this.state.attackDest)
+        if (this.state.attackSrc !== "" &&
+            this.state.attackDest !== "") {
+            if (this.state.attackDest === "hero") {
+                axios
+                    .get(
+                        SERVER_URL + "/match/attackPlayer?token=" +
+                        this.props.sessionToken.token +
+                        "&card=" +
+                        this.state.attackSrc
+                    )
+                    .then(res => {
+                        if (res.data.status === "ok") {
+                            console.log(res.data.data);
+                            // this.props.history.push(process.env.PUBLIC_URL + "/");
+                        } else {
+                            console.log(res.data.message);
+                        }
+                    });
+            } else {
+                axios
+                    .get(
+                        SERVER_URL + "/match/attack?token=" +
+                        this.props.sessionToken.token +
+                        "&card=" +
+                        this.state.attackSrc +
+                        "&ennemyCard=" +
+                        this.state.attackDest
+                    )
+                    .then(res => {
+                        if (res.data.status === "ok") {
+                            console.log(res.data.data);
+
+                            // this.props.history.push(process.env.PUBLIC_URL + "/");
+                        } else {
+                            console.log(res.data.message);
+                        }
+                    });
+            }
+        }
+    }
+
+    async handleAttackSource(card) {
         console.log(card)
+        await this.setState({
+            attackSrc: card
+        })
+        this.attack()
     }
 
     handleAttackDest(card) {
         console.log(card)
+        this.setState({
+            attackDest: card
+        })
+        this.attack()
     }
+
 
     render() {
         if (this.state.player1 === "") {

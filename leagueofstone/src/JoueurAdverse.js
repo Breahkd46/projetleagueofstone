@@ -14,7 +14,7 @@ class JoueurAdverse extends Component {
       return (
         <div className="container">
             <div className="row">
-                <div className="col">
+                <div className="col" onClick={() => this.props.handleAttackDest("hero")}>
                     <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
                 <div className="col1">
@@ -28,8 +28,7 @@ class JoueurAdverse extends Component {
             </div>
             <div className="div_img">
                 <CardVisible board={this.props.player.board}
-                             handleCard={this.handleAttackDest}/>
-                Carte Visible
+                             handleCard={this.props.handleAttackDest}/>
 
             </div>
         </div>
