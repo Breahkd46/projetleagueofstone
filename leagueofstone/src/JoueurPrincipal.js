@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 class JoueurPrincipal extends Component {
 
     render() {
-
         const statusTurn = this.props.player.turn ? "" : "disabled";
 
         return (
@@ -44,7 +43,7 @@ class JoueurPrincipal extends Component {
                     </div>
                 </div>
                 <div className="hand">
-                    <HandsCards handPlayer={this.props.player.hand} handlePlayCard={this.props.handlePlayCard}/>
+                    <HandsCards handPlayer={this.props.player.hand}/>
                 </div>
             </div>
         );
