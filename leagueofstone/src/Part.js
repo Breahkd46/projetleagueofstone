@@ -19,6 +19,7 @@ class Part extends Component {
         }
         this.handleEndTurn = this.handleEndTurn.bind(this);
         this.handlePickCard = this.handlePickCard.bind(this);
+        this.handlePlayCard = this.handlePlayCard.bind(this);
     }
 
     componentDidMount() {
@@ -101,6 +102,9 @@ class Part extends Component {
         });
         this.loadMatch();
     }
+    handlePlayCard() {
+        this.loadMatch()
+    }
 
     render() {
         return (
@@ -118,6 +122,7 @@ class Part extends Component {
                     <div className="row">
                         <JoueurPrincipal handlePickCard={this.handlePickCard}
                                          handleEndTurn={this.handleEndTurn}
+                                         handlePlayCard={this.handlePlayCard}
                                          player={this.state.player1}/>
                     </div>
                     <div className="row">

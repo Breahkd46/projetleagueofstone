@@ -28,7 +28,8 @@ class JoueurAdverse extends Component {
 
             </div>
             <div className="hand">
-              {<HandsCards handPlayer={this.props.player.hand}/>}
+              {<HandsCards handPlayer={this.props.player.hand}
+                           handlePlayCard={null}/>}
             </div>
         </div>
       );
