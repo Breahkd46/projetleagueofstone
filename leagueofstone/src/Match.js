@@ -6,9 +6,6 @@ import {connect} from "react-redux";
 import './App.css'
 import './Signin.css'
 import MakeDeck from "./MakeDeck";
-import HandsCards from "./HandsCards";
-import JoueurAdverse from "./JoueurAdverse";
-import JoueurPrincipal from "./JoueurPrincipal";
 // Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
@@ -96,7 +93,15 @@ class Match extends Component {
             console.log(this.props.matchmaking.match.player2)
             console.log(this.props.match.player1.hand)
             return (
-                <div className="part">
+                <div >
+                    {/*<header >*/}
+                        {/*<h2>League of Stones</h2>*/}
+                        {/*<p>Bienvenue</p> <br />*/}
+                        {/*<p> Et c est parti </p>*/}
+                        {/*<div> {this.props.matchmaking.match.player1.name}</div>*/}
+                        {/*<p> CONTRE </p>*/}
+                        {/*<div> {this.props.matchmaking.match.player2.name} </div>*/}
+                    {/*</header>*/}
                     <Part />
                     {/*<div> <JoueurAdverse player={this.props.match.player2} /> </div>*/}
                     {/*<div> <JoueurPrincipal player={this.props.match.player1} /> </div>*/}

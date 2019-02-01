@@ -12,20 +12,25 @@ class JoueurAdverse extends Component {
 
     render() {
       return (
-          <div>
-            <div className="hero">
+        <div className="container">
+            <div className="row">
                 <div className="col">
+                    <img src="/lol.jpg"/>
                 </div>
                 <div className="col1">
                     <p className="pDeck">{console.log(this.props.player.deck)}
                     {this.props.player.deck}</p>
                 </div>
             </div>
-            <div className="visible">
+            <div className="div_img">
+                {/* <CardVisible /> */}
                 Carte Visible
+
             </div>
+            <div className="hand">
+              {<HandsCards handPlayer={this.props.player.hand}/>}
             </div>
-            
+        </div>
       );
     }
 

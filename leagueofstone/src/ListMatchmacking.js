@@ -28,8 +28,8 @@ class ListMatchmacking extends Component {
 
   componentDidMount() {
     this.intervalID = setInterval(
-      () => this.reloadRequests(),
-      RELOAD_TIME
+        () => this.reloadRequests(),
+        RELOAD_TIME
     );
     this.reloadRequests();
   }
