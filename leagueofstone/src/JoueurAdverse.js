@@ -17,6 +17,7 @@ class JoueurAdverse extends Component {
                 <div className="col" onClick={() => this.props.handleAttackDest("hero")}>
                     <p className="pJoueurA">Joueur {this.props.player.name}</p>
                 </div>
+                <p>JA : {this.props.player.hp}</p>
                 <div className="col1">
                     <p className="pDeck">{console.log(this.props.player.deck)}
                     {this.props.player.deck}</p>
