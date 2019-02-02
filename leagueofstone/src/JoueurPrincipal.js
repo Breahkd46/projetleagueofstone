@@ -11,17 +11,36 @@ import { connect } from 'react-redux';
 class JoueurPrincipal extends Component {
 
     render() {
-      return (
-        <div>
-            <div>
-                Carte visible
-            </div>
-            <div>
-              {<HandsCards handPlayer={this.props.player.hand}/>}
-            </div>
-            <div>
-                <div className="col2">
-                 <p className="pJoueurP">Joueur {this.props.player.name}</p>
+        // const statusTurn = this.props.player.turn ? "" : "disabled";
+        console.log(this.props.handleAttackSource)
+        return (
+            <div className="container">
+                <div className="div_img">
+                    <CardVisible board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
+                    Carte visible
+                </div>
+                <div className="div_img">
+                    Cartes main
+                </div>
+                <div className="row">
+                    <div className="col2">
+                        <p className="pJoueurP">Joueur {this.props.player.name}</p>
+                    </div>
+                    <div className="col">
+                        <button disabled={!this.props.player.turn}
+                                onClick={this.props.handlePickCard}>
+                            Pioche
+                        </button>
+                    </div>
+                    <div className="col">
+                        <button disabled={!this.props.player.turn}
+                                onClick={this.props.handleEndTurn}>
+                            Fin du tour
+                        </button>
+                    </div>
+                    <div className="deck">
+                        Deck
+                    </div>
                 </div>
                 <div className="hand">
                     <HandsCards handPlayer={this.props.player.hand}

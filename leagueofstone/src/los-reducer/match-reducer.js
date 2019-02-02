@@ -13,6 +13,12 @@ function matchReducer(state = initialState, action) {
               player1: action.player1,
               player2: action.player2
             };
+        case "REMOVE_MATCH":
+            return {
+                status : "",
+                player1: null,
+                player2: null
+            }
         default:
             return state;
     }
