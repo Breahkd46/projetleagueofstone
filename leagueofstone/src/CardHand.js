@@ -17,6 +17,9 @@ class CardHand extends Component {
             <div className={id} onClick={this.props.click}>
             <div className="hausementepaule" style={{backgroundImage: "url("+img+")"}}>
                 <p className="nom">{this.props.name}</p>
+                <div className="points"><p>A : {this.props.attack}</p>
+                <p>D : {this.props.def}</p></div>
+                
             </div>
                 
             </div>

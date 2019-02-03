@@ -153,3 +153,9 @@
     position: absolute;
     top: -25%;
 }
+
+.points{
+    position: absolute;
+    background: #601006;
+    top: 39%;
+}
