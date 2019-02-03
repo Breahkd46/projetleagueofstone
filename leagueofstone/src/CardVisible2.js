@@ -3,7 +3,7 @@ import Card from './CardHand.js'
 import './Game.css'
 import axios from "axios";
 import {SERVER_URL} from "./consts";
-import CardHand3 from "./CardHand3";
+import CardHand2 from "./CardHand2";
 
 class CardVisible extends Component {
 
@@ -29,7 +29,7 @@ class CardVisible extends Component {
         return (
             <div>
                 {this.props.board.map((champ, index) =>
-                    <CardHand3 key={index}
+                    <CardHand2 key={index}
                               className={this.state.selectedCard === champ.key?"selectedCard":""}
                               lvl={index + 1}
                               name={champ.key}
