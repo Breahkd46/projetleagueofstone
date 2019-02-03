@@ -138,11 +138,12 @@ class MakeDeck extends Component {
                         <div className="cadre TabCardsToAdd containerList">
                             <p className={"titreList"}>Mon deck</p>
                             <div className={"containerMakeDeck"}>
+                                {console.log(this.state.deck)}
                             {this.state.deck.map((champ, index) =>
                                 <Card className={"item"} key={index}
                                       name={champ.name}
                                       img={champ.key}
-                                      info={champ.info}
+                                      info={champ.stats}
                                       onClick={() => this.handleClickToCards(index)}/>
                             )}
                             </div>
