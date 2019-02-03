@@ -14,38 +14,35 @@ class JoueurPrincipal extends Component {
         // const statusTurn = this.props.player.turn ? "" : "disabled";
         console.log(this.props.handleAttackSource)
         return (
-            <div className="container">
-                <div className="div_img">
+            <div>
+                <div>
                     <CardVisible board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
                     Carte visible
                 </div>
-                <div className="div_img">
-                    Cartes main
-                </div>
-                <div className="row">
+                <div>
                     <div className="col2">
                         <p className="pJoueurP">Joueur {this.props.player.name}</p>
                     </div>
-                    <div className="col">
+                    <div>
                         <button disabled={!this.props.player.turn}
                                 onClick={this.props.handlePickCard}>
                             Pioche
                         </button>
                     </div>
-                    <div className="col">
+                    <div className="col3">
+                    </div>
+                </div>
+                <div>
+                    <HandsCards handPlayer={this.props.player.hand}
+                                handlePlayCard={this.props.handlePlayCard}/>
+                </div>
+                
+                <div>
                         <button disabled={!this.props.player.turn}
                                 onClick={this.props.handleEndTurn}>
                             Fin du tour
                         </button>
                     </div>
-                    <div className="deck">
-                        Deck
-                    </div>
-                </div>
-                <div className="hand">
-                    <HandsCards handPlayer={this.props.player.hand}
-                                handlePlayCard={this.props.handlePlayCard}/>
-                </div>
             </div>
         );
     }

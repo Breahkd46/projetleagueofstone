@@ -27,7 +27,7 @@ class CardVisible extends Component {
 
     render() {
         return (
-            <div className='plateau'>
+            <div>
                 {this.props.board.map((champ, index) =>
                     <CardHand key={index}
                               className={this.state.selectedCard === champ.key?"selectedCard":""}
