@@ -22,6 +22,7 @@ class JoueurPrincipal extends Component {
                 <div>
                     <div className="col2">
                         <p className="pJoueurP">Joueur {this.props.player.name}</p>
+                        <p>JP : {this.props.player.hp}</p>
                     </div>
                     <div>
                         <button disabled={!this.props.player.turn}
