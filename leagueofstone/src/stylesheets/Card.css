@@ -105,7 +105,7 @@
 .flip .card .front {
     /*position: absolute;*/
     z-index: 1;
-    background: white;
+    /*background: white;*/
     color: black;
     cursor: pointer;
     background-color: #23555c;
