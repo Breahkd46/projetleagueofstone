@@ -44,6 +44,7 @@ class JoueurPrincipal extends Component {
                         </button>
                     </div>
             </div>
+        </div>
         );
     }
 
