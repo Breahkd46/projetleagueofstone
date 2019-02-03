@@ -7,7 +7,9 @@ class DownCard extends Component {
 
     render() {
         return (
-          <div>Carte face cachée</div>
+          <div>
+              <img src={"dos-carte.png"} />
+              Carte face cachée</div>
         );
     }
 }
