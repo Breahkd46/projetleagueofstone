@@ -13,14 +13,16 @@ class Card extends Component {
                         <img className="" alt={`${this.props.name} card`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.props.img}_0.jpg`}/>
                         <div className="card-text">
                             <div className={"card-text-item-left"}>
-                                <p>A : {this.props.info?this.props.info.attackdamage:''}</p>
+                                <img src={"swords.png"} />
+                                <p>{this.props.info.attackdamage}</p>
                                 {/*<p>M : {this.props.info.magic}</p>*/}
                             </div>
                             <div className={"card-text-title"}>
                                 <p>{this.props.name}</p>
                             </div>
                             <div className={"card-text-item-right"}>
-                                <p>D : {this.props.info.armor}</p>
+                                <img src={"security-badge.png"} />
+                                <p>{this.props.info.armor}</p>
                                 {/*<p>Dif : {this.props.info.difficulty}</p>*/}
                             </div>
                         </div>
