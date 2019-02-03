@@ -25,26 +25,27 @@ class HandsCards extends Component {
         this.handleClickCard = this.handleClickCard.bind(this);
     }
 
-    creatHand = () => {
-        let handfinal = []
-        let handTemp = this.props.handPlayer
-        let i = 1;
-        for(let c in handTemp){
-            handfinal.push(
-                <CardHand key={c}
-                lvl={i}
-                name={handTemp[c]['name']}
-                img={handTemp[c]['name']}
-                onClick={() => this.handleClickCard(handTemp[c]['name'])}
-                />
-            );
-            i++
-        }
-        this.setState({
-            hand: handfinal,
-            cardPlayed: "",
-        })
-    }
+    // creatHand = () => {
+    //     let handfinal = []
+    //     let handTemp = this.props.handPlayer
+    //     let i = 1;
+    //     for(let c in handTemp){
+    //         handfinal.push(
+    //             <CardHand key={c}
+    //             lvl={i}
+    //             name={handTemp[c]['name']}
+    //             img={handTemp[c]['name']}
+    //             info={handTemp[c]['stats']}
+    //             onClick={() => this.handleClickCard(handTemp[c]['name'])}
+    //             />
+    //         );
+    //         i++
+    //     }
+    //     this.setState({
+    //         hand: handfinal,
+    //         cardPlayed: "",
+    //     })
+    // }
 
     createHandsCardsJ2 = () => {
         let handJ2 = []
@@ -96,6 +97,8 @@ class HandsCards extends Component {
                                   lvl={index + 1}
                                   name={card.name}
                                   img={card.key}
+                                  attack={card.stats.attackdamage}
+                                  def={card.stats.armor}
                                   click={() => this.handleClickCard(card.key)}
                         />
                     )}
