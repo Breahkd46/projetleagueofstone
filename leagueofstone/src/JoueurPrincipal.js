@@ -25,13 +25,12 @@ class JoueurPrincipal extends Component {
                         <p>JP : {this.props.player.hp}</p>
                     </div>
                     <div>
-                        <button disabled={!this.props.player.turn}
+                        <button className="col3" disabled={!this.props.player.turn || (this.props.player.turn && this.props.player.cardPicked)}
                                 onClick={this.props.handlePickCard}>
-                            Pioche
                         </button>
                     </div>
-                    <div className="col3">
-                    </div>
+                    {/*<div className="col3" >*/}
+                    {/*</div>*/}
                 </div>
                 <div>
                     <HandsCards handPlayer={this.props.player.hand}
