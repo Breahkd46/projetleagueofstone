@@ -15,6 +15,12 @@ class JoueurPrincipal extends Component {
         console.log(this.props.handleAttackSource)
         return (
             <div>
+                 <div className="fin">
+                        <button disabled={!this.props.player.turn}
+                                onClick={this.props.handleEndTurn}>
+                            Fin du tour
+                        </button>
+                    </div>
                 <div className="boardPrincipal">
                     <CardVisible2 board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
                 </div>
@@ -36,12 +42,7 @@ class JoueurPrincipal extends Component {
                                 handlePlayCard={this.props.handlePlayCard}/>
                 </div>
                 
-                <div>
-                        <button disabled={!this.props.player.turn}
-                                onClick={this.props.handleEndTurn}>
-                            Fin du tour
-                        </button>
-                    </div>
+               
             </div>
         );
     }

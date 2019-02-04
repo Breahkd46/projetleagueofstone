@@ -52,7 +52,8 @@
 	margin:30px;
 	position: absolute;
 	top: 45%;
-    left: 45%;
+	left: 45%;
+	margin-top: 0%;
 }
 
 .bouton{
