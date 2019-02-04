@@ -24,8 +24,8 @@ class JoueurPrincipal extends Component {
                         <p className="pv">JP : {this.props.player.hp}</p>
                     </div>
                     <div>
-                        <button className="col3" disabled={!this.props.player.turn || (this.props.player.turn && this.props.player.cardPicked)}
-                                onClick={this.props.handlePickCard}>
+                        <button className="col3 pDeck" disabled={!this.props.player.turn || (this.props.player.turn && this.props.player.cardPicked)}
+                                onClick={this.props.handlePickCard}> {this.props.player.deck}
                         </button>
                     </div>
                     {/*<div className="col3" >*/}
