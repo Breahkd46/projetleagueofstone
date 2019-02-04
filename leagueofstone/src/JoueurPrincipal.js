@@ -16,13 +16,12 @@ class JoueurPrincipal extends Component {
         return (
             <div>
                 <div className="boardPrincipal">
-                    cartes visibles
                     <CardVisible2 board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
                 </div>
                 <div>
                     <div className="col2">
                         <p className="pJoueurP">Joueur {this.props.player.name}</p>
-                        <p>JP : {this.props.player.hp}</p>
+                        <p className="pv">JP : {this.props.player.hp}</p>
                     </div>
                     <div>
                         <button className="col3" disabled={!this.props.player.turn || (this.props.player.turn && this.props.player.cardPicked)}

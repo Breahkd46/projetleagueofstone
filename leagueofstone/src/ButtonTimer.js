@@ -30,7 +30,7 @@ class ButtonTimer extends Component {
         const timer = `${Math.floor(this.state.time/60)}:${this.state.time % 60}`
       return (
 
-        <div >
+        <div className="chrono">
             {/*onLoad={this.decompte}*/}
             <div id="Crono">{timer}</div>
         </div>
