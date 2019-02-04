@@ -144,6 +144,10 @@ class Part extends Component {
                     // this.props.history.push(process.env.PUBLIC_URL + "/");
                 } else {
                     console.log(res.data.message);
+                    if (res.data.message === 'There is no match associated') {
+                        this.props.removeMatch("");
+                        this.props.removeMatchmaking("");
+                    }
                 }
             });
     }
