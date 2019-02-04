@@ -120,6 +120,8 @@
 /*cursor: pointer;*/
 /*}*/
 
+/*Css carte à la position 1*/
+
 .id1{
     position: absolute;
     left: -389%;
@@ -127,18 +129,24 @@
     height: 31%;
     
 }
+
+/*Css carte à la position 2*/
 .id2{
     position: absolute;
     left: -169%;
     width: 20%;
     height: 31%;
 }
+
+/*Css carte à la position 3*/
 .id3{
     position: absolute;
     left: 3%;
     width: 20%;
     height: 31%;
 }
+
+/*Css carte à la position 4*/
 .id4{
     position: absolute;
     left: 177%;
@@ -146,13 +154,17 @@
     height: 31%;
 }
 
+
+/*Css carte à la position 5*/
 .id5{
     position: absolute;
     left: 348%;
     width: 20%;
     height: 31%;
 }
-.hausementepaule{
+
+/*Css carte de la main du joueur principal*/
+.main{
     background-size: 100% 100%;
     width: 980%;
     height: 1332%;
@@ -162,6 +174,7 @@
     
 }
 
+/*Css nom des champions*/
 .nom{
     font-size: 200%;
     font-family: fantasy;
@@ -171,6 +184,8 @@
     top: -25%;
 }
 
+
+/*Css points d'attaque et dde défense des champions*/
 .points{
     background: #601006;
     top: 32%;
@@ -178,6 +193,7 @@
     border-radius: 10%;
 }
 
+/*Css carte plateau adversaire*/
 .visibleAdverse{
     background-size: 100% 100%;
     width: 576%;
@@ -186,6 +202,7 @@
     border-radius: 26%;
 }
 
+/*Css carte plateau joueur principal*/
 .visiblePrincipal{
     background-size: 100% 100%;
     height: 1261%;

@@ -33,6 +33,7 @@ img{
     height: 100%;
 }
 
+/*Css nombre de cartes restantes adversaire*/
 .pDeck{
     font-size: 247%;
     font-family: fantasy;
@@ -40,6 +41,7 @@ img{
     text-align: center;
 }
 
+/*Css avatar joueur adversaire*/
 .col{
     position: absolute;
     left: 25%;
@@ -51,6 +53,7 @@ img{
     border-radius: 10%;
 }
 
+/*Css deck joueur adversaire*/
 .col1{
     position: absolute;
     left: 75%;
@@ -66,6 +69,7 @@ img{
     border-radius: 10%;
 }
 
+/*Css avatar joueur principal*/
 .col2{
     position: absolute;
     left: -340%;
@@ -80,6 +84,7 @@ img{
     background-size: 100% 100%;
 }
 
+/*Css deck joueur principal*/
 .col3{
     position: absolute;
     left: 409%;
@@ -101,6 +106,7 @@ img{
     height: 4%;
 }
 
+/*Css points de vie joueur principal*/
 .pJoueurP{
     font-size: 139%;
     font-family: fantasy;
@@ -109,6 +115,7 @@ img{
     margin-bottom: 0%;
 }
 
+/*Css points de vie joueur adversaire*/
 .pJoueurA{
     font-size: 162%;
 
@@ -119,8 +126,4 @@ img{
 .pv{
     position: absolute;
     top: 84%;
-}
-
-.fin{
-    
 }
