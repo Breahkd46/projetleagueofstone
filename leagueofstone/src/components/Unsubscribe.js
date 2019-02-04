@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 
-// import logo from "./logo.svg";
 import axios from "axios";
 
 // Redux
 import { connect } from 'react-redux';
-import removeTokenSession from './actions/removeTokenSession'
+import removeTokenSession from '../actions/removeTokenSession'
 
 import { SERVER_URL } from "./consts";
-import "./App.css";
-import "./Signin.css";
+import "../stylesheets/App.css";
+import "../stylesheets/Signin.css";
 
 class Unsubscribe extends Component {
   constructor(props) {

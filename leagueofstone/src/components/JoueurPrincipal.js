@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import "./stylesheets/Joueur.css";
-import CardVisible2 from "./CardVisible2";
-import HandsCards from "./HandsCards";
 
-import axios from "axios";
-import {SERVER_URL} from "./consts";
-// import Card from "./CardHand.js";
+import axios from 'axios';
+import {SERVER_URL} from './consts';
 import { connect } from 'react-redux';
+
+import "../stylesheets/Joueur.css";
+import CardVisible2 from "./CardVisible2.js";
+import HandsCards from "./HandsCards.js";
 
 class JoueurPrincipal extends Component {
 
     render() {
-        // const statusTurn = this.props.player.turn ? "" : "disabled";
         console.log(this.props.handleAttackSource)
         return (
             <div>
@@ -35,7 +34,7 @@ class JoueurPrincipal extends Component {
                     <HandsCards handPlayer={this.props.player.hand}
                                 handlePlayCard={this.props.handlePlayCard}/>
                 </div>
-                
+
                 <div>
                         <button disabled={!this.props.player.turn}
                                 onClick={this.props.handleEndTurn}>

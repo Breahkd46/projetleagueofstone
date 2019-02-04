@@ -2,14 +2,14 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import initMatchmaking from './actions/initMatchmaking';
+import initMatchmaking from '../actions/initMatchmaking';
 
 // Requete Server
-import axios from "axios";
-import { SERVER_URL } from "./consts";
+import axios from 'axios';
+import { SERVER_URL } from './consts';
 
-import "./Signin.css"
-import setMatchmaking from "./actions/setMatchmaking";
+import '../stylesheets/Signin.css'
+import setMatchmaking from '../actions/setMatchmaking';
 
 class ButtonParticipate extends Component {
 

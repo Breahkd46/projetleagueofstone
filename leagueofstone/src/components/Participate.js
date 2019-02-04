@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 
-import ButtonParticipate from './ButtonParticipate';
-import ButtonUnParticipate from './ButtonUnParticipate';
-import ListMatchmacking from './ListMatchmacking';
-import ListRequest from './ListRequest';
-
 // Redux
 import { connect } from 'react-redux';
-import setMatchmaking from './actions/setMatchmaking';
-import updateMatchmakingRequest from "./actions/updateMatchmakingRequest";
-
-// import setMatch from './actions/setMatch';
+import setMatchmaking from '../actions/setMatchmaking';
+import updateMatchmakingRequest from "../actions/updateMatchmakingRequest";
 
 // Requete Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
+
+import ButtonParticipate from './ButtonParticipate.js';
+import ButtonUnParticipate from './ButtonUnParticipate.js';
+import ListMatchmacking from './ListMatchmacking.js';
+import ListRequest from './ListRequest.js';
 
 
 class Participate extends Component {
@@ -53,8 +51,6 @@ class Participate extends Component {
               this.props.setMatchmaking(res.data.data.match);
 
             }
-
-            // this.props.history.push(process.env.PUBLIC_URL + "/");
           } else {
             console.log(res.data.message);
           }

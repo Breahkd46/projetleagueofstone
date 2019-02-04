@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 
-import Participate from './Participate';
-
 // Redux
 import { connect } from 'react-redux';
-// import setMatch from './actions/updateMatch';
 
-import "./Game.css";
-import Match from "./Match";
-import Compte from "./Compte";
-import ListeCartes from "./ListeCartes";
+import '../stylesheets/Game.css';
+import Match from './Match.js';
+import Compte from './Compte.js';
+import ListeCartes from './ListeCartes.js';
+import Participate from './Participate.js';
 
 class Game extends Component {
     constructor(props) {
@@ -89,11 +87,4 @@ const mapStateToProps = state => {
   }
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     setMatch: matchmakingId => {
-//       dispatch(setMatch(matchmakingId))
-//     }
-//   }
-// };
 export default connect(mapStateToProps,null)(Game)

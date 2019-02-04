@@ -3,7 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import { SERVER_URL } from "./consts";
-import "./Signin.css";
+
+import "../stylesheets/Signin.css";
 
 class Signup extends Component {
   constructor(props) {

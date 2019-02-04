@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 
-// import logo from "./logo.svg";
-
 // Requete Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 // Redux
 import { connect } from 'react-redux';
-import removeTokenSession from './actions/removeTokenSession'
+import removeTokenSession from '../actions/removeTokenSession'
 
-import "./App.css";
+import "../stylesheets/App.css";
 
 class Logout extends Component {
   constructor(props) {

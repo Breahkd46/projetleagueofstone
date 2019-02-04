@@ -2,16 +2,15 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-// import setMatch from './actions/updateMatch';
+import axios from 'axios';
+import {SERVER_URL} from './consts';
 
-import "./Game.css";
-import axios from "axios";
-import {SERVER_URL} from "./consts";
-import Card from "./Card";
-import './stylesheets/makeDeck.css'
+import '../stylesheets/makeDeck.css'
+import '../stylesheets/Game.css';
+import Card from './Card.js';
 
 class ListeCartes extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -69,11 +68,4 @@ const mapStateToProps = state => {
     }
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     setMatch: matchmakingId => {
-//       dispatch(setMatch(matchmakingId))
-//     }
-//   }
-// };
 export default connect(mapStateToProps,null)(ListeCartes)

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {RELOAD_TIME} from "./consts";
+
+import {RELOAD_TIME} from './consts';
 
 
 class ButtonTimer extends Component {
@@ -60,5 +61,4 @@ function decompte(){
     }
 }
 
-  
-  export default ButtonTimer
+export default ButtonTimer

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+// Import pour redux
+import { connect } from 'react-redux';
+
 import {
   HashRouter as Router,
   Switch,
@@ -7,12 +10,11 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Signin from "./Signin";
-import Signup from "./Signup";
-import Game from "./Game";
+import Signin from "./components/Signin.js";
+import Signup from "./components/Signup.js";
+import Game from "./components/Game.js";
 
-// Import pour redux
-import { connect } from 'react-redux';
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -45,13 +47,5 @@ class LOSRouter extends Component {
 const mapStateToProps = state => {
   return { sessionToken: state.sessionReducer}
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     setTokenSession: token => {
-//       dispatch(setTokenSession(token))
-//     }
-//   }
-// }
 
 export default connect(mapStateToProps,null)(LOSRouter)

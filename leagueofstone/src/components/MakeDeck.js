@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 // Redux
 import { connect } from 'react-redux';
-import setMatch from './actions/updateMatch';
-
-import './App.css'
-import "./Game.css";
-import "./stylesheets/makeDeck.css"
-import "./Signin.css"
-
-// import axios from "axios";
+import setMatch from '../actions/updateMatch';
 import {SERVER_URL} from "./consts";
-import Card from "./Card";
 import axios from "axios";
+
+import '../stylesheets/App.css'
+import "../stylesheets/Game.css";
+import "../stylesheets/makeDeck.css"
+import "../stylesheets/Signin.css"
+import Card from "./Card.js";
 
 class MakeDeck extends Component {
     constructor(props) {
@@ -179,4 +177,5 @@ const mapDispatchToProps = dispatch => {
         }
     }
 };
+
 export default connect(mapStateToProps,mapDispatchToProps)(MakeDeck)

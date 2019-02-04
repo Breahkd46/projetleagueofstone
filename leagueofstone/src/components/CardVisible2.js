@@ -1,9 +1,11 @@
 import React, {Component} from "react";
-import Card from './CardHand.js'
-import './Game.css'
+
 import axios from "axios";
 import {SERVER_URL} from "./consts";
-import CardHand2 from "./CardHand2";
+
+import '../stylesheets/Game.css'
+import Card from './CardHand.js'
+import CardHand2 from './CardHand2.js';
 
 class CardVisible extends Component {
 

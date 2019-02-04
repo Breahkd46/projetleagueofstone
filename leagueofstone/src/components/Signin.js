@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // Redux
 import { connect } from 'react-redux';
-import setTokenSession from './actions/setTokenSession'
+import setTokenSession from '../actions/setTokenSession'
 
 import { SERVER_URL } from "./consts";
 
-import "./App.css";
-import "./Signin.css";
+import "../stylesheets/App.css";
+import "../stylesheets/Signin.css";
 
 class Signin extends Component {
   constructor(props) {

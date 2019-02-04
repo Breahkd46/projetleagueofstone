@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import "./stylesheets/Card.css";
+import React, { Component } from "react";
+
+import '../stylesheets/Card.css';
+
 class Card extends Component {
-    // flipped() {
-    //     return this.props.flipped ? "notflipped" : "flipped";
-    // }
 
     render() {
         return (

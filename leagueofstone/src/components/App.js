@@ -5,21 +5,18 @@ import { createStore } from 'redux';
 
 import LOSRouter from './LOSRouter';
 
-// Import pour redux
-import losApp from './los-reducer/reducers';
+// Import for Redux
+import losApp from '../los-reducer/reducers';
 
-import "./App.css";
+import '../stylesheets/App.css';
 
-// Creation du store pour Redux
+// Creation of store for Redux
 let store = createStore(
   losApp,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     return (

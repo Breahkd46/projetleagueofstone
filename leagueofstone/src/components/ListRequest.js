@@ -2,16 +2,15 @@ import React, { Component } from "react";
 
 // Redux
 import { connect } from 'react-redux';
-import updateMatchmakingRequest from './actions/updateMatchmakingRequest';
-import setMatch from './actions/updateMatch';
+import updateMatchmakingRequest from '../actions/updateMatchmakingRequest';
+import setMatch from '../actions/updateMatch';
 
 // Requete Server
 import axios from "axios";
 import { SERVER_URL } from "./consts";
-// import { RELOAD_TIME } from "./consts";
 
-import "./Signin.css";
-import "./stylesheets/ListMatchmacking.css"
+import "../stylesheets/Signin.css";
+import "../stylesheets/ListMatchmacking.css"
 
 class ListRequest extends Component {
 
@@ -20,34 +19,6 @@ class ListRequest extends Component {
 
     this.handleAcceptRequest = this.handleAcceptRequest.bind(this);
   }
-  // componentDidMount() {
-  //   this.intervalID = setInterval(
-  //     () => this.reloadRequests(),
-  //     RELOAD_TIME
-  //   );
-  // }
-  //
-  // componentWillUnmount() {
-  //   clearInterval(this.intervalID);
-  // }
-  //
-  // reloadRequests() {
-  //   axios
-  //     .get(
-  //       SERVER_URL + "/matchmaking/participate?token=" +
-  //       this.props.sessionToken.token
-  //     )
-  //     .then(res => {
-  //       if (res.data.status === "ok") {
-  //         console.log(res.data.data.request);
-  //         if (res.data.data.request !== this.props.matchmaking.request) {
-  //           this.props.updateMatchmakingRequest(res.data.data.request)
-  //         }
-  //       } else {
-  //         console.log(res.data.message);
-  //       }
-  //     });
-  // }
 
   handleAcceptRequest(e) {
     axios
@@ -60,7 +31,6 @@ class ListRequest extends Component {
       .then(res => {
         if (res.data.status === "ok") {
           console.log(res.data.data);
-          // this.props.history.push(process.env.PUBLIC_URL + "/");
         } else {
           console.log(res.data.message);
         }

@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button"
-import "./stylesheets/Part.css";
-
-import ButtonTimer from "./ButtonTimer";
-import JoueurAdverse from "./JoueurAdverse";
-import JoueurPrincipal from "./JoueurPrincipal";
 
 import axios from "axios";
 import {RELOAD_TIME, SERVER_URL} from "./consts";
 import {connect} from 'react-redux';
-import removeMatch from "./actions/removeMatch";
-import removeMatchmaking from "./actions/removeMatchmaking";
+import removeMatch from "../actions/removeMatch";
+import removeMatchmaking from "../actions/removeMatchmaking";
+
+import "../stylesheets/Part.css";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button"
+
+import ButtonTimer from "./ButtonTimer.js";
+import JoueurAdverse from "./JoueurAdverse.js";
+import JoueurPrincipal from "./JoueurPrincipal.js";
+
 
 class Part extends Component {
     constructor(props) {
@@ -76,8 +78,6 @@ class Part extends Component {
                             player2: res.data.data.player1
                         })
                     }
-
-                    // this.props.history.push(process.env.PUBLIC_URL + "/");
                 } else {
                     console.log(res.data.message);
                 }
@@ -92,8 +92,6 @@ class Part extends Component {
             ).then( res => {
             if (res.data.status === "ok") {
                 console.log(res.data.data);
-
-                // this.props.history.push(process.env.PUBLIC_URL + "/");
             } else {
                 console.log(res.data.message);
             }
@@ -109,8 +107,6 @@ class Part extends Component {
             ).then( res => {
             if (res.data.status === "ok") {
                 console.log(res.data.data);
-
-                // this.props.history.push(process.env.PUBLIC_URL + "/");
             } else {
                 console.log(res.data.message);
             }
@@ -141,7 +137,6 @@ class Part extends Component {
                     console.log(res.data.data);
                     this.props.removeMatch("");
                     this.props.removeMatchmaking("");
-                    // this.props.history.push(process.env.PUBLIC_URL + "/");
                 } else {
                     console.log(res.data.message);
                 }
@@ -187,7 +182,6 @@ class Part extends Component {
                         if (res.data.status === "ok") {
                             console.log(res.data.data);
                             this.changeStateAfterAttack(res.data.data.player1,res.data.data.player2);
-                            // this.props.history.push(process.env.PUBLIC_URL + "/");
                         } else {
                             console.log(res.data.message);
                         }
@@ -206,7 +200,6 @@ class Part extends Component {
                         if (res.data.status === "ok") {
                             console.log(res.data.data);
                             this.changeStateAfterAttack(res.data.data.player1,res.data.data.player2);
-                            // this.props.history.push(process.env.PUBLIC_URL + "/");
                         } else {
                             console.log(res.data.message);
                         }
@@ -243,12 +236,6 @@ class Part extends Component {
                             <JoueurAdverse player={this.state.player2}
                                            handleAttackDest={this.handleAttackDest}/>
                         </div>
-                        {/*<div className="col">*/}
-                        {/*<button onClick={this.handlePickCard()}>Pioche</button>*/}
-                        {/*</div>*/}
-                        {/*<div className="col">*/}
-                        {/*<button onClick={this.handleEndTurn()}>Fin du tour</button>*/}
-                        {/*</div>*/}
                         <div className="encadre">
                         <div className="principal">
                             <JoueurPrincipal handlePickCard={this.handlePickCard}
@@ -267,9 +254,6 @@ class Part extends Component {
 
                     <Modal show={this.state.statusGame === "Player 1 won" || this.state.statusGame === "Player 2 won"}
                            onHide={this.handleFinishGame} >
-                        {/*<Modal.Header closeButton>*/}
-                            {/*<Modal.Title>Modal heading</Modal.Title>*/}
-                        {/*</Modal.Header>*/}
                         <Modal.Body> {this.state.statusGame.substring(7,8) === "1"? (
                             this.state.J1isJ1?this.state.player1.name:this.state.player2.name
                         ):(

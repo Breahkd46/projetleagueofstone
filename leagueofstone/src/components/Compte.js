@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-import Unsubscribe from './Unsubscribe';
-
 // Redux
 import { connect } from 'react-redux';
 
-import "./Game.css";
+import '../stylesheets/Game.css';
+import Unsubscribe from './Unsubscribe.js';
 
 class Compte extends Component {
     // constructor(props) {

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import "./stylesheets/Joueur.css";
-import CardVisible from "./CardVisible";
-import HandsCards from "./HandsCards";
 
-import axios from "axios";
-import {SERVER_URL} from "./consts";
-import Card from "./CardHand.js";
+import axios from 'axios';
 import { connect } from 'react-redux';
+import {SERVER_URL} from './consts';
+
+import '../stylesheets/Joueur.css';
+import CardVisible from './CardVisible.js';
+import HandsCards from './HandsCards.js';
+import Card from "./CardHand.js";
+
 
 class JoueurAdverse extends Component {
 
@@ -33,4 +35,4 @@ class JoueurAdverse extends Component {
 
 }
 
-  export default JoueurAdverse;
+export default JoueurAdverse;
