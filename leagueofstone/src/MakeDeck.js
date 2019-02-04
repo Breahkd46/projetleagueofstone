@@ -77,7 +77,7 @@ class MakeDeck extends Component {
             for(let card of this.state.deck) {
                 console.log(card)
                 req.push({
-                    key: card.name
+                    key: card.key
                 })
             }
             // req.push({key: this.state.deck.map((champ, index,) => champ.key) });
