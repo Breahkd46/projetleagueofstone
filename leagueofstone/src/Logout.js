@@ -9,7 +9,7 @@ import { SERVER_URL } from "./consts";
 import { connect } from 'react-redux';
 import removeTokenSession from './actions/removeTokenSession'
 
-import "./App.css";
+import "./stylesheets/App.css";
 
 class Logout extends Component {
   constructor(props) {

@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import setMatch from './actions/updateMatch';
 
-import './App.css'
-import "./Game.css";
+import './stylesheets/App.css'
+import "./stylesheets/Game.css";
 import "./stylesheets/makeDeck.css"
-import "./Signin.css"
+import "./stylesheets/Signin.css"
 
 // import axios from "axios";
 import {SERVER_URL} from "./consts";

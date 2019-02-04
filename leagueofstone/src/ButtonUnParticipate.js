@@ -8,7 +8,7 @@ import removeMatchmaking from './actions/removeMatchmaking';
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 
-import "./Signin.css";
+import "./stylesheets/Signin.css";
 
 class ButtonUnParticipate extends Component {
 

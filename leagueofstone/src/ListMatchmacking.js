@@ -8,8 +8,8 @@ import axios from "axios";
 import { SERVER_URL } from "./consts";
 import { RELOAD_TIME } from "./consts";
 
-import './list.css';
-import './Signin.css';
+import './stylesheets/list.css';
+import './stylesheets/Signin.css';
 import './stylesheets/ListMatchmacking.css';
 
 class ListMatchmacking extends Component {

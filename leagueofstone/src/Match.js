@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import updateMatch from "./actions/updateMatch";
 import {connect} from "react-redux";
 
-import './App.css'
-import './Signin.css'
+import './stylesheets/App.css'
+import './stylesheets/Signin.css'
 import MakeDeck from "./MakeDeck";
 // Server
 import axios from "axios";
