@@ -16,7 +16,7 @@ class CardHand extends Component {
         return (
             <div className="face front">
                 <div className={id} onClick={this.props.click}>
-                    <div className="hausementepaule" style={{backgroundImage: "url("+img+")"}}>
+                    <div className="visibleAdverse" style={{backgroundImage: "url("+img+")"}}>
                         <div className="card-text">
                             <div className={"card-text-title"}>
                                 <p>{this.props.name}</p>
@@ -34,8 +34,6 @@ class CardHand extends Component {
                 </div>
             </div>
         );
-            
-            
     }
 }
 

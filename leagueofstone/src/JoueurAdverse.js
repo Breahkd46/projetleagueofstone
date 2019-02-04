@@ -30,7 +30,6 @@ class JoueurAdverse extends Component {
             <div className="visible">
                 <CardVisible board={this.props.player.board}
                              handleCard={this.props.handleAttackDest}/>
-
             </div>
         </div>
       );

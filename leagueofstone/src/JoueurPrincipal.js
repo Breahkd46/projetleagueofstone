@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./stylesheets/Joueur.css";
-import CardVisible from "./CardVisible";
+import CardVisible2 from "./CardVisible2";
 import HandsCards from "./HandsCards";
 
 import axios from "axios";
@@ -15,14 +15,13 @@ class JoueurPrincipal extends Component {
         console.log(this.props.handleAttackSource)
         return (
             <div>
-                <div>
-                    <CardVisible board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
-                    Carte visible
+                <div className="boardPrincipal">
+                    <CardVisible2 board={this.props.player.board} handleCard={this.props.handleAttackSource}/>
                 </div>
                 <div>
                     <div className="col2">
                         <p className="pJoueurP">Joueur {this.props.player.name}</p>
-                        <p>JP : {this.props.player.hp}</p>
+                        <p className="pv">JP : {this.props.player.hp}</p>
                     </div>
                     <div>
                         <button className="col3 pDeck" disabled={!this.props.player.turn || (this.props.player.turn && this.props.player.cardPicked)}

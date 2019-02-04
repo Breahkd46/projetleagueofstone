@@ -239,7 +239,7 @@ class Part extends Component {
             return (
                 <div className="plateau">
                     <div className="center">
-                        <div className="adversasire">
+                        <div className="adversaire">
                             <JoueurAdverse player={this.state.player2}
                                            handleAttackDest={this.handleAttackDest}/>
                         </div>
@@ -249,12 +249,14 @@ class Part extends Component {
                         {/*<div className="col">*/}
                         {/*<button onClick={this.handleEndTurn()}>Fin du tour</button>*/}
                         {/*</div>*/}
+                        <div className="encadre">
                         <div className="principal">
                             <JoueurPrincipal handlePickCard={this.handlePickCard}
                                              handleEndTurn={this.handleEndTurn}
                                              handlePlayCard={this.handlePlayCard}
                                              handleAttackSource={this.handleAttackSource}
                                              player={this.state.player1}/>
+                        </div>
                         </div>
                         <div className="bouton">
                             <div className="timer">
