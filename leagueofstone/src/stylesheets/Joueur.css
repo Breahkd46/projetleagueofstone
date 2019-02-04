@@ -72,7 +72,8 @@ img{
     background-image: url(/lol2.jpg);
     border: 3px solid;
     background-repeat: no-repeat;
-    top: 822%;
+    top: 953%;
+
 
     width: 129%;
     height: 319%;
@@ -118,4 +119,8 @@ img{
 .pv{
     position: absolute;
     top: 84%;
+}
+
+.fin{
+    
 }
