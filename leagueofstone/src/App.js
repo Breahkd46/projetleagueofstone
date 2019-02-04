@@ -8,7 +8,7 @@ import LOSRouter from './LOSRouter';
 // Import pour redux
 import losApp from './los-reducer/reducers';
 
-import "./App.css";
+import "./stylesheets/App.css";
 
 // Creation du store pour Redux
 let store = createStore(

@@ -4,9 +4,9 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 //import setMatch from './actions/setMatch';
 
-import './App.css';
+import './stylesheets/App.css';
 // import logo from "./logo.svg";
-import "./Game.css";
+import "./stylesheets/Game.css";
 import CardHand from "./CardHand.js";  
 import DownCard from './DownCard'
 import axios from "axios";

@@ -5,7 +5,7 @@ import Unsubscribe from './Unsubscribe';
 // Redux
 import { connect } from 'react-redux';
 
-import "./Game.css";
+import "./stylesheets/Game.css";
 
 class Compte extends Component {
     // constructor(props) {

@@ -8,7 +8,7 @@ import initMatchmaking from './actions/initMatchmaking';
 import axios from "axios";
 import { SERVER_URL } from "./consts";
 
-import "./Signin.css"
+import "./stylesheets/Signin.css"
 import setMatchmaking from "./actions/setMatchmaking";
 
 class ButtonParticipate extends Component {

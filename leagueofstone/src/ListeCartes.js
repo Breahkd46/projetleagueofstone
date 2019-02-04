@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 // import setMatch from './actions/updateMatch';
 
-import "./Game.css";
+import "./stylesheets/Game.css";
 import axios from "axios";
 import {SERVER_URL} from "./consts";
 import Card from "./Card";

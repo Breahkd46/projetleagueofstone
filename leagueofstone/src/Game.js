@@ -6,7 +6,7 @@ import Participate from './Participate';
 import { connect } from 'react-redux';
 // import setMatch from './actions/updateMatch';
 
-import "./Game.css";
+import "./stylesheets/Game.css";
 import Match from "./Match";
 import Compte from "./Compte";
 import ListeCartes from "./ListeCartes";

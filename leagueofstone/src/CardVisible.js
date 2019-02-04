@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Card from './CardHand.js'
-import './Game.css'
+import './stylesheets/Game.css'
 import axios from "axios";
 import {SERVER_URL} from "./consts";
 import CardHand3 from "./CardHand3";
