@@ -1,0 +1,211 @@
+.oui {
+    overflow: hidden;
+    width: 75%;
+    margin: 30px;
+}
+
+.oui img {
+    background-size: cover;
+    width: 244%;
+    margin-left: -120%;
+}
+
+.card-text {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+
+.card-text img {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    margin: auto;
+}
+
+/*.face{*/
+    /*overflow: hidden;*/
+    /*width: 75%;*/
+    /*margin : 30px;*/
+/*}*/
+
+/*.face img{*/
+    /*background-size: cover;*/
+    /*width: 244%;*/
+    /*margin-left:-120%;*/
+/*}*/
+.card-text-item-left {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.card-text-item-right {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+}
+
+.card-text-title {
+
+}
+
+/* @keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flip{animation: fadein 4.0s;} */
+
+
+.card-body {
+    margin-top: -60px;
+    padding: 0;
+    color: white;
+}
+
+.flip {
+    -webkit-perspective: 800px;
+    width: 14em;
+    /*height: 200px;*/
+    position: sticky;
+    margin-bottom: 10px;
+}
+
+.flip .card.flipped {
+    -webkit-transform: rotatex(-180deg);
+}
+
+.flip .card {
+
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+}
+
+.card img {
+    width: 100%;
+}
+
+/*.flip .card .face {*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*position: absolute;*/
+/*-webkit-backface-visibility: hidden;*/
+/*z-index: 2;*/
+/*}*/
+.flip .card .front {
+    /*position: absolute;*/
+    z-index: 1;
+    /*background: white;*/
+    color: black;
+    cursor: pointer;
+    background-color: #23555c;
+    border-radius: 10px;
+}
+
+/*.flip .card .back {*/
+/*-webkit-transform: rotatex(-180deg);*/
+/*background: blue;*/
+/*background: black;*/
+/*color: white;*/
+/*cursor: pointer;*/
+/*}*/
+
+/*Css carte à la position 1*/
+
+.id1{
+    position: absolute;
+    left: -389%;
+    width: 20%;
+    height: 31%;
+    
+}
+
+/*Css carte à la position 2*/
+.id2{
+    position: absolute;
+    left: -169%;
+    width: 20%;
+    height: 31%;
+}
+
+/*Css carte à la position 3*/
+.id3{
+    position: absolute;
+    left: 3%;
+    width: 20%;
+    height: 31%;
+}
+
+/*Css carte à la position 4*/
+.id4{
+    position: absolute;
+    left: 177%;
+    width: 20%;
+    height: 31%;
+}
+
+
+/*Css carte à la position 5*/
+.id5{
+    position: absolute;
+    left: 348%;
+    width: 20%;
+    height: 31%;
+}
+
+/*Css carte de la main du joueur principal*/
+.main{
+    background-size: 100% 100%;
+    width: 980%;
+    height: 1332%;
+    position: absolute;
+    top: 1266%;
+    border-radius: 10%;
+    
+}
+
+/*Css nom des champions*/
+.nom{
+    font-size: 200%;
+    font-family: fantasy;
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: -25%;
+}
+
+
+/*Css points d'attaque et dde défense des champions*/
+.points{
+    background: #601006;
+    top: 32%;
+    width: 34%;
+    border-radius: 10%;
+}
+
+/*Css carte plateau adversaire*/
+.visibleAdverse{
+    background-size: 100% 100%;
+    width: 576%;
+    position: absolute;
+    top: -351%;
+    border-radius: 26%;
+}
+
+/*Css carte plateau joueur principal*/
+.visiblePrincipal{
+    background-size: 100% 100%;
+    height: 1261%;
+    width: 948%;
+    border-radius: 10%;
+}
