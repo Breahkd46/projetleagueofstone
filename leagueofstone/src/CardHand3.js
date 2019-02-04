@@ -14,14 +14,24 @@ class CardHand extends Component {
         let id = "id"+this.props.lvl;
         let img = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+this.props.img+"_0.jpg";
         return (
-            <div className={id} onClick={this.props.click}>
-            <div className="visibleAdverse" style={{backgroundImage: "url("+img+")"}}>
-                <p className="nom">{this.props.name}</p>
-                <div className="points"><p>A : {this.props.attack}</p>
-                <p>D : {this.props.def}</p></div>
-                
-            </div>
-                
+            <div className="face front">
+                <div className={id} onClick={this.props.click}>
+                    <div className="visibleAdverse" style={{backgroundImage: "url("+img+")"}}>
+                        <div className="card-text">
+                            <div className={"card-text-title"}>
+                                <p>{this.props.name}</p>
+                            </div>
+                            <div className={"card-text-item-left"}>
+                                <img src={"swords.png"} />
+                                <p>A : {this.props.attack}</p>
+                            </div>
+                            <div className={"card-text-item-right"}>
+                                <img src={"security-badge.png"} />
+                                <p>D : {this.props.def}</p>
+                            </div>
+                        </div>
+                    </div>           
+                </div>
             </div>
         );
     }
