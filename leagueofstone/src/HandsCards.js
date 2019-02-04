@@ -66,7 +66,6 @@ class HandsCards extends Component {
     //     clearInterval(this.intervalGetMatch);
     // }
     handleClickCard(name) {
-        console.log(name)
         axios
             .get(
                 SERVER_URL + "/match/playCard?token=" +
@@ -88,7 +87,6 @@ class HandsCards extends Component {
     render() {
 
         if (this.props.handPlayer instanceof Array) {
-            console.log(this.state.hand)
             return (
                 <div className="hand">
                     {/*{this.state.hand}*/}
