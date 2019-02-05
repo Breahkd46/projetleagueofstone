@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a6d370e598c28f9fafbc",
+    "revision": "78bed7360a9fe12ad5c6",
     "url": "/projetleagueofstone/static/css/main.69c18c36.chunk.css"
   },
   {
-    "revision": "a6d370e598c28f9fafbc",
-    "url": "/projetleagueofstone/static/js/main.a6d370e5.chunk.js"
+    "revision": "78bed7360a9fe12ad5c6",
+    "url": "/projetleagueofstone/static/js/main.78bed736.chunk.js"
   },
   {
     "revision": "a6941998568bde771d23",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/projetleagueofstone/static/js/runtime~main.170a11d0.js"
   },
   {
-    "revision": "b99ae65d66c90b6ea2a83f0ae6aac65e",
+    "revision": "845fda8956665ce9662042ec0c4f8011",
     "url": "/projetleagueofstone/index.html"
   }
 ];
