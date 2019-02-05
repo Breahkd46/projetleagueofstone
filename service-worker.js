@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/projetleagueofstone/precache-manifest.1fe528bf0302caf94eb53ca2da890376.js"
+  "/projetleagueofstone/precache-manifest.2a4b89583dbe77f4681faa2277006dcb.js"
 );
 
 workbox.clientsClaim();
